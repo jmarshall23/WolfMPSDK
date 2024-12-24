@@ -172,7 +172,7 @@ void CG_SetInitialSnapshot( snapshot_t *snap ) {
 //	cg.clientNum = snap->ps.clientNum;
 
 	// NERVE - SMF
-	{
+	if (cg_popupLimboMenu.integer) {
 		static char prevmap[64] = { 0 };
 		char curmap[64];
 
