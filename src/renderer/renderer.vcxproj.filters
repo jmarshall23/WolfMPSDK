@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{8eab65a6-10c1-4c53-9958-f7ac1b902771}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{c38a8790-7b24-4cd3-89c5-ef48e53b02b4}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="jpeg">
+      <UniqueIdentifier>{c3d74d62-ce85-41ac-a6f8-c56696f42246}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="jpeg\Source Files No. 1">
+      <UniqueIdentifier>{16179054-aacd-4757-a26f-741a47812c8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="jpeg\Header Files No. 1">
+      <UniqueIdentifier>{845fca74-52ce-4529-a671-5c9d8e6783ed}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ref_trin.def">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="tr_animation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tr_backend.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tr_bsp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tr_cmds.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tr_cmesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tr_curve.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tr_flares.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tr_font.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tr_image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tr_init.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tr_light.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tr_main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tr_marks.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tr_mesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tr_model.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tr_noise.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tr_scene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tr_shade.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tr_shade_calc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tr_shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tr_shadows.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tr_sky.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tr_surface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tr_world.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\win32\win_gamma.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\win32\win_glimp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\win32\win_qgl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jpeg-6\jcapimin.c">
+      <Filter>jpeg\Source Files No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jpeg-6\jccoefct.c">
+      <Filter>jpeg\Source Files No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jpeg-6\jccolor.c">
+      <Filter>jpeg\Source Files No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jpeg-6\jcdctmgr.c">
+      <Filter>jpeg\Source Files No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jpeg-6\jchuff.c">
+      <Filter>jpeg\Source Files No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jpeg-6\jcinit.c">
+      <Filter>jpeg\Source Files No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jpeg-6\jcmainct.c">
+      <Filter>jpeg\Source Files No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jpeg-6\jcmarker.c">
+      <Filter>jpeg\Source Files No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jpeg-6\jcmaster.c">
+      <Filter>jpeg\Source Files No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jpeg-6\jcomapi.c">
+      <Filter>jpeg\Source Files No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jpeg-6\jcparam.c">
+      <Filter>jpeg\Source Files No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jpeg-6\jcphuff.c">
+      <Filter>jpeg\Source Files No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jpeg-6\jcprepct.c">
+      <Filter>jpeg\Source Files No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jpeg-6\jcsample.c">
+      <Filter>jpeg\Source Files No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jpeg-6\jctrans.c">
+      <Filter>jpeg\Source Files No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jpeg-6\jdapimin.c">
+      <Filter>jpeg\Source Files No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jpeg-6\jdapistd.c">
+      <Filter>jpeg\Source Files No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jpeg-6\jdatadst.c">
+      <Filter>jpeg\Source Files No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jpeg-6\jdatasrc.c">
+      <Filter>jpeg\Source Files No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jpeg-6\jdcoefct.c">
+      <Filter>jpeg\Source Files No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jpeg-6\jdcolor.c">
+      <Filter>jpeg\Source Files No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jpeg-6\jddctmgr.c">
+      <Filter>jpeg\Source Files No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jpeg-6\jdhuff.c">
+      <Filter>jpeg\Source Files No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jpeg-6\jdinput.c">
+      <Filter>jpeg\Source Files No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jpeg-6\jdmainct.c">
+      <Filter>jpeg\Source Files No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jpeg-6\jdmarker.c">
+      <Filter>jpeg\Source Files No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jpeg-6\jdmaster.c">
+      <Filter>jpeg\Source Files No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jpeg-6\jdpostct.c">
+      <Filter>jpeg\Source Files No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jpeg-6\jdsample.c">
+      <Filter>jpeg\Source Files No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jpeg-6\jdtrans.c">
+      <Filter>jpeg\Source Files No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jpeg-6\jerror.c">
+      <Filter>jpeg\Source Files No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jpeg-6\jfdctflt.c">
+      <Filter>jpeg\Source Files No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jpeg-6\jidctflt.c">
+      <Filter>jpeg\Source Files No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jpeg-6\jmemmgr.c">
+      <Filter>jpeg\Source Files No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jpeg-6\jmemnobs.c">
+      <Filter>jpeg\Source Files No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jpeg-6\jutils.c">
+      <Filter>jpeg\Source Files No. 1</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="anorms256.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\qcommon\cm_public.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\win32\glw_win.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\jpeg-6\jchuff.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\game\q_shared.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\qcommon\qcommon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\qcommon\qfiles.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="qgl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\win32\resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\game\surfaceflags.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tr_local.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tr_public.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cgame\tr_types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\win32\win_local.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\jpeg-6\jconfig.h">
+      <Filter>jpeg\Header Files No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\jpeg-6\jdct.h">
+      <Filter>jpeg\Header Files No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\jpeg-6\jdhuff.h">
+      <Filter>jpeg\Header Files No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\jpeg-6\jerror.h">
+      <Filter>jpeg\Header Files No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\jpeg-6\jinclude.h">
+      <Filter>jpeg\Header Files No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\jpeg-6\jmemsys.h">
+      <Filter>jpeg\Header Files No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\jpeg-6\jmorecfg.h">
+      <Filter>jpeg\Header Files No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\jpeg-6\jpegint.h">
+      <Filter>jpeg\Header Files No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\jpeg-6\jpeglib.h">
+      <Filter>jpeg\Header Files No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\jpeg-6\jversion.h">
+      <Filter>jpeg\Header Files No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="qgl_linked.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

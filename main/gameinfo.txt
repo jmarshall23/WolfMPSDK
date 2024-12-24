@@ -1,0 +1,21 @@
+// Game type info
+//
+// description, g_gametype enum
+gametypes {
+  { "Wolf MP" 5 }
+  { "Wolf SW" 6 }
+  { "Wolf CP" 7 }
+}
+
+
+// english name, map name, vs count, par times per gametype valid gametyes for ui
+// 
+maps {
+}
+
+joingametypes {
+  { "All" -1 }
+  { "Wolf MP" 5 }
+  { "Wolf SW" 6 }
+  { "Wolf CP" 7 }
+}

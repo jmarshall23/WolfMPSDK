@@ -1,0 +1,646 @@
+#include "ui_mp/menudef.h"
+\\ Italian - modified 11/9/01 by lmm
+{
+\\ SETUP MENU \\
+
+menuDef {
+	name "options_menu"
+	visible 0
+	fullscreen 0
+	rect 100 125 443 340
+	focusColor 1 .75 0 1
+	style 1
+	border 1
+	onOpen { setitemcolor fadebox backcolor 0 0 0 1 ; 
+	fadeout fadebox }
+	onEsc { close options_menu ; close setup_menu ; open main }
+
+
+	
+itemDef 
+	{
+	name window
+	group grpSystembutton
+	rect 0 2 443 300	
+	style WINDOW_STYLE_FILLED
+	border 1
+	bordercolor .5 .5 .5 .5
+	forecolor 1 1 1 1
+	backcolor 0 0 0 .25
+	visible 1
+	decoration
+	}
+
+
+itemDef 
+	{
+	name ctr_performance
+	text "Prestazione"
+	type 1
+	textfont UI_FONT_NORMAL
+	textscale .255
+	textfont UI_FONT_NORMAL
+	group grpSystembutton
+	style WINDOW_STYLE_FILLED
+	rect 100 10 100 12
+	textalign 1
+	textalignx 50
+	textaligny 10
+	forecolor 1 1 1 1
+	backcolor .1 .1 .1 0 
+	visible 1
+	action { play "sound/misc/kcaction.wav" ; 
+	hide grpOptions ; show performance }
+	mouseEnter { show message_graphics ; setitemcolor ctr_performance backcolor .3 .3 .3 0 } 
+	mouseExit { hide message_graphics ; setitemcolor ctr_performance backcolor .1 .1 .1 0 } 
+	}
+
+itemDef {
+	name window
+	text "Opzioni di gioco"
+ 	type 1
+	style 0	
+	textstyle 6
+	rect 222.5 -12 64 14 
+	textalign ITEM_ALIGN_CENTER
+	textfont UI_FONT_NORMAL
+	textscale .255	
+	textfont UI_FONT_NORMAL	
+	textalignx 2
+	textaligny 12
+	forecolor .9 .9 .9 .9
+	visible 1 
+	decoration
+}
+	itemDef 
+	{
+		name window2
+		group grpControlbutton
+		rect 2 4 439 20	
+		style WINDOW_STYLE_FILLED
+		border 1
+		bordercolor .1 .1 .1 .2
+		forecolor 1 1 1 1
+		backcolor .3 0.5 0.2 .25
+		visible 1
+		decoration
+	}
+
+
+
+
+
+	itemDef {
+		name performance
+		group grpOptions
+		text "Durata segni sui muri:"
+		type ITEM_TYPE_MULTI	
+		cvar "cg_markTime"
+		cvarFloatList { "Lunga" 30000 "Normale" 20000 "Breve" 10000 "Off" 0 }
+		rect 66 30 289 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 161
+		textaligny 10
+		textfont UI_FONT_NORMAL
+	textscale .255
+	textfont UI_FONT_NORMAL	
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		visible 1
+		mouseenter	{ show floater_message }
+		mouseexit	{ hide floater_message }
+    		}
+
+	itemDef {
+		name performance
+		group grpOptions
+		text "Espulsione cartucce:"
+		type ITEM_TYPE_MULTI	
+		cvar "cg_brassTime"
+		cvarFloatList { "Alta" 15000 "Media" 2500 "Off" 0 }
+		rect 66 45 289 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 161
+		textaligny 10
+		textfont UI_FONT_NORMAL
+	textscale .255
+		textfont UI_FONT_NORMAL	
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		visible 1 
+		mouseenter	{ show floater_message }
+		mouseexit	{ hide floater_message }
+    		}
+
+	itemDef {
+		name performance
+		group grpOptions
+		type ITEM_TYPE_YESNO
+		text "Luci dinamiche:"
+		cvar "r_dynamiclight"
+		rect 66 60 289 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 161
+		textaligny 10
+		textfont UI_FONT_NORMAL
+	textscale .255
+		textfont UI_FONT_NORMAL	
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		visible 1 
+		mouseenter	{ show floater_message }
+		mouseexit	{ hide floater_message }
+    		}
+
+
+	itemDef {
+		name performance
+		group grpOptions
+		type ITEM_TYPE_YESNO
+		text "Bassa qualità cielo:"
+		cvar "r_fastsky"
+		rect 66 75 289 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 161
+		textaligny 10
+		textfont UI_FONT_NORMAL
+	textscale .255
+		textfont UI_FONT_NORMAL	
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		visible 1 
+		mouseenter	{ show floater_message }
+		mouseexit	{ hide floater_message }
+    		}
+
+	itemDef {
+		name performance
+		group grpOptions
+		type ITEM_TYPE_YESNO
+		text "Sincronizza ogni frame:"
+		cvar "r_finish"
+		rect 66 90 289 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 161
+		textaligny 10
+		textfont UI_FONT_NORMAL
+	textscale .255
+		textfont UI_FONT_NORMAL	
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		visible 1 
+		mouseenter	{ show floater_message }
+		mouseexit	{ hide floater_message }
+    		}
+	
+//	itemDef {
+//		name performance
+//		group grpOptions
+//		type ITEM_TYPE_YESNO
+//		text "Forza modelli giocatori:"
+//		cvar "cg_forceModel"
+//		rect 66 105 289 12
+//		textalign ITEM_ALIGN_RIGHT
+//		textalignx 161
+//		textaligny 10
+//		textfont UI_FONT_NORMAL
+//	textscale .255
+//		style WINDOW_STYLE_FILLED
+//		backcolor 1 1 1 .07
+//		forecolor 1 1 1 1
+//		visible 1 
+//    		}
+
+//
+
+	itemDef {
+		name performance
+		type ITEM_TYPE_MULTI	
+		group grpOptions
+		text "Distanza effetti luce:"
+		rect 66 105 289 12
+		cvar "cg_coronafardist"
+		cvarFloatList { "Off" 0 "Ridotta" 800 "Normale" 1536 "Elevata" 4096 "Estrema" 16000 }
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 161
+		textaligny 10
+		textfont UI_FONT_NORMAL
+	textscale .255
+		textfont UI_FONT_NORMAL	
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		visible 1
+		mouseenter	{ show floater_message }
+		mouseexit	{ hide floater_message }
+		}
+
+
+
+	itemDef {
+		name performance
+		group grpOptions
+		type ITEM_TYPE_YESNO
+		text "Particelle:"
+		cvar "cg_wolfparticles"
+		rect 66 120 289 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 161
+		textaligny 10
+		textfont UI_FONT_NORMAL
+	textscale .255
+		textfont UI_FONT_NORMAL	
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		visible 1
+		mouseenter	{ show floater_message }
+		mouseexit	{ hide floater_message } 
+    		}
+
+//
+
+	itemDef {
+		name performance
+		group grpOptions
+		type ITEM_TYPE_YESNO
+		text "Filmati di gioco:"
+		cvar "r_inGameVideo"
+		rect 66 135 289 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 161
+		textaligny 10
+		textfont UI_FONT_NORMAL
+		textscale .255  
+		textfont UI_FONT_NORMAL	
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07     
+		forecolor 1 1 1 1
+		visible 1 
+		mouseenter	{ show floater_message }
+		mouseexit	{ hide floater_message } 
+    		}
+
+
+itemDef {
+	name ctr_view
+	text "Video"
+	type 1
+	textfont UI_FONT_NORMAL
+	textscale .255
+	textfont UI_FONT_NORMAL	
+	group grpSystembutton
+	style WINDOW_STYLE_FILLED
+	background "ui_mp/assets/button_back.tga"
+	rect 240 10 100 12
+	textalign 1
+	textalignx 50
+	textaligny 10
+	forecolor 1 1 1 1
+	backcolor .1 .1 .1 0 
+	visible 1
+	action { play "sound/misc/kcaction.wav" ; 
+	hide grpOptions ; show view }
+	mouseEnter { show message_driver ; setitemcolor ctr_view backcolor .3 .3 .3 0 } 
+	mouseExit { hide message_driver ; setitemcolor ctr_view backcolor .1 .1 .1 0 } 
+	}
+
+//
+
+	itemDef {
+		name view
+		group grpOptions
+		type ITEM_TYPE_YESNO
+		text "Mostra arma:"
+		cvar "cg_drawGun"
+		rect 66 30 289 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 161
+		textaligny 10
+		textfont UI_FONT_NORMAL
+	textscale .255
+		textfont UI_FONT_NORMAL	
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		visible 0
+		mouseenter	{ show floater_message }
+		mouseexit	{ hide floater_message }
+    	}
+
+//	itemDef {
+//		name view
+//		group grpOptions
+//		type ITEM_TYPE_YESNO
+//		text "Identifica bersaglio:"
+//		cvar "cg_drawCrosshairNames"
+//		rect 66 45 289 12
+//		textalign ITEM_ALIGN_RIGHT
+//		textalignx 161
+//		textaligny 10
+//		textfont UI_FONT_NORMAL
+//	textscale .255
+//		style WINDOW_STYLE_FILLED
+//		backcolor 1 1 1 .07
+//		forecolor 1 1 1 1
+//		visible 0
+//   		}
+
+//	itemDef {
+//		name view
+//		group grpOptions
+//		type ITEM_TYPE_YESNO
+//		text "Mostra tempo:"
+//		cvar "cg_drawTimer"
+//		rect 66 60 289 12
+//		textalign ITEM_ALIGN_RIGHT
+//		textalignx 161
+//		textaligny 10
+//		textfont UI_FONT_NORMAL
+//	textscale .255
+//		style WINDOW_STYLE_FILLED
+//		backcolor 1 1 1 .07
+//		forecolor 1 1 1 1
+//		visible 0
+//   		}
+
+//	itemDef {
+//		name view
+//		group grpOptions
+//		type ITEM_TYPE_YESNO
+//		text "Nebbia:"
+//		cvar "r_wolffog"
+//		rect 66 45 289 12
+//		textalign ITEM_ALIGN_RIGHT
+//		textalignx 161
+//		textaligny 10
+//		textfont UI_FONT_NORMAL			
+//		textfont UI_FONT_NORMAL
+//		textscale .255
+//		style WINDOW_STYLE_FILLED
+//		backcolor 1 1 1 .07
+//		forecolor 1 1 1 1
+//		visible 0
+//		mouseenter	{ show floater_message }
+//		mouseexit	{ hide floater_message }
+//  		}
+
+//	itemDef {
+//		name view
+//		group grpOptions
+//		type ITEM_TYPE_MULTI	
+//		text "Barra di stato:"
+//		cvar "cg_hudfiles"
+//		cvarStrList { Normale "ui/hud.txt" Piccola "ui/hud2.txt" }
+//		rect 66 90 289 12
+//		textalign ITEM_ALIGN_RIGHT
+//		textalignx 161
+//		textaligny 10
+//		textfont UI_FONT_NORMAL
+//	textscale .255   
+//		style WINDOW_STYLE_FILLED
+//		backcolor 1 1 1 .07     
+//		forecolor 1 1 1 1
+//		visible 0
+//		}
+
+
+	itemDef {
+		name view
+		type ITEM_TYPE_MULTI				
+		group grpOptions
+		text "Suggerimenti:"
+		rect 66 60 289 12
+		cvar "cg_cursorHints"
+		cvarFloatList { "Off" 0 "Pulsanti" 1 "Strobo" 2 "Intermittenti" 3 "Fissi" 4 }
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 161 
+		textaligny 10
+		textfont UI_FONT_NORMAL	
+		textfont UI_FONT_NORMAL
+		textscale .255    
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07    
+		forecolor 1 1 1 1
+		visible 0
+		mouseenter	{ show floater_message }
+		mouseexit	{ hide floater_message }
+   		}
+
+	itemDef {
+		name view
+		type ITEM_TYPE_MULTI				
+		group grpOptions
+		text "Mostra bussola:"
+		rect 66 75 289 12
+		cvar "cg_drawCompass"
+		cvarFloatList { "Off" 0 "On" 1 }
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 161 
+		textaligny 10
+		textfont UI_FONT_NORMAL	
+		textfont UI_FONT_NORMAL
+		textscale .255    
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07    
+		forecolor 1 1 1 1
+		visible 0
+		mouseenter	{ show floater_message }
+		mouseexit	{ hide floater_message }
+   		}
+
+	itemDef {
+		name view
+		type ITEM_TYPE_MULTI				
+		group grpOptions
+		text "Visuale squadra:"
+		rect 66 90 289 12
+		cvar "cg_drawteamoverlay"
+		cvarFloatList { "Off" 0 "Breve" 1 "Lunga" 2 }
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 161 
+		textaligny 10
+		textfont UI_FONT_NORMAL	
+		textfont UI_FONT_NORMAL
+		textscale .255    
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07    
+		forecolor 1 1 1 1
+		visible 0
+		mouseenter	{ show floater_message }
+		mouseexit	{ hide floater_message }
+   		}
+
+	itemDef {
+		name view
+		type ITEM_TYPE_MULTI				
+		group grpOptions
+		text "Dimensioni mirino:"
+		rect 66 105 289 12
+		cvar "cg_crosshairsize"
+		cvarFloatList { "Leggero" 24 "Piccolo" 32 "Medio" 48 "Grande" 64 "Immenso" 96 }
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 161 
+		textaligny 10
+		textfont UI_FONT_NORMAL	
+		textfont UI_FONT_NORMAL
+		textscale .255    
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07    
+		forecolor 1 1 1 1
+		visible 0
+		mouseenter	{ show floater_message }
+		mouseexit	{ hide floater_message }
+   		}
+
+	itemDef {
+		name view
+		type ITEM_TYPE_MULTI				
+		group grpOptions
+		text "Icona tempo di chat:"
+		rect 66 45 289 12
+		cvar "cg_voicespritetime"
+		cvarFloatList { "Breve" 3000 "Normale" 6000 "Lunga" 12000 "Lunghissima" 24000 }
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 161 
+		textaligny 10
+		textfont UI_FONT_NORMAL
+		textscale .255   
+		textfont UI_FONT_NORMAL	 
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07    
+		forecolor 1 1 1 1
+		visible 0
+		mouseenter	{ show floater_message }
+		mouseexit	{ hide floater_message }
+   		}
+
+
+	itemDef {
+		name view
+		group grpOptions
+		text "Mirino:"
+ 		type 1
+		rect 197 175 60 12
+		textalign ITEM_ALIGN_CENTER
+		textfont UI_FONT_NORMAL
+		textscale .255		
+		textalignx 30
+		textfont UI_FONT_NORMAL	
+		textaligny 12
+		forecolor 1 .75 0 1
+		visible 0 
+		decoration		
+	}
+
+	itemDef {
+		name view				
+		group grpOptions
+		rect 202 200 50 50
+		ownerdraw UI_CROSSHAIR
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 0 
+		textaligny 50  
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07      
+		forecolor 1 1 1 1
+		visible 0
+   		}
+
+
+
+
+itemDef {
+	name ctr_other
+	text "Altro"
+	type 1
+		textfont UI_FONT_NORMAL	
+	textfont UI_FONT_NORMAL
+	textscale .255
+	group grpSystembutton
+	style WINDOW_STYLE_FILLED
+	background "ui_mp/assets/button_back.tga"
+	rect 306 10 100 12
+	textalign 1
+	textalignx 50
+	textaligny 10
+	forecolor 1 1 1 1
+	backcolor .1 .1 .1 0 
+	visible 0
+	action { play "sound/misc/kcaction.wav" ; 
+	hide grpOptions ; show other }
+	mouseEnter { show message_other ; setitemcolor ctr_other backcolor .3 .3 .3 0 } 
+	mouseExit { hide message_other ; setitemcolor ctr_other backcolor .1 .1 .1 0} 	
+	}
+
+
+
+
+
+
+	itemDef {
+		name fadebox
+		style WINDOW_STYLE_FILLED
+		background "ui_mp/assets/fadebox.tga"
+		forecolor 0 0 0 1
+		backcolor 0 0 0 1
+		rect 0 0 640 480
+		visible 1 
+		decoration
+    	}
+
+itemDef 
+{
+	name yesno_message
+	rect 0 322 640 30 
+	text "Seleziona l'oggetto per impostarlo su Sì o No" 
+	forecolor 1 .75 0 1
+	textfont UI_FONT_NORMAL
+	textscale .25
+	textalignx 221
+	textalign 1
+	textaligny 20
+	visible 0
+	decoration 
+	}
+
+itemDef 
+{
+	name slider_message
+	rect 0 322 640 30 
+	text "Trascina il cursore per aumentare o diminuire"
+	forecolor 1 .75 0 1
+	textfont UI_FONT_NORMAL
+	textscale .25
+	textalignx 221
+	textalign 1
+	textaligny 20
+	visible 0
+	decoration 
+	}
+
+itemDef 
+{
+	name floater_message
+	rect 0 322 640 30 
+	text "Premi Invio o clicca per cambiare"
+	forecolor 1 .75 0 1
+	textfont UI_FONT_NORMAL
+	textscale .25
+	textalignx 221
+	textalign 1
+	textaligny 20
+	visible 0
+	decoration 
+	}
+
+
+	
+
+
+}

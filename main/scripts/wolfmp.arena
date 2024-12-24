@@ -1,0 +1,16 @@
+{
+map					"mp_beach"
+longname			"Beach Invasion"
+type				"wolfmp wolfsw"
+timelimit			8
+axisRespawnTime		40
+alliedRespawnTime	30
+}
+{
+map					"mp_trenchtoast"
+longname			"Trench Toast"
+type				"wolfcp"
+timelimit			10
+axisRespawnTime		30
+alliedRespawnTime	30
+}

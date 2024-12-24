@@ -1,0 +1,646 @@
+#include "ui_mp/menudef.h"
+
+{
+\\ SETUP MENU \\
+
+menuDef {
+	name "options_menu"
+	visible 0
+	fullscreen 0
+	rect 100 125 443 340
+	focusColor 1 .75 0 1
+	style 1
+	border 1
+	onOpen { setitemcolor fadebox backcolor 0 0 0 1 ; 
+	fadeout fadebox }
+	onEsc { close options_menu ; close setup_menu ; open main }
+
+
+	
+itemDef 
+	{
+	name window
+	group grpSystembutton
+	rect 0 2 443 300	
+	style WINDOW_STYLE_FILLED
+	border 1
+	bordercolor .5 .5 .5 .5
+	forecolor 1 1 1 1
+	backcolor 0 0 0 .25
+	visible 1
+	decoration
+	}
+
+
+itemDef 
+	{
+	name ctr_performance
+	text "Geschwindigkeit"
+	type 1
+	textfont UI_FONT_NORMAL
+	textscale .255
+	textfont UI_FONT_NORMAL
+	group grpSystembutton
+	style WINDOW_STYLE_FILLED
+	rect 50 10 100 12
+	textalign 1
+	textalignx 95
+	textaligny 10
+	forecolor 1 1 1 1
+	backcolor .1 .1 .1 0 
+	visible 1
+	action { play "sound/misc/kcaction.wav" ; 
+	hide grpOptions ; show performance }
+	mouseEnter { show message_graphics ; setitemcolor ctr_performance backcolor .3 .3 .3 0 } 
+	mouseExit { hide message_graphics ; setitemcolor ctr_performance backcolor .1 .1 .1 0 } 
+	}
+
+itemDef {
+	name window
+	text "SPIELOPTIONEN"
+ 	type 1
+	style 0	
+	textstyle 6
+	rect 222.5 -12 64 14 
+	textalign ITEM_ALIGN_CENTER
+	textfont UI_FONT_NORMAL
+	textscale .255	
+	textfont UI_FONT_NORMAL	
+	textalignx 2
+	textaligny 12
+	forecolor .9 .9 .9 .9
+	visible 1 
+	decoration
+}
+	itemDef 
+	{
+		name window2
+		group grpControlbutton
+		rect 2 4 439 20	
+		style WINDOW_STYLE_FILLED
+		border 1
+		bordercolor .1 .1 .1 .2
+		forecolor 1 1 1 1
+		backcolor .3 0.5 0.2 .25
+		visible 1
+		decoration
+	}
+
+
+
+
+
+	itemDef {
+		name performance
+		group grpOptions
+		text "Dauer Wandtreffer:"
+		type ITEM_TYPE_MULTI	
+		cvar "cg_markTime"
+		cvarFloatList { "Lang" 30000 "Normal" 20000 "Kurz" 10000 "Aus" 0 }
+		rect 22 30 400 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 200
+		textaligny 10
+		textfont UI_FONT_NORMAL
+	textscale .255
+	textfont UI_FONT_NORMAL	
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		visible 1 
+		mouseenter	{show floater_message}
+		mouseexit	{hide floater_message}
+    		}
+
+	itemDef {
+		name performance
+		group grpOptions
+		text "Verzierungen:"
+		type ITEM_TYPE_MULTI	
+		cvar "cg_brassTime"
+		cvarFloatList { "Hoch" 15000 "Mittel" 2500 "Aus" 0 }
+		rect 22 45 400 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 200
+		textaligny 10
+		textfont UI_FONT_NORMAL
+	textscale .255
+		textfont UI_FONT_NORMAL	
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		visible 1 
+		mouseenter	{show floater_message}
+		mouseexit	{hide floater_message}
+    		}
+
+	itemDef {
+		name performance
+		group grpOptions
+		type ITEM_TYPE_YESNO
+		text "Dynamische Lichter:"
+		cvar "r_dynamiclight"
+		rect 22 60 400 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 200
+		textaligny 10
+		textfont UI_FONT_NORMAL
+	textscale .255
+		textfont UI_FONT_NORMAL	
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		visible 1 
+		mouseenter	{show floater_message}
+		mouseexit	{hide floater_message}
+    		}
+
+
+	itemDef {
+		name performance
+		group grpOptions
+		type ITEM_TYPE_YESNO
+		text "Einfacher Himmel:"
+		cvar "r_fastsky"
+		rect 22 75 400 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 200
+		textaligny 10
+		textfont UI_FONT_NORMAL
+	textscale .255
+		textfont UI_FONT_NORMAL	
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		visible 1
+		mouseenter	{show floater_message}
+		mouseexit	{hide floater_message}		
+    		}
+
+	itemDef {
+		name performance
+		group grpOptions
+		type ITEM_TYPE_YESNO
+		text "Bild-Synchronisation:"
+		cvar "r_finish"
+		rect 22 90 400 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 200
+		textaligny 10
+		textfont UI_FONT_NORMAL
+	textscale .255
+		textfont UI_FONT_NORMAL	
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		visible 1 
+		mouseenter	{show floater_message}
+		mouseexit	{hide floater_message}
+    		}
+	
+//	itemDef {
+//		name performance
+//		group grpOptions
+//		type ITEM_TYPE_YESNO
+//		text "Spielermodelle erzwingen:"
+//		cvar "cg_forceModel"
+//		rect 22 105 400 12
+//		textalign ITEM_ALIGN_RIGHT
+//		textalignx 200
+//		textaligny 10
+//		textfont UI_FONT_NORMAL
+//	textscale .255
+//		style WINDOW_STYLE_FILLED
+//		backcolor 1 1 1 .07
+//		forecolor 1 1 1 1
+//		visible 1 
+//    		}
+
+//
+
+	itemDef {
+		name performance
+		type ITEM_TYPE_MULTI	
+		group grpOptions
+		text "Lichteffekt-Distanz:"
+		rect 22 105 400 12
+		cvar "cg_coronafardist"
+		cvarFloatList { "Aus" 0 "Nah" 800 "Normal" 1536 "Fern" 4096 "Extrem" 16000 }
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 200
+		textaligny 10
+		textfont UI_FONT_NORMAL
+	textscale .255
+		textfont UI_FONT_NORMAL	
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		visible 1
+		mouseenter	{show floater_message}
+		mouseexit	{hide floater_message}		
+		}
+
+
+
+	itemDef {
+		name performance
+		group grpOptions
+		type ITEM_TYPE_YESNO
+		text "Partikel:"
+		cvar "cg_wolfparticles"
+		rect 22 120 400 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 200
+		textaligny 10
+		textfont UI_FONT_NORMAL
+	textscale .255
+		textfont UI_FONT_NORMAL	
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		visible 1 
+		mouseenter	{show floater_message}
+		mouseexit	{hide floater_message}
+    		}
+
+//
+
+	itemDef {
+		name performance
+		group grpOptions
+		type ITEM_TYPE_YESNO
+		text "Filmsequenzen:"
+		cvar "r_inGameVideo"
+		rect 22 135 400 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 200
+		textaligny 10
+		textfont UI_FONT_NORMAL
+	textscale .255  
+		textfont UI_FONT_NORMAL	
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07     
+		forecolor 1 1 1 1
+		visible 1 
+		mouseenter	{show floater_message}
+		mouseexit	{hide floater_message}
+  		}
+
+
+itemDef {
+	name ctr_view
+	text "Anzeige"
+	type 1
+	textfont UI_FONT_NORMAL
+	textscale .255
+	textfont UI_FONT_NORMAL	
+	group grpSystembutton
+	style WINDOW_STYLE_FILLED
+	background "ui_mp/assets/button_back.tga"
+	rect 181 10 100 12
+	textalign 1
+	textalignx 95
+	textaligny 10
+	forecolor 1 1 1 1
+	backcolor .1 .1 .1 0 
+	visible 1
+	action { play "sound/misc/kcaction.wav" ; 
+	hide grpOptions ; show view }
+	mouseEnter { show message_driver ; setitemcolor ctr_view backcolor .3 .3 .3 0 } 
+	mouseExit { hide message_driver ; setitemcolor ctr_view backcolor .1 .1 .1 0 } 
+	}
+
+//
+
+	itemDef {
+		name view
+		group grpOptions
+		type ITEM_TYPE_YESNO
+		text "Waffe zeigen:"
+		cvar "cg_drawGun"
+		rect 22 30 400 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 200
+		textaligny 10
+		textfont UI_FONT_NORMAL
+	textscale .255
+		textfont UI_FONT_NORMAL	
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		visible 0
+		mouseenter	{show floater_message}
+		mouseexit	{hide floater_message}
+    	}
+
+//	itemDef {
+//		name view
+//		group grpOptions
+//		type ITEM_TYPE_YESNO
+//		text "Zielidentifikation:"
+//		cvar "cg_drawCrosshairNames"
+//		rect 22 45 400 12
+//		textalign ITEM_ALIGN_RIGHT
+//		textalignx 200
+//		textaligny 10
+//		textfont UI_FONT_NORMAL
+//	textscale .255
+//		style WINDOW_STYLE_FILLED
+//		backcolor 1 1 1 .07
+//		forecolor 1 1 1 1
+//		visible 0
+//   		}
+
+//	itemDef {
+//		name view
+//		group grpOptions
+//		type ITEM_TYPE_YESNO
+//		text "Zeit zeigen:"
+//		cvar "cg_drawTimer"
+//		rect 22 60 400 12
+//		textalign ITEM_ALIGN_RIGHT
+//		textalignx 200
+//		textaligny 10
+//		textfont UI_FONT_NORMAL
+//	textscale .255
+//		style WINDOW_STYLE_FILLED
+//		backcolor 1 1 1 .07
+//		forecolor 1 1 1 1
+//		visible 0
+//   		}
+
+//	itemDef {
+//		name view
+//		group grpOptions
+//		type ITEM_TYPE_YESNO
+//		text "Nebel:"
+//		cvar "r_wolffog"
+//		rect 22 45 400 12
+//		textalign ITEM_ALIGN_RIGHT
+//		textalignx 200
+//		textaligny 10
+//		textfont UI_FONT_NORMAL			
+//		textfont UI_FONT_NORMAL
+//	textscale .255
+//		style WINDOW_STYLE_FILLED
+//		backcolor 1 1 1 .07
+//		forecolor 1 1 1 1
+//		visible 0
+//		mouseenter	{show floater_message}
+//		mouseexit	{hide floater_message}
+//   		}
+
+//	itemDef {
+//		name view
+//		group grpOptions
+//		type ITEM_TYPE_MULTI	
+//		text "Statusleiste:"
+//		cvar "cg_hudfiles"
+//		cvarStrList { Normal "ui/hud.txt" Small "ui/hud2.txt" }
+//		rect 22 90 400 12
+//		textalign ITEM_ALIGN_RIGHT
+//		textalignx 200
+//		textaligny 10
+//		textfont UI_FONT_NORMAL
+//	textscale .255   
+//		style WINDOW_STYLE_FILLED
+//		backcolor 1 1 1 .07     
+//		forecolor 1 1 1 1
+//		visible 0
+//		}
+
+
+	itemDef {
+		name view
+		type ITEM_TYPE_MULTI				
+		group grpOptions
+		text "Cursor-Tipps:"
+		rect 22 60 400 12
+		cvar "cg_cursorHints"
+		cvarFloatList { "Aus" 0 "Größen-Puls" 1 "Schwellen-Puls" 2 "Alpha-Puls" 3 "Voll" 4 }
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 200 
+		textaligny 10
+		textfont UI_FONT_NORMAL	
+		textfont UI_FONT_NORMAL
+	textscale .255    
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07    
+		forecolor 1 1 1 1
+		visible 0
+		mouseenter	{show floater_message}
+		mouseexit	{hide floater_message}
+   		}
+
+	itemDef {
+		name view
+		type ITEM_TYPE_MULTI				
+		group grpOptions
+		text "Kompass zeigen:"
+		rect 22 75 400 12
+		cvar "cg_drawCompass"
+		cvarFloatList { "Aus" 0 "An" 1 }
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 200 
+		textaligny 10
+		textfont UI_FONT_NORMAL	
+		textfont UI_FONT_NORMAL
+	textscale .255    
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07    
+		forecolor 1 1 1 1
+		visible 0
+		mouseenter	{show floater_message}
+		mouseexit	{hide floater_message}
+   		}
+
+	itemDef {
+		name view
+		type ITEM_TYPE_MULTI				
+		group grpOptions
+		text "Team-Infos:"
+		rect 22 90 400 12
+		cvar "cg_drawteamoverlay"
+		cvarFloatList { "Aus" 0 "Kurz" 1 "Lang" 2 }
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 200 
+		textaligny 10
+		textfont UI_FONT_NORMAL	
+		textfont UI_FONT_NORMAL
+	textscale .255    
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07    
+		forecolor 1 1 1 1
+		visible 0
+		mouseenter	{show floater_message}
+		mouseexit	{hide floater_message}
+   		}
+
+	itemDef {
+		name view
+		type ITEM_TYPE_MULTI				
+		group grpOptions
+		text "Fadenkreuz-Größe:"
+		rect 22 105 400 12
+		cvar "cg_crosshairsize"
+		cvarFloatList { "Winzig" 24 "Klein" 32 "Mittel" 48 "Groß" 64 "Riesig" 96 }
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 200 
+		textaligny 10
+		textfont UI_FONT_NORMAL	
+		textfont UI_FONT_NORMAL
+	textscale .255    
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07    
+		forecolor 1 1 1 1
+		visible 0
+		mouseenter	{show floater_message}
+		mouseexit	{hide floater_message}
+   		}
+
+	itemDef {
+		name view
+		type ITEM_TYPE_MULTI				
+		group grpOptions
+		text "Chat-Symbol-Zeit:"
+		rect 22 45 400 12
+		cvar "cg_voicespritetime"
+		cvarFloatList { "Kurz" 3000 "Normal" 6000 "Lang" 12000 "Wirklich lang" 24000 }
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 200 
+		textaligny 10
+		textfont UI_FONT_NORMAL
+	textscale .255   
+		textfont UI_FONT_NORMAL	 
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07    
+		forecolor 1 1 1 1
+		visible 0
+		mouseenter	{show floater_message}
+		mouseexit	{hide floater_message}
+   		}
+
+
+	itemDef {
+		name view
+		group grpOptions
+		text "Fadenkreuz"
+ 		type 1
+		rect 197 175 60 12
+		textalign ITEM_ALIGN_CENTER
+		textfont UI_FONT_NORMAL
+	textscale .255		
+		textalignx 30
+		textfont UI_FONT_NORMAL	
+		textaligny 12
+		forecolor 1 .75 0 1
+		visible 0 
+		decoration
+	}
+
+	itemDef {
+		name view				
+		group grpOptions
+		rect 202 200 50 50
+		ownerdraw UI_CROSSHAIR
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 0 
+		textaligny 50  
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07      
+		forecolor 1 1 1 1
+		visible 0
+   		}
+
+
+
+
+itemDef {
+	name ctr_other
+	text "Sonstiges"
+	type 1
+		textfont UI_FONT_NORMAL	
+	textfont UI_FONT_NORMAL
+	textscale .255
+	group grpSystembutton
+	style WINDOW_STYLE_FILLED
+	background "ui_mp/assets/button_back.tga"
+	rect 306 10 100 12
+	textalign 1
+	textalignx 50
+	textaligny 10
+	forecolor 1 1 1 1
+	backcolor .1 .1 .1 0 
+	visible 0
+	action { play "sound/misc/kcaction.wav" ; 
+	hide grpOptions ; show other }
+	mouseEnter { show message_other ; setitemcolor ctr_other backcolor .3 .3 .3 0 } 
+	mouseExit { hide message_other ; setitemcolor ctr_other backcolor .1 .1 .1 0} 	
+	}
+
+
+
+
+
+
+	itemDef {
+		name fadebox
+		style WINDOW_STYLE_FILLED
+		background "ui_mp/assets/fadebox.tga"
+		forecolor 0 0 0 1
+		backcolor 0 0 0 1
+		rect 0 0 640 480
+		visible 1 
+		decoration
+    	}
+
+itemDef 
+{
+	name yesno_message
+	rect 0 322 640 30
+	text "Objekt zum Statuswechsel wählen"
+	forecolor 1 .75 0 1
+	textfont UI_FONT_NORMAL
+	textscale .25
+	textalignx 221
+	textalign 1
+	textaligny 20
+	visible 0
+	decoration
+	}
+	
+itemDef
+{
+	name slider_message
+	rect 0 322 640 30 
+	text "Zum Erhöhen/Verringern Regler bewegen"      
+	forecolor 1 .75 0 1
+	textfont UI_FONT_NORMAL
+	textscale .25
+	textalignx 221
+	textalign 1
+	textaligny 20
+	visible 0
+	decoration 
+	}
+
+itemDef 
+{
+	name floater_message
+	rect 0 322 640 30 
+	text "Eingabetaste oder Klicken zum Ändern"      
+	forecolor 1 .75 0 1
+	textfont UI_FONT_NORMAL
+	textscale .25
+	textalignx 221
+	textalign 1
+	textaligny 20
+	visible 0
+	decoration 
+	}
+
+
+	
+
+
+}

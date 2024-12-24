@@ -1,0 +1,40 @@
+// General Sound Scripts
+// This file is meant mostly for level defind sounds used in many levels
+//
+// channels: local, announcer, body, voice, weapon, item, auto (default)
+// toggles: streaming, looping (only works for streaming sounds), global
+
+Blank
+{
+	streaming
+	voice
+	sound sound/scenaric/general/blank.wav
+}
+
+Cough1
+{
+	streaming
+	voice
+	sound sound/scenaric/general/misc_cough_1.wav
+}
+
+Cough2
+{
+	streaming
+	voice
+	sound sound/scenaric/general/misc_cough_2.wav
+}
+
+Cough3
+{
+	streaming
+	voice
+	sound sound/scenaric/general/misc_cough_3.wav
+}
+
+Whistle1
+{
+	streaming
+	voice
+	sound sound/scenaric/general/misc_whistle.wav
+}

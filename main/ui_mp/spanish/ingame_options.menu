@@ -1,0 +1,574 @@
+#include "ui_mp/menudef.h"
+
+{
+\\ SETUP MENU \\
+
+menuDef {
+		name "ingame_options"
+		visible 0
+		fullscreen 0
+		outOfBoundsClick			// this closes the window if it gets a click out of the rectangle
+		rect 100 125 443 340
+		focusColor 1 .75 0 1
+		style 1
+		border 1
+
+		onopen { setCvar cg_draw2D "0"; hide grpOptions ; show performance }
+		onClose { setCvar cg_draw2D "1" }
+		onEsc { setCvar cg_draw2D "1" }
+
+
+
+itemDef 
+	{
+	name window
+	group ingamebox
+	rect 60 2 300 240	
+//	rect 100 2 300 260	
+	style WINDOW_STYLE_FILLED
+	border 1
+	bordercolor .5 .5 .5 .5
+	forecolor 1 1 1 1
+	backcolor 0 0 0 .25
+	visible 1
+	decoration
+	}
+
+	itemDef 
+	{
+		name window2
+		group grpControlbutton
+//		rect 2 4 439 20	
+		rect 62 4 296 20	
+		style WINDOW_STYLE_FILLED
+		border 1
+		bordercolor .1 .1 .1 .2
+		forecolor 1 1 1 1
+		backcolor .3 0.5 0.2 .25
+		visible 1
+		decoration
+	}
+
+
+/////////////////
+// Performance
+/////////////////
+
+itemDef {
+	name ctr_performance
+	text "Funcionamiento"
+	type 1
+	textfont	UI_FONT_NORMAL
+	textscale .25
+	group grpControlbutton
+	rect 100 10 100 12
+	textalign 1
+	textalignx 50
+	textaligny 10
+	forecolor 1 1 1 1
+	backcolor .1 .1 .1 0 
+	visible 1
+	action { hide grpOptions ; show performance }
+	mouseEnter { setitemcolor ctr_performance backcolor .1 .37 .1 1 }
+	mouseExit { setitemcolor ctr_performance backcolor .37 .1 .1 1 }
+	}
+
+itemDef {
+	name performance
+	group grpOptions
+	type ITEM_TYPE_MULTI	
+	text "Indicador de vida:"
+	cvar "cg_markTime"
+	cvarFloatList { "Largo" 30000 "Normal" 20000 "Breve" 10000 "Desactivado" 0 }
+	rect 66 30 289 12
+	textalign ITEM_ALIGN_RIGHT
+	textalignx 161
+	textaligny 10
+	textfont	UI_FONT_NORMAL
+	textscale .25
+	style WINDOW_STYLE_FILLED
+	backcolor 1 1 1 .07
+	forecolor 1 1 1 1
+	visible 1 
+	}
+
+
+itemDef {
+	name performance
+	group grpOptions
+	type ITEM_TYPE_MULTI	
+	text "Relieve metal:"
+	cvar "cg_brassTime"
+	cvarFloatList { "Alto" 15000 "Medio" 2500 "Desactivado" 0 }
+	rect 66 45 289 12
+	textalign ITEM_ALIGN_RIGHT
+	textalignx 161
+	textaligny 10
+	textfont	UI_FONT_NORMAL
+	textscale .25
+	style WINDOW_STYLE_FILLED
+	backcolor 1 1 1 .07
+	forecolor 1 1 1 1
+	visible 1 
+	}
+
+itemDef {
+	name performance
+	group grpOptions
+	type ITEM_TYPE_YESNO
+	text "Luces dinamicas:"
+	cvar "r_dynamiclight"
+	rect 66 60 289 12
+	textalign ITEM_ALIGN_RIGHT
+	textalignx 161
+	textaligny 10
+	textfont	UI_FONT_NORMAL
+	textscale .25
+	style WINDOW_STYLE_FILLED
+	backcolor 1 1 1 .07
+	forecolor 1 1 1 1
+	visible 1 
+	}
+
+itemDef {
+	name performance
+	group grpOptions
+	type ITEM_TYPE_YESNO
+	text "Cielo de baja calidad:"
+	cvar "r_fastsky"
+	rect 66 75 289 12
+	textalign ITEM_ALIGN_RIGHT
+	textalignx 161
+	textaligny 10
+	textfont	UI_FONT_NORMAL
+	textscale .25
+	style WINDOW_STYLE_FILLED
+	backcolor 1 1 1 .07
+	forecolor 1 1 1 1
+	visible 1 
+	}
+
+itemDef {
+	name performance
+	group grpOptions
+	type ITEM_TYPE_YESNO
+	text "Dibujar detalles cielo:"
+	cvar "cg_skybox"
+		rect 66 90 289 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 161
+		textaligny 10
+		textfont	UI_FONT_NORMAL
+	textscale .25
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		visible 1  
+	}
+
+itemDef {
+	name performance
+	group grpOptions
+	type ITEM_TYPE_YESNO
+	text "Sincronizar fotogramas:"
+	cvar "r_finish"
+		rect 66 105 289 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 161
+		textaligny 10
+		textfont	UI_FONT_NORMAL
+	textscale .25
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		visible 1 
+	}
+
+//itemDef {
+//	name performance
+//	group grpOptions
+//	type ITEM_TYPE_YESNO
+//	text "Forzar modelos de jugador:"
+//	cvar "cg_forceModel"
+//		rect 66 120 289 12
+//		textalign ITEM_ALIGN_RIGHT
+//		textalignx 161
+//		textaligny 10
+//		textfont	UI_FONT_NORMAL
+//	textscale .25
+//		style WINDOW_STYLE_FILLED
+//		backcolor 1 1 1 .07
+//		forecolor 1 1 1 1
+//		visible 1  
+//	}
+
+
+itemDef {
+	name performance
+	type ITEM_TYPE_MULTI	
+	group grpOptions
+	text "Corona Dist:"
+	cvar "cg_coronafardist"
+	cvarFloatList { "Desactivado" 0 "Cerca" 800 "Normal" 1536 "Lejos" 4096 "Extremo" 16000 }
+		rect 66 120 289 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 161
+		textaligny 10
+		textfont	UI_FONT_NORMAL
+	textscale .25
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		visible 1 
+	}
+
+
+
+
+itemDef {
+	name performance
+	group grpOptions
+	type ITEM_TYPE_YESNO
+	text "Partículas:"
+	cvar "cg_wolfparticles"
+		rect 66 135 289 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 161
+		textaligny 10
+		textfont	UI_FONT_NORMAL
+	textscale .25
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		visible 1 
+	}
+
+
+itemDef {
+		name performance				
+		group grpOptions
+		type ITEM_TYPE_YESNO
+		text "Videos del juego:"
+		cvar "r_inGameVideo"
+		rect 66 150 289 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 161
+		textaligny 10
+		textfont	UI_FONT_NORMAL
+		textscale .25
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		visible 1 
+	}
+
+
+
+/////////////////
+// view
+/////////////////
+	
+itemDef {
+	name ctr_view
+	text "Ver"
+	type 1
+	textfont	UI_FONT_NORMAL
+	textscale .25
+	group grpControlbutton
+	rect 230 10 100 12
+	textalign 1
+	textalignx 50
+	textaligny 10
+	forecolor 1 1 1 1
+	backcolor .1 .1 .1 0 
+	visible 1
+	action { hide grpOptions ; show view }
+	mouseEnter { setitemcolor ctr_view backcolor .1 .37 .1 1 }
+		mouseExit { setitemcolor ctr_view backcolor .37 .1 .1 1 }
+	}
+
+	
+
+itemDef {
+	name view
+	group grpOptions
+	type ITEM_TYPE_YESNO
+	text "Desenfundar arma:"
+	cvar "cg_drawGun"
+		rect 66 30 289 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 161
+		textaligny 10
+		textfont	UI_FONT_NORMAL
+	textscale .25
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		visible 0
+	}
+
+//itemDef {
+//	name view
+//	group grpOptions
+//	type ITEM_TYPE_YESNO
+//	text "Identificar objetivo:"
+//	cvar "cg_drawCrosshairNames"
+//		rect 66 45 289 12
+//		textalign ITEM_ALIGN_RIGHT
+//		textalignx 161
+//		textaligny 10
+//		textfont	UI_FONT_NORMAL
+//	textscale .25
+//		style WINDOW_STYLE_FILLED
+//		backcolor 1 1 1 .07
+//		forecolor 1 1 1 1
+//		visible 0
+//	}
+
+//itemDef {
+//	name view
+//	group grpOptions
+//	type ITEM_TYPE_YESNO
+//	text "Mostrar tiempo:"
+//	cvar "cg_drawTimer"
+//		rect 66 60 289 12
+//		textalign ITEM_ALIGN_RIGHT
+//		textalignx 161
+//		textaligny 10
+//		textfont	UI_FONT_NORMAL
+//	textscale .25
+//		style WINDOW_STYLE_FILLED
+//		backcolor 1 1 1 .07
+//		forecolor 1 1 1 1
+//		visible 0
+//	}
+
+//itemDef {
+//	name view
+//	group grpOptions
+//	type ITEM_TYPE_YESNO
+//	text "Niebla:"
+//	cvar "r_wolffog"
+//		rect 66 45 289 12
+//		textalign ITEM_ALIGN_RIGHT
+//		textalignx 161
+//		textaligny 10
+//		textfont	UI_FONT_NORMAL
+//	textscale .25
+//		style WINDOW_STYLE_FILLED
+//		backcolor 1 1 1 .07
+//		forecolor 1 1 1 1
+//		visible 0
+//	}
+
+itemDef {
+	name view				
+	group grpOptions
+	type ITEM_TYPE_YESNO
+	text "Solo charlas de equipo:"
+	cvar "cg_teamChatsOnly"
+		rect 66 60 289 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 161
+		textaligny 10
+		textfont	UI_FONT_NORMAL
+	textscale .25
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		visible 0
+	}
+
+//itemDef {
+//	name view				
+//	group grpOptions
+//	type ITEM_TYPE_MULTI	
+//	text "Barra de estado:"
+//	cvar "cg_hudfiles"
+//	cvarStrList { "Wolf Std." "ui/wolfhud.txt" "Small(Q3A)" "ui/hud2.txt" }
+//	rect 30 150 256 20
+//	textalign ITEM_ALIGN_RIGHT
+//	textalignx 143
+//	textaligny 17
+//	textfont	UI_FONT_NORMAL
+//	textscale .25		 
+//	forecolor 1 1 1 1
+//	visible 1 
+//	action { exec "loadhud" }
+//	}
+
+	itemDef {
+		name view				
+    	type ITEM_TYPE_MULTI	
+		group grpOptions
+		text "Señales del cursor:"
+		cvar "cg_cursorHints"
+		cvarFloatList { "Desactivado" 0 "Tamaño de pulsación" 1 "Estroboscópica" 2 "Pulsación alfa" 3 "Sólido" 4 }
+		textalign ITEM_ALIGN_RIGHT
+		rect 66 75 289 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 161
+		textaligny 10
+		textfont	UI_FONT_NORMAL
+	textscale .25
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		visible 0
+	}
+
+	itemDef {
+		name view
+		type ITEM_TYPE_MULTI				
+		group grpOptions
+		text "Mostar brújula:"
+		rect 66 90 289 12
+		cvar "cg_drawCompass"
+		cvarFloatList { "Desactivado" 0 "Activado" 1 }
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 161
+		textaligny 10
+		textfont	UI_FONT_NORMAL
+	textscale .25    
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07    
+		forecolor 1 1 1 1
+		visible 0
+   		}
+
+	itemDef {
+		name view
+		type ITEM_TYPE_MULTI				
+		group grpOptions
+		text "Información sobre el equipo:"
+		rect 66 105 289 12
+		cvar "cg_drawteamoverlay"
+		cvarFloatList { "Desactivado" 0 "Breve" 1 "Largo" 2 }
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 161 
+		textaligny 10
+		textfont	UI_FONT_NORMAL
+	textscale .24    
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07    
+		forecolor 1 1 1 1
+		visible 0
+   		}
+
+	itemDef {
+		name view
+		type ITEM_TYPE_MULTI				
+		group grpOptions
+		text "Tamaño de la cruz filar:"
+		rect 66 120 289 12
+		cvar "cg_crosshairsize"
+		cvarFloatList { "Diminuto" 24 "Pequeño" 32 "Medio" 48 "Grande" 64 "Enorme" 96 }
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 161 
+		textaligny 10
+		textfont	UI_FONT_NORMAL
+	textscale .25    
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07    
+		forecolor 1 1 1 1
+		visible 0
+   		}
+
+	itemDef {
+		name view
+		type ITEM_TYPE_MULTI				
+		group grpOptions
+		text "Tiempo de icono de chat:"
+		rect 66 45 289 12
+		cvar "cg_voicespritetime"
+		cvarFloatList { "Breve" 3000 "Normal" 6000 "Largo" 12000 "Realmente largo" 24000 }
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 161
+		textaligny 10
+		textfont	UI_FONT_NORMAL
+	textscale .25    
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07    
+		forecolor 1 1 1 1
+		visible 0
+   		}
+
+
+	itemDef {
+		name view
+		group grpOptions
+		text "Cruz visor"
+ 		type 1
+		rect 183 155 60 12
+		textalign ITEM_ALIGN_CENTER
+		textfont	UI_FONT_NORMAL
+	textscale .25		
+		textalignx 30
+		textaligny 12
+		forecolor 1 .75 0 1
+		visible 0 
+		decoration
+	}
+
+	itemDef {
+		name view				
+		group grpOptions
+//		rect 202 200 50 50
+		rect 185 175 50 50
+		ownerdraw UI_CROSSHAIR
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 0 
+		textaligny 50  
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07      
+		forecolor 1 1 1 1
+		visible 0
+   		}
+
+
+
+
+/////////////////
+// Other
+/////////////////
+	
+itemDef {
+	name ctr_other
+	text "Otros"
+	type 1
+	textfont	UI_FONT_NORMAL
+	textscale .25
+	group grpControlbutton
+
+	rect 306 10 100 12
+	textalign 1
+	textalignx 50
+	textaligny 10
+	forecolor 1 1 1 1
+	backcolor .1 .1 .1 0 
+	visible 0
+	action { hide grpOptions ; show other }
+	mouseEnter { setitemcolor ctr_other backcolor .1 .37 .1 1 }
+		mouseExit { setitemcolor ctr_other backcolor .37 .1 .1 1 }
+	}
+
+
+
+itemDef {
+      	name slider_message
+      	rect 30 15 640 30 
+	text "Arrastrar el botón para aumentar y disminuir"      
+	forecolor 1 .75 0 1
+	textfont	UI_FONT_NORMAL
+	textscale .25
+	textalignx 221
+	textalign 1
+	textaligny 20
+	visible 0
+      	decoration 
+	}
+
+}
+
+
+}

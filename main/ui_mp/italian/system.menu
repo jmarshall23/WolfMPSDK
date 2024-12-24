@@ -1,0 +1,816 @@
+#include "ui_mp/menudef.h"
+// Italian - modified 11/10/01 by lmm
+{
+\\ SETUP MENU \\
+
+
+
+
+menuDef {
+	name "system_menu"
+	visible 0
+	fullscreen 0
+	rect 100 125 443 340
+	focusColor 1 .75 0 1
+	style 1
+	border 1
+	onOpen { setitemcolor fadebox backcolor 0 0 0 1 ; fadeout fadebox ; hide grpSystem ; show graphics }
+	onEsc { close system_menu ; close setup_menu ; open main }
+
+
+
+
+	itemDef 
+	{
+		name window
+		group grpSystembutton
+		rect 0 2 443 300	
+		style WINDOW_STYLE_FILLED
+		border 1
+		bordercolor .5 .5 .5 .5
+		forecolor 1 1 1 1
+		backcolor 0 0 0 .25
+		visible 1
+		decoration
+	}
+
+
+
+
+// 	System		//
+
+itemDef {
+	name ctr_graphics
+	text "Grafica"
+	type 1
+	textfont UI_FONT_NORMAL
+	textscale .25
+	group grpSystembutton
+	style WINDOW_STYLE_FILLED
+	background "ui_mp/assets/button_back.tga"
+	rect 56 10 100 12
+	textalign 1
+	textalignx 50
+	textaligny 10
+	forecolor 1 1 1 1
+ 	visible 1
+	action { play "sound/misc/kcaction.wav" ; 
+	hide grpSystem ; show graphics }
+	mouseEnter { show message_graphics  } 
+	mouseExit { hide message_graphics  } 
+	}
+
+	itemDef 
+	{
+		name ctr_graphics
+		group grpControlbutton
+		rect 2 4 439 20	
+		style WINDOW_STYLE_FILLED
+		border 1
+		bordercolor .1 .1 .1 .2
+		forecolor 1 1 1 1
+		backcolor .3 0.5 0.2 .25
+		visible 1
+		decoration
+	}
+
+
+
+
+
+
+itemDef {
+	name ctr_graphics
+	text "Sistema"
+ 	type 1
+	style 0	
+	textstyle 6
+	rect 222.5 -12 64 14 
+	textalign ITEM_ALIGN_CENTER
+	textfont UI_FONT_NORMAL
+	textscale .25		
+	textalignx 2
+	textaligny 12
+	forecolor .9 .9 .9 .8
+	visible 1 
+	decoration
+
+}
+
+
+
+
+	itemDef {
+    	name graphics				
+		group grpSystem
+		text "Qualità:"
+   		type ITEM_TYPE_MULTI	
+		cvar "ui_glCustom"
+		cvarFloatList { "Alta qualità" 0 "Normale" 1 "Veloce" 2 "Velocissima" 3 "Personalizzata" 4 }
+		rect 66 30 289 12
+   		textalign ITEM_ALIGN_RIGHT
+   		textalignx 163 
+   		textaligny 10
+		textfont UI_FONT_NORMAL
+	textscale .25
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07         
+   		forecolor 1 1 1 1
+   		visible 0 
+//		decoration
+		action { uiScript update "ui_glCustom" }
+		mouseenter	{ show floater_message }
+		mouseexit	{ hide floater_message }	
+	}
+
+
+
+
+
+
+	itemDef {
+  		name graphics
+		group grpSystem
+   		type ITEM_TYPE_EDITFIELD
+		text "Driver GL:"
+		cvar "r_gldriver"
+		rect 66 45 289 12
+   		textalign ITEM_ALIGN_RIGHT
+  		textalignx 163
+   		textaligny 10
+		textfont UI_FONT_NORMAL
+	textscale .25
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07        
+   		forecolor 1 1 1 1
+   		visible 0 
+		decoration			
+	}
+
+	itemDef {
+   		name graphics
+		group grpSystem
+      		type ITEM_TYPE_YESNO
+		text "Estensioni GL:"
+		cvar "r_allowExtensions"
+		rect 66 60 289 12
+      	textalign ITEM_ALIGN_RIGHT
+      	textalignx 163
+      	textaligny 10
+		textfont UI_FONT_NORMAL
+	textscale .25  
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07     
+      	forecolor 1 1 1 1
+      	visible 0
+		action { uiScript glCustom }
+		mouseenter	{ show floater_message }
+		mouseexit	{ hide floater_message }	
+	}
+	
+	itemDef {
+   		name graphics
+		group grpSystem
+   		type ITEM_TYPE_MULTI	
+		text "Modalità video:"
+		cvar "r_mode"
+		cvarFloatList { "640*480" 3 "800*600" 4 "960*720" 5 "1024*768" 6 "1152*864" 7 "1280*1024" 8 "1600*1200" 9 "2048*1536" 10 "856*480 Wide Screen" 11 }
+		rect 66 75 289 12
+      	textalign ITEM_ALIGN_RIGHT
+      	textalignx 163
+      	textaligny 10
+		textfont UI_FONT_NORMAL
+	textscale .25 
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07       
+      	forecolor 1 1 1 1
+      	visible 0 
+		action { uiScript glCustom }
+		mouseenter	{ show floater_message }
+		mouseexit	{ hide floater_message }	
+	}
+
+	itemDef {
+   		name graphics
+		group grpSystem
+   		type ITEM_TYPE_MULTI
+		text "Profondità colore:"
+		cvar "r_colorbits"
+		cvarFloatList { "Predfinita desktop" 0 "16 bit" 16 "32 bit" 32 }
+		rect 66 90 289 12
+      	textalign ITEM_ALIGN_RIGHT
+      	textalignx 163
+      	textaligny 10
+		textfont UI_FONT_NORMAL
+	textscale .25 
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07      
+      	forecolor 1 1 1 1
+      	visible 0 
+		action { uiScript glCustom ; uiScript update "r_colorbits" }
+		mouseenter	{ show floater_message }
+		mouseexit	{ hide floater_message }	
+	}
+
+	itemDef {
+   		name graphics
+		group grpSystem
+      	type ITEM_TYPE_YESNO
+		text "Pieno schermo:"
+		cvar "r_fullscreen"
+		rect 66 105 289 12
+      	textalign ITEM_ALIGN_RIGHT
+      	textalignx 163
+      	textaligny 10
+		textfont UI_FONT_NORMAL
+	textscale .25
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07        
+      	forecolor 1 1 1 1
+      	visible 0 
+		action { uiScript glCustom }
+		mouseenter	{ show floater_message }
+		mouseexit	{ hide floater_message }	
+	}
+
+	itemDef {
+      	name graphics
+		group grpSystem
+      	type ITEM_TYPE_MULTI			
+		text "Illuminazione:"
+		cvar "r_vertexlight"text "Mappa luci (alto):"
+		cvarFloatList { "Mappa luci (alto)" 0 "Vertex (basso)" 1  }
+		rect 66 120 289 12
+      	textalign ITEM_ALIGN_RIGHT
+      	textalignx 163
+      	textaligny 10
+		textfont UI_FONT_NORMAL
+	textscale .25   
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07     
+      	forecolor 1 1 1 1
+      	visible 0 
+		action { uiScript glCustom }
+		mouseenter	{ show floater_message }
+		mouseexit	{ hide floater_message }	
+	}
+
+	itemDef {
+   		name graphics
+		group grpSystem
+    		type ITEM_TYPE_MULTI
+		text "Dettaglio geometrico:"
+		cvar "r_lodbias"
+		cvarFloatList { "Basso" 2 "Medio" 1 "Alto" 0 }
+		rect 66 135 289 12
+      	textalign ITEM_ALIGN_RIGHT
+      	textalignx 163
+      	textaligny 10
+		textfont UI_FONT_NORMAL
+	textscale .25 
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07       
+      	forecolor 1 1 1 1
+      	visible 0 
+		action { uiScript glCustom ; uiScript update "r_lodbias" }
+		mouseenter	{ show floater_message }
+		mouseexit	{ hide floater_message }	
+	}
+
+	itemDef {
+  		name graphics
+		group grpSystem
+   		type ITEM_TYPE_MULTI
+		text "Dettaglio texture generiche:"
+		cvar "r_picmip"
+		cvarFloatList { "Basso" 2 "Normale" 1 "Alto" 0 }
+		rect 66 150 289 12
+      	textalign ITEM_ALIGN_RIGHT
+      	textalignx 163
+      	textaligny 10
+		textfont UI_FONT_NORMAL
+	textscale .25 
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07       
+      	forecolor 1 1 1 1
+      	visible 0 
+		action { uiScript glCustom }
+		mouseenter	{ show floater_message }
+		mouseexit	{ hide floater_message }	
+	}
+	
+	itemDef {
+      	name graphics
+		group grpSystem
+      	type ITEM_TYPE_MULTI
+		text "Qualità texture:"
+		cvar "r_texturebits"
+		cvarFloatList { "Predefinita" 0 "16 bit" 16 "32 bit" 32 }
+		rect 66 165 289 12
+      	textalign ITEM_ALIGN_RIGHT
+      	textalignx 163
+      	textaligny 10
+		textfont UI_FONT_NORMAL
+	textscale .25 
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07       
+      		forecolor 1 1 1 1
+      		visible 0 
+		mouseenter	{ show floater_message }
+		mouseexit	{ hide floater_message }	
+   	}
+
+	itemDef {
+      	name graphics
+		group grpSystem
+	      	type ITEM_TYPE_MULTI
+		text "Filtro texture:"
+		cvar "r_texturemode"
+		cvarStrList { "Bilineare", "GL_LINEAR_MIPMAP_NEAREST", "Trilineare", "GL_LINEAR_MIPMAP_LINEAR"  }
+		rect 66 180 289 12
+	      	textalign ITEM_ALIGN_RIGHT
+	      	textalignx 163
+	      	textaligny 10
+		textfont UI_FONT_NORMAL
+		textscale .25  
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07      
+     	 	forecolor 1 1 1 1
+     	 	visible 0 
+		action { uiScript glCustom }
+		mouseenter	{ show floater_message }
+		mouseexit	{ hide floater_message }	
+		}
+
+	itemDef {
+	      	name graphics
+		group grpSystem
+	      	type ITEM_TYPE_YESNO
+		text "Compressione texture:"
+		cvar "r_ext_compressed_textures"
+		rect 66 195 289 12
+      		textalign ITEM_ALIGN_RIGHT
+      		textalignx 163
+      		textaligny 10
+		textfont UI_FONT_NORMAL
+		textscale .25 
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07       
+     	 	forecolor 1 1 1 1
+     	 	visible 0 
+		action { uiScript glCustom }
+		mouseenter	{ show floater_message }
+		mouseexit	{ hide floater_message }	
+		}
+
+	itemDef {
+     	 	name graphics			
+		group grpSystem
+      		type ITEM_TYPE_SLIDER
+		text "Luminosità:"
+		cvarfloat "r_gamma" 1 0.5 2
+ 		rect 66 210 289 12
+    	  	textalign ITEM_ALIGN_RIGHT
+      		textalignx 163 
+     	 	textaligny 10
+		textfont UI_FONT_NORMAL
+		textscale .25 
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07       
+    	  	forecolor 1 1 1 1
+   	   	visible 0 
+		mouseenter	{ show slider_message }
+		mouseexit	{ hide slider_message }
+    		}
+
+	itemDef {
+  	    	name graphics
+		group grpSystem
+   	   	type ITEM_TYPE_SLIDER
+		text "Dimensioni schermo:"
+		cvarfloat "cg_viewsize" 100 30 100
+		rect 66 225 289 12
+    	  	textalign ITEM_ALIGN_RIGHT
+   	   	textalignx 163
+    	  	textaligny 10
+		textfont UI_FONT_NORMAL
+		textscale .25
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07        
+     	 	forecolor 1 1 1 1
+    	  	visible 0
+		mouseenter	{ show slider_message }
+		mouseexit	{ hide slider_message }	 
+    		}
+
+
+
+itemDef {
+	name graphics
+	text "Applica"
+	type 1
+	group grpSystem
+	textfont UI_FONT_NORMAL
+	textscale .255
+	style WINDOW_STYLE_FILLED
+	background "ui_mp/assets/button_back.tga"
+	rect 181 280 100 12
+	textalign 1
+	textalignx 50
+	textaligny 10
+	forecolor 1 1 1 1
+	backcolor .1 .1 .1 0 
+	visible 1
+	action { play "sound/misc/kcaction.wav" ; 
+	open vid_restart_popmenu ; hide graphics }
+	mouseEnter { show message_apply } 
+	mouseExit { hide message_apply } 
+		}
+	
+	itemDef {
+      		name graphics
+		group grpSystem
+		style WINDOW_STYLE_SHADER
+		background "ui_mp/assets/framebutton.tga"
+ 		rect 181 357 100 26
+      		visible 1 
+		decoration  	  
+    		}
+
+	itemDef {
+      		name graphics
+		group grpSystem
+		style WINDOW_STYLE_SHADER
+		background "ui_mp/assets/leftbutton.tga"
+   	   	rect 169 357 13 26
+   	   	visible 1 
+		decoration  	  
+   	 	}
+
+	itemDef {
+	      	name graphics
+		group grpSystem
+		style WINDOW_STYLE_SHADER
+		background "ui_mp/assets/rightbutton.tga"
+      		rect 280 357 13 26
+     	 	visible 1 
+		decoration  	  
+    		}
+
+itemDef {
+	name graphics
+	text "Imposta consigliati"
+	type 1
+	group grpSystem
+	textfont UI_FONT_NORMAL
+	textscale .255
+	style WINDOW_STYLE_FILLED
+	border	0
+	bordercolor 1 1 1 .5
+	background "ui_mp/assets/button_back.tga"
+	rect 181 250 200 12
+	textalign 1
+	textalignx 50
+	textaligny 10
+	forecolor 1 1 1 1
+	backcolor .1 .1 .1 0 
+	visible 1
+	action { play "sound/misc/kcaction.wav" ; 
+	exec setrecommended }
+	mouseEnter { show message_set_recommended } 
+	mouseExit { hide message_set_recommended } 
+	}
+	
+    		
+
+
+itemDef {
+	name ctr_driver
+	text "Info driver"
+	type 1
+	textfont UI_FONT_NORMAL
+	textscale .25
+	group grpSystembutton
+	style WINDOW_STYLE_FILLED
+	background "ui_mp/assets/button_back.tga"
+	rect 181 10 100 12
+	textalign 1
+	textalignx 50
+	textaligny 10
+	forecolor 1 1 1 1
+	backcolor .1 .1 .1 0 
+	visible 1
+	action { play "sound/misc/kcaction.wav" ; 
+	hide grpSystem ; show driver }
+	mouseEnter { show message_driver ; setitemcolor  ctr_driver backcolor .3 .3 .3 0 } 
+	mouseExit { hide message_driver ; setitemcolor 	ctr_driver backcolor .1 .1 .1 0 } 
+	}
+
+	
+itemDef {
+		name driver
+		group grpSystem
+		rect 60 10 400 300	
+		ownerdraw UI_GLINFO
+		textalign 0
+		textalignx 0
+		textaligny 23
+		textscale .17
+		forecolor 1 1 1 1
+		visible 0
+		decoration
+		style 1
+		
+	}
+
+ 
+  
+
+itemDef {
+	name ctr_other
+	text "Audio"
+	type 1
+	textfont UI_FONT_NORMAL
+	textscale .25
+	group grpSystembutton
+	style WINDOW_STYLE_FILLED
+	background "ui_mp/assets/button_back.tga"
+	rect 306 10 100 12
+	textalign 1
+	textalignx 50
+	textaligny 10
+	forecolor 1 1 1 1
+	backcolor .1 .1 .1 0 
+	visible 1
+	action { play "sound/misc/kcaction.wav" ; 
+	hide grpSystem ; show other }
+	mouseEnter { show message_other ; setitemcolor ctr_other backcolor .3 .3 .3 0 } 
+	mouseExit { hide message_other ; setitemcolor ctr_other backcolor .1 .1 .1 0} 	
+	}
+/*
+itemDef {
+      name ctr_other
+	 style WINDOW_STYLE_SHADER
+	 background "ui_mp/assets/framebutton.tga"
+ 	 rect 306 395 100 26
+       visible 1 
+	 decoration  	  
+    	}
+
+itemDef {
+      name ctr_other
+	style WINDOW_STYLE_SHADER
+	background "ui_mp/assets/leftbutton.tga"
+      rect 294 395 13 26
+      visible 1 
+	decoration  	  
+    	}
+
+itemDef {
+      name ctr_other
+	style WINDOW_STYLE_SHADER
+	background "ui_mp/assets/rightbutton.tga"
+      rect 405 395 13 26
+      visible 1 
+	decoration  	  
+    	}
+
+itemDef {
+	name other
+	group grpSystem
+	rect 2 4 439 125	
+	style WINDOW_STYLE_FILLED
+	border 1
+	bordercolor .5 .5 .5 .5
+	forecolor 1 1 1 1
+	backcolor 0 0 0 .25
+	visible 0
+	decoration
+}
+
+itemDef {
+	name other
+	group grpSystem
+	rect 2 131 439 150	
+	style WINDOW_STYLE_FILLED
+	border 1
+	bordercolor .5 .5 .5 .5
+	forecolor 1 1 1 1
+	backcolor 0 0 0 .25
+	visible 0
+	decoration
+}
+
+
+itemDef {
+	name other
+	group grpSystem
+	rect 2 283 439 100	
+	style WINDOW_STYLE_FILLED
+	border 1
+	bordercolor .5 .5 .5 .5
+	forecolor 1 1 1 1
+	backcolor 0 0 0 .25
+	visible 0
+	decoration
+}
+
+*/
+itemDef {
+      	name other			
+		group grpSystem
+      	style 1
+		text "Audio"
+		rect 163 30 128 20
+      	textalign ITEM_ALIGN_CENTER
+      	textalignx 64 
+      	textaligny 20
+		textfont UI_FONT_NORMAL
+	textscale .25
+      	forecolor 1 .75 0 1
+      	visible 0 
+		decoration
+    	}
+
+	itemDef {
+      		name other
+		group grpSystem
+      		type ITEM_TYPE_SLIDER
+		text "Volume effetti:"
+		cvarfloat "s_volume" 0.7 0 1
+		rect 99 60 256 12
+      		textalign ITEM_ALIGN_RIGHT
+      		textalignx 128
+      		textaligny 10
+		textfont UI_FONT_NORMAL
+		textscale .25    
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07   
+      		forecolor 1 1 1 1
+      		visible 0
+		mouseenter	{ show slider_message }
+		mouseexit	{ hide slider_message }	
+    		}
+	
+	itemDef {
+      		name other
+		group grpSystem
+      		type ITEM_TYPE_SLIDER
+		text "Volume musica:"
+		cvarfloat "s_musicvolume" 0.25 0 1
+		rect 99 90 256 12
+      		textalign ITEM_ALIGN_RIGHT
+      		textalignx 128
+      		textaligny 10
+		textfont UI_FONT_NORMAL
+		textscale .25  
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07     
+      		forecolor 1 1 1 1
+      		visible 0
+		mouseenter	{ show slider_message }
+		mouseexit	{ hide slider_message }		
+    		}
+
+	itemDef {
+      		name other
+		group grpSystem
+      		type ITEM_TYPE_MULTI
+		text "Qualità audio:"
+		cvar "s_khz"
+		cvarFloatList { "22 khz (alta)" 22 "11 khz (bassa)" 11 }
+		rect 99 120 256 12
+      		textalign ITEM_ALIGN_RIGHT
+      		textalignx 128
+      		textaligny 10
+		textfont UI_FONT_NORMAL
+		textscale .25 
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07       
+      		forecolor 1 1 1 1
+      		visible 0
+		mouseenter	{ show floater_message }
+		mouseexit	{ hide floater_message }
+    		}
+/*
+	itemDef {
+      		name other
+		group grpSystem
+      		type ITEM_TYPE_YESNO
+		text "Audio doppler:"
+		cvar "s_doppler"
+		rect 99 150 256 12
+      		textalign ITEM_ALIGN_RIGHT
+      		textalignx 128
+      		textaligny 10
+		textfont UI_FONT_NORMAL
+	textscale .25
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07        
+      		forecolor 1 1 1 1
+      		visible 0
+		mouseenter	{ show floater_message }
+		mouseexit	{ hide floater_message }
+    		}
+*/
+
+
+	itemDef {
+		name other
+		group grpSystem
+		text "Applica"
+		type 1	
+		textscale .25
+		background "ui/assets/button_back.tga"
+		rect 181 260 100 12
+		textfont UI_FONT_NORMAL
+		textalign 1
+		textalignx 50
+		textaligny 10
+		forecolor 1 1 1 1
+		backcolor .1 .1 .1 0 
+		visible 1
+		action { play "sound/misc/kcaction.wav" ; exec snd_restart ; hide other }
+//		mouseEnter { setcolor backcolor .1 .37 .1 1 }
+//		mouseExit { setcolor backcolor .37 .1 .1 1 }
+		}
+
+itemDef {
+     	name fadebox
+     	style WINDOW_STYLE_FILLED
+ 	background "ui_mp/assets/fadebox.tga"
+	forecolor 0 0 0 1
+	backcolor 0 0 0 1
+	rect 0 0 640 480
+     	visible 1 
+	decoration
+    	}
+
+itemDef 
+{
+	name floater_message
+	rect 0 322 640 30 
+	text "Premi Invio o clicca per cambiare"
+	forecolor 1 .75 0 1
+	textfont UI_FONT_NORMAL
+	textscale .25
+	textalignx 221
+	textalign 1
+	textaligny 20
+	visible 0
+	decoration 
+	}
+
+itemDef 
+{
+	name message_apply
+	rect 0 322 640 30 
+	text "CLICCA per applicare le modifiche"
+	forecolor 1 .75 0 1
+	textfont UI_FONT_NORMAL
+	textscale .25
+	textalignx 221
+	textalign 1
+	textaligny 20
+	visible 0
+	decoration 
+	}
+
+itemDef 
+{
+	name message_set_recommended
+	rect 0 322 640 30 
+	text "CLICCA per rilevare automaticamente le tue impostazioni"
+	forecolor 1 .75 0 1
+	textfont UI_FONT_NORMAL
+	textscale .25
+	textalignx 221
+	textalign 1
+	textaligny 20
+	visible 0
+	decoration 
+	}
+
+itemDef 
+{
+	name slider_message
+	rect 0 322 640 30 
+	text "Trascina il cursore per aumentare o diminuire"
+	forecolor 1 .75 0 1
+	textfont UI_FONT_NORMAL
+	textscale .25
+	textalignx 221
+	textalign 1
+	textaligny 20
+	visible 0
+	decoration 
+	}
+
+	
+
+
+}
+
+
+}
+ 	

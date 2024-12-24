@@ -1,0 +1,5 @@
+// all sound scripts must be listed in here, or they will be ignored
+// level sounds
+// generic sounds
+general.sounds
+combat.sounds

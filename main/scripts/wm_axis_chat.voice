@@ -1,0 +1,199 @@
+male
+
+// Axis voices
+AllClear
+{
+	sound/multiplayer/axis/g-all_clear.wav	"All clear."
+}
+
+DynamiteDefused
+{
+	sound/multiplayer/axis/g-dynamite_defused.wav		"Dynamite defused."
+}
+
+DynamitePlanted
+{
+	sound/multiplayer/axis/g-dynamite_planted.wav		"Dynamite planted."
+}
+
+FireInTheHole
+{
+	sound/multiplayer/axis/g-fire_in_the_hole.wav		"Fire in the hole!"
+}
+
+HoldYourFire
+{
+	sound/multiplayer/axis/g-hold_fire.wav	"Hold your fire!"
+}
+
+LetsGo
+{
+	sound/multiplayer/axis/g-lets_go.wav	"Lets go."
+}
+
+Medic
+{
+	sound/multiplayer/axis/g-medic1.wav	"Medic!"	sprites/voiceMedic
+}
+
+OnDefense
+{
+	sound/multiplayer/axis/g-on_defense.wav	"I'm on defense."
+}
+
+OnOffense
+{
+	sound/multiplayer/axis/g-on_offense.wav	"I'm on offense."
+}
+
+// NEW STUFF
+Affirmative
+{
+	sound/multiplayer/axis/g-affirmative.wav "Affirmative."
+}
+
+Negative
+{
+	sound/multiplayer/axis/g-negative.wav "Negative."
+}
+
+NeedAmmo
+{
+	sound/multiplayer/axis/g-ammo.wav "I need ammo!"	sprites/voiceAmmo
+}
+
+NeedBackup
+{
+	sound/multiplayer/axis/g-backup.wav "I need backup!"
+}
+
+CoverMe
+{
+	sound/multiplayer/axis/g-cover_me.wav "Cover me!"
+}
+
+Incoming
+{
+	sound/multiplayer/axis/g-incoming.wav "Incoming!"
+}
+
+IamEngineer
+{
+	sound/multiplayer/axis/g-engineer.wav "I'm an engineer."
+}
+
+IamMedic
+{
+	sound/multiplayer/axis/g-medic.wav "I'm a medic."
+}
+
+IamLieutenant
+{
+	sound/multiplayer/axis/g-lt.wav "I'm a lieutenant."
+}
+
+IamSoldier
+{
+	sound/multiplayer/axis/g-soldier.wav "I'm a soldier."
+}
+
+// MORE NEW STUFF - Added by Brandon
+
+Bye
+{
+	sound/multiplayer/axis/g-bye1.wav "Bye."
+}
+
+ClearPath
+{
+	sound/multiplayer/axis/g-clearpath1.wav "Clear the path!"
+}
+
+DefendObjective
+{
+	sound/multiplayer/axis/g-defendobj1.wav "Defend our objective!"
+}
+
+DisarmDynamite
+{
+	sound/multiplayer/axis/g-disarm1.wav "Disarm the dynamite!"
+}
+
+EnemyWeak
+{
+	sound/multiplayer/axis/g-enemyweak1.wav "The enemy is weakened."
+}
+
+FollowMe
+{
+	sound/multiplayer/axis/g-followme1.wav "Follow me! Schnell!"
+}
+
+GoodGame
+{
+	sound/multiplayer/axis/g-goodgame1.wav "Good game."
+}
+
+GreatShot
+{
+	sound/multiplayer/axis/g-greatshot1.wav "Great shot."
+}
+
+Hi
+{
+	sound/multiplayer/axis/g-hi1.wav "Hello."
+	sound/multiplayer/axis/g-hi3.wav "Hey!"
+	sound/multiplayer/axis/g-hi2.wav "Hello."
+}
+
+Move
+{
+	sound/multiplayer/axis/g-move1.wav "Move!"
+}
+
+NeedEngineer
+{
+	sound/multiplayer/axis/g-needeng1.wav "We need an engineer!"
+}
+
+Oops
+{
+	sound/multiplayer/axis/g-oops1.wav "Oops."
+}
+
+PathCleared
+{
+	sound/multiplayer/axis/g-pathclear1.wav "Path is cleared."
+}
+
+Sorry
+{
+	sound/multiplayer/axis/g-sorry1.wav "Sorry."
+}
+
+TakingFire
+{
+	sound/multiplayer/axis/g-takingfire1.wav "Taking fire!"
+}
+
+Thanks
+{
+	sound/multiplayer/axis/g-thanks1.wav "Danke."
+}
+
+Welcome
+{
+	sound/multiplayer/axis/g-welcome1.wav "You're welcome."
+}
+
+WhereTo
+{
+	sound/multiplayer/axis/g-whereto1.wav "Where to?"
+}
+
+Cheer
+{
+	sound/multiplayer/axis/g-yeah1.wav "Yes!"
+	sound/multiplayer/axis/g-yeah2.wav "YES!"
+	sound/multiplayer/axis/g-yeah3.wav "Heh heh."
+}
