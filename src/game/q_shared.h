@@ -137,17 +137,9 @@ If you have questions concerning this license or the applicable additional terms
 
 // buildstring will be incorporated into the version string
 #ifdef NDEBUG
-#ifdef _M_IX86
-#define CPUSTRING   "win-x86"
-#elif defined _M_ALPHA
-#define CPUSTRING   "win-AXP"
-#endif
+#define CPUSTRING   "win-x64"
 #else
-#ifdef _M_IX86
-#define CPUSTRING   "win-x86-debug"
-#elif defined _M_ALPHA
-#define CPUSTRING   "win-AXP-debug"
-#endif
+#define CPUSTRING   "win-x64-debug"
 #endif
 
 

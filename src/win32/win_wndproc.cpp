@@ -310,11 +310,7 @@ MainWndProc
 main window procedure
 ====================
 */
-LONG WINAPI MainWndProc(
-	HWND hWnd,
-	UINT uMsg,
-	WPARAM wParam,
-	LPARAM lParam ) {
+LONG WINAPI MainWndProc(HWND hWnd, UINT uMsg, WPARAM wParam,LPARAM lParam ) {
 
 	if ( uMsg == MSH_MOUSEWHEEL ) {
 		if ( ( ( int ) wParam ) > 0 ) {

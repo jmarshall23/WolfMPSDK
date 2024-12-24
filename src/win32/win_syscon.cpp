@@ -277,7 +277,7 @@ static LONG WINAPI ConWndProc( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lPara
 	return DefWindowProc( hWnd, uMsg, wParam, lParam );
 }
 
-LONG WINAPI InputLineWndProc( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam ) {
+LONG_PTR WINAPI InputLineWndProc( HWND hWnd, UINT_PTR uMsg, WPARAM wParam, LPARAM lParam ) {
 	char inputBuffer[1024];
 
 	switch ( uMsg )
@@ -439,7 +439,7 @@ void Sys_CreateConsole( void ) {
 									 g_wv.hInstance, NULL );
 	SendMessage( s_wcd.hwndBuffer, WM_SETFONT, ( WPARAM ) s_wcd.hfBufferFont, 0 );
 
-	s_wcd.SysInputLineWndProc = ( WNDPROC ) SetWindowLong( s_wcd.hwndInputLine, GWL_WNDPROC, ( long ) InputLineWndProc );
+	s_wcd.SysInputLineWndProc = ( WNDPROC ) SetWindowLongPtr( s_wcd.hwndInputLine, GWLP_WNDPROC, (LONG_PTR)InputLineWndProc );
 	SendMessage( s_wcd.hwndInputLine, WM_SETFONT, ( WPARAM ) s_wcd.hfBufferFont, 0 );
 
 	ShowWindow( s_wcd.hWnd, SW_SHOWDEFAULT );

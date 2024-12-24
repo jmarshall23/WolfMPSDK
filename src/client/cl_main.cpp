@@ -513,7 +513,8 @@ void CL_WriteWaveClose() {
 }
 
 extern int s_soundtime;
-extern portable_samplepair_t *paintbuffer;
+#define PAINTBUFFER_SIZE        4096 
+extern portable_samplepair_t paintbuffer[PAINTBUFFER_SIZE];
 
 void CL_WriteWaveFilePacket() {
 	int total, i;

@@ -544,7 +544,7 @@ Builds a platform-specific DLL name
 =================
 */
 char* Sys_GetDLLName(const char* name) {
-	return va("%sx86.dll", name);
+	return va("%sx64.dll", name);
 }
 
 /*
