@@ -1,8 +1,8 @@
 textures/decals/burnm_01a
 {
+    qer_editorimage textures/decals/burnm_01.tga
     polygonOffset
     entityMergable
-//   qer_trans 0.5
     {
         map textures/decals/burnm_01.tga
         blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
@@ -23,9 +23,46 @@ textures/decals/blood1
 		alphaGen vertex
 	}
 }
+textures/decals/blood1_red
+{
+	polygonOffset
+	entityMergable
+	{
+		map textures/decals/blood1_red.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		rgbGen vertex
+		alphaGen vertex
+	}
+}
 
+
+
+textures/decals/maps
+{
+	polygonOffset
+	entityMergable
+	{
+		map textures/decals/maps.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		rgbGen vertex
+		alphaGen vertex
+	}
+}
+
+textures/decals/maps_rocket
+{
+	polygonOffset
+	entityMergable
+	{
+		map textures/decals/maps_rocket.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		rgbGen vertex
+		alphaGen vertex
+	}
+}
 
 /// oil slick maxx  4-11-00  ////
+
 textures/decals/oil_slick
 {
 	polygonOffset
@@ -72,6 +109,17 @@ textures/decals/blood2
 		alphaGen vertex
 	}
 }
+textures/decals/blood2_red
+{
+	polygonOffset
+	entityMergable
+	{
+		map textures/decals/blood2_red.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		rgbGen vertex
+		alphaGen vertex
+	}
+}
 
 textures/decals/blood3
 {
@@ -79,6 +127,17 @@ textures/decals/blood3
 	entityMergable
 	{
 		map textures/decals/blood3.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		rgbGen vertex
+		alphaGen vertex
+	}
+}
+textures/decals/blood3_red
+{
+	polygonOffset
+	entityMergable
+	{
+		map textures/decals/blood3_red.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
 		rgbGen vertex
 		alphaGen vertex
@@ -96,6 +155,18 @@ textures/decals/blood4
 		alphaGen vertex
 	}
 }
+textures/decals/blood4_red
+{
+	polygonOffset
+	entityMergable
+	{
+		map textures/decals/blood4_red.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		rgbGen vertex
+		alphaGen vertex
+	}
+}
+
 
 textures/decals/blood5
 {
@@ -108,7 +179,17 @@ textures/decals/blood5
 		alphaGen vertex
 	}
 }
-
+textures/decals/blood5_red
+{
+	polygonOffset
+	entityMergable
+	{
+		map textures/decals/blood5_red.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		rgbGen vertex
+		alphaGen vertex
+	}
+}
 textures/decals/candle1
 {
 	polygonOffset
@@ -426,6 +507,33 @@ textures/decals/castle_m11b_1
 	}
 }
 
+textures/decals/castle_m11b_1dm
+{
+
+	polygonOffset
+	entityMergable
+
+	qer_editorimage textures/castle_props/castle_m11b.tga
+	// surfaceparm nomarks
+	// q3map_lightimage textures/castle_props/castle_m11b.tga
+	q3map_surfacelight 100
+	light 1
+
+
+	{
+		map $lightmap
+		rgbGen identity
+	}
+	{
+		map textures/castle_props/castle_m11b.tga
+		blendFunc GL_DST_COLOR GL_ZERO
+		rgbGen identity
+	}
+	{
+		map textures/castle_props/castle_m11b.blend.tga
+		blendfunc GL_ONE GL_ONE
+	}
+}
 
 textures/decals/castle_m11c_1
 {
@@ -468,6 +576,17 @@ textures/decals/blood1_drag
 		alphaGen vertex
 	}
 }
+textures/decals/blood1_drag_red
+{
+	polygonOffset
+	entityMergable
+	{
+		map textures/decals/blood1_drag_red.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		rgbGen vertex
+		alphaGen vertex
+	}
+}
 textures/decals/blood1_drip
 {
 	polygonOffset
@@ -479,7 +598,17 @@ textures/decals/blood1_drip
 		alphaGen vertex
 	}
 }
-
+textures/decals/blood1_drip_red
+{
+	polygonOffset
+	entityMergable
+	{
+		map textures/decals/blood1_drip_red.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		rgbGen vertex
+		alphaGen vertex
+	}
+}
 /// maxx cath window
 
 textures/decals/athedrale_c16
@@ -933,7 +1062,7 @@ textures/decals/light_c01_d
 	entityMergable
 	qer_editorimage textures/lights/light_c01.tga
 	surfaceparm nomarks
-	q3map_lightimage textures/lights/light_c01.blend.tga
+	q3map_lightimage textures/lightimage/light_c01_color.tga
 	q3map_surfacelight 5000
 	light 1
 
@@ -950,6 +1079,61 @@ textures/decals/light_c01_d
 	}
 	{
 		map textures/lights/light_c01.blend.tga
+		blendfunc GL_ONE GL_ONE
+	}
+}
+
+textures/decals/light_c01m
+{
+	polygonOffset
+	entityMergable
+	qer_editorimage textures/lights/light_c01m.tga
+	surfaceparm nomarks
+	q3map_lightimage textures/lightimage/light_c01_color.tga
+	q3map_surfacelight 5000
+	light 1
+
+	// bright white KP light
+
+	{
+		map $lightmap
+		rgbGen identity
+	}
+	{
+		map textures/lights/light_c01m.tga
+		blendFunc GL_DST_COLOR GL_ZERO
+		rgbGen identity
+	}
+	{
+		map textures/lights/light_c01.blend.tga
+		blendfunc GL_ONE GL_ONE
+	}
+}
+
+textures/decals/light_m01b
+{
+	polygonOffset
+	entityMergable
+	qer_editorimage textures/lights/light_m01b.tga
+	surfaceparm nomarks
+	q3map_lightimage textures/lightimage/blue.tga
+	q3map_lightsubdivide 128
+	q3map_surfacelight 5000
+	light 1
+
+	// bright white KP light
+
+	{
+		map $lightmap
+		rgbGen identity
+	}
+	{
+		map textures/lights/light_m01b.tga
+		blendFunc GL_DST_COLOR GL_ZERO
+		rgbGen identity
+	}
+	{
+		map textures/lights/light_m01b.blend.tga
 		blendfunc GL_ONE GL_ONE
 	}
 }
@@ -1074,6 +1258,73 @@ textures/decals/light_m16_10kd
 	}
 }
 
+
+textures/decals/light_m32
+//maxx
+
+{
+
+	polygonOffset
+	entityMergable
+
+	qer_editorimage textures/lights/light_m32.tga
+	surfaceparm nomarks
+	q3map_lightrgb 1.000000 0.866667 0.733333
+	q3map_surfacelight 10000
+	light 1
+
+	// small white KP light
+
+	{
+		map $lightmap
+		rgbGen identity
+	}
+	{
+		map textures/lights/light_m32.tga
+		blendFunc GL_DST_COLOR GL_ZERO
+		rgbGen identity
+	}
+	{
+		map textures/lights/light_m32.blend.tga
+		blendfunc GL_ONE GL_ONE
+	}
+}
+
+
+
+textures/decals/light_m16_10kd
+//maxx
+
+{
+
+	polygonOffset
+	entityMergable
+
+	qer_editorimage textures/lights/light_m16.tga
+	surfaceparm nomarks
+	q3map_lightrgb 1.000000 0.866667 0.733333
+	q3map_surfacelight 10000
+	light 1
+
+	// small white KP light
+
+	{
+		map $lightmap
+		rgbGen identity
+	}
+	{
+		map textures/lights/light_m16.tga
+		blendFunc GL_DST_COLOR GL_ZERO
+		rgbGen identity
+	}
+	{
+		map textures/lights/light_m16.blend.tga
+		blendfunc GL_ONE GL_ONE
+	}
+}
+
+
+
 textures/decals/light_m11_redd
 {
 
@@ -1147,7 +1398,7 @@ textures/decals/light_c01_10k
 	entityMergable
 	qer_editorimage textures/lights/light_c01.tga
 	surfaceparm nomarks
-	q3map_lightimage textures/lights/light_c01.blend.tga
+	q3map_lightimage textures/lightimage/light_c01.blend.tga
 	q3map_surfacelight 10000
 	light 1
 
@@ -1360,6 +1611,18 @@ textures/decals/luff
 	}
 }
 
+textures/decals/xlabs
+{
+	polygonOffset
+	entityMergable
+	{
+		map textures/decals/xlabs.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		rgbGen vertex
+		alphaGen vertex
+	}
+}
+
 textures/decals/skidmarks
 {
 	polygonOffset
@@ -1389,6 +1652,7 @@ textures/decals/castle_c46_a
 
 textures/decals/fan_shadow
 {
+	surfaceparm nomarks
 	polygonOffset
 	entityMergable
 	{
@@ -1440,6 +1704,22 @@ textures/decals/jet_shadow
 	}
 }
 
+textures/decals/shadow
+{
+	nofog
+	polygonOffset
+	entityMergable
+	qer_editorimage textures/decals/shadow.tga
+
+
+	{
+		map textures/decals/shadow.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		rgbGen vertex
+		alphaGen vertex
+	}
+}
+
 textures/Hvillage/vilwin_frm1
 {
 	nofog
@@ -1456,6 +1736,204 @@ textures/Hvillage/vilwin_frm1
 
 	}
 }
+
+textures/training/desk_cm01
+{
+	polygonOffset
+	entityMergable
+	{
+		map textures/training/desk_cm01.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		rgbGen vertex
+		alphaGen vertex
+	}
+}
+
+textures/intro/slide1decal
+{
+	nofog
+	polygonOffset
+	entityMergable
+	qer_editorimage textures/intro/slide1.tga
+
+
+	{
+		map textures/intro/slide1.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		rgbGen vertex
+
+	}
+}
+
+textures/intro/slide3decal
+{
+	nofog
+	polygonOffset
+	entityMergable
+	qer_editorimage textures/intro/slide3.tga
+
+
+	{
+		map textures/intro/slide3.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		rgbGen vertex
+
+	}
+}
+
+
+textures/intro/md_slide2decal
+{
+	nofog
+	polygonOffset
+	entityMergable
+	qer_editorimage textures/intro/md_slide2.tga
+
+
+	{
+		map textures/intro/md_slide2.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		rgbGen vertex
+
+	}
+}
+
+textures/intro/md_slide3decal
+{
+	nofog
+	polygonOffset
+	entityMergable
+	qer_editorimage textures/intro/md_slide3.tga
+
+
+	{
+		map textures/intro/md_slide3.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		rgbGen vertex
+
+	}
+}
+
+textures/intro/md_slide4decal
+{
+	nofog
+	polygonOffset
+	entityMergable
+	qer_editorimage textures/intro/md_slide4.tga
+
+
+	{
+		map textures/intro/md_slide4.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		rgbGen vertex
+
+	}
+}
+
+
+textures/intro/md_slide5decal
+{
+	nofog
+	polygonOffset
+	entityMergable
+	qer_editorimage textures/intro/md_slide5.tga
+
+
+	{
+		map textures/intro/md_slide5.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		rgbGen vertex
+
+	}
+}
+
+
+textures/intro/md_slide6decal
+{
+	nofog
+	polygonOffset
+	entityMergable
+	qer_editorimage textures/intro/md_slide6.tga
+
+
+	{
+		map textures/intro/md_slide6.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		rgbGen vertex
+
+	}
+}
+
+
+textures/intro/md_slide7decal
+{
+	nofog
+	polygonOffset
+	entityMergable
+	qer_editorimage textures/intro/md_slide7.tga
+
+
+	{
+		map textures/intro/md_slide7.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		rgbGen vertex
+
+	}
+}
+
+
+textures/intro/md_slide8decal
+{
+	nofog
+	polygonOffset
+	entityMergable
+	qer_editorimage textures/intro/md_slide8.tga
+
+
+	{
+		map textures/intro/md_slide8.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		rgbGen vertex
+
+	}
+}
+
+
+
+textures/intro/md_slide9decal
+{
+	nofog
+	polygonOffset
+	entityMergable
+	qer_editorimage textures/intro/doc1.tga
+
+
+	{
+		map textures/intro/doc1.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		rgbGen vertex
+
+	}
+}
+
+textures/intro/md_slide10decal
+{
+	nofog
+	polygonOffset
+	entityMergable
+	qer_editorimage textures/intro/doc2.tga
+
+
+	{
+		map textures/intro/doc2.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		rgbGen vertex
+
+	}
+}
+
+
+
 
 
 

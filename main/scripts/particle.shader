@@ -123,12 +123,42 @@ zombieSpiritTrail
 zombieSpiritSkull
 {
 	cull none
+	
+	
+
 	{
 		map models/mapobjects/skull/skull_spirit.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
 		rgbGen		vertex
 		alphaGen	entity
 	}
+	
+}
+
+helgaSpiritTrail
+{
+	cull none
+	{
+		map sprites/spirit_trail.tga
+		blendFunc GL_SRC_ALPHA GL_ONE
+		rgbGen		vertex
+		alphaGen	vertex
+	}
+}
+
+helgaSpiritGhost
+{
+	cull none
+	surfaceparm nodlight
+	deformVertexes wave 100 sin 0.75 1.5 0 0.75
+	{
+		map models/players/beast/ghost.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	//	blendFunc blend
+	//	rgbGen		vertex
+		alphaGen	entity
+	}
+	
 }
 
 //--------------------------------------------------------------------
@@ -253,14 +283,14 @@ lightningBolt
 	}
 }
 
-lightningBoss1
+lightningBoltGreen
 {
 	nopicmip	// dont scale with texture details, since it looks bad
 	cull disable
 	nofog
 	entityMergable
 	{
-		map sprites\boss1lightning.tga
+		map sprites\lightninggreen.tga
 		blendfunc GL_SRC_ALPHA GL_ONE	// needs to be this or we get fog discoloration
 		rgbGen 	vertex
 		alphaGen vertex
@@ -320,14 +350,13 @@ flamethrowerFireStream
 // character on fire effect
 entityOnFire1
 {
-	nopicmip
-	nomipmap
+	allowCompress
 	// give it some character
 	deformVertexes wave 45 sin 0 10 0 -.6	// a negative frequency is for Z deformation based on normal
 	cull none
 	{	// flame top-side
-		//animmapcomp 20 sprites/clnfire_lg/spr000.tga sprites/clnfire_lg/spr001.tga sprites/clnfire_lg/spr002.tga sprites/clnfire_lg/spr003.tga sprites/clnfire_lg/spr004.tga sprites/clnfire_lg/spr005.tga sprites/clnfire_lg/spr006.tga sprites/clnfire_lg/spr007.tga sprites/clnfire_lg/spr008.tga sprites/clnfire_lg/spr009.tga sprites/clnfire_lg/spr010.tga sprites/clnfire_lg/spr011.tga sprites/clnfire_lg/spr012.tga sprites/clnfire_lg/spr013.tga sprites/clnfire_lg/spr014.tga sprites/clnfire_lg/spr015.tga
-		animmap 20 sprites/clnfire/spr000.tga sprites/clnfire/spr001.tga sprites/clnfire/spr002.tga sprites/clnfire/spr003.tga sprites/clnfire/spr004.tga sprites/clnfire/spr005.tga sprites/clnfire/spr006.tga sprites/clnfire/spr007.tga sprites/clnfire/spr008.tga sprites/clnfire/spr009.tga sprites/clnfire/spr010.tga sprites/clnfire/spr011.tga sprites/clnfire/spr012.tga sprites/clnfire/spr013.tga sprites/clnfire/spr014.tga sprites/clnfire/spr015.tga
+		animmapcomp 20 sprites/clnfire_lg/spr000.tga sprites/clnfire_lg/spr001.tga sprites/clnfire_lg/spr002.tga sprites/clnfire_lg/spr003.tga sprites/clnfire_lg/spr004.tga sprites/clnfire_lg/spr005.tga sprites/clnfire_lg/spr006.tga sprites/clnfire_lg/spr007.tga sprites/clnfire_lg/spr008.tga sprites/clnfire_lg/spr009.tga sprites/clnfire_lg/spr010.tga sprites/clnfire_lg/spr011.tga sprites/clnfire_lg/spr012.tga sprites/clnfire_lg/spr013.tga sprites/clnfire_lg/spr014.tga sprites/clnfire_lg/spr015.tga
+		animmapnocomp 20 sprites/clnfire/spr000.tga sprites/clnfire/spr001.tga sprites/clnfire/spr002.tga sprites/clnfire/spr003.tga sprites/clnfire/spr004.tga sprites/clnfire/spr005.tga sprites/clnfire/spr006.tga sprites/clnfire/spr007.tga sprites/clnfire/spr008.tga sprites/clnfire/spr009.tga sprites/clnfire/spr010.tga sprites/clnfire/spr011.tga sprites/clnfire/spr012.tga sprites/clnfire/spr013.tga sprites/clnfire/spr014.tga sprites/clnfire/spr015.tga
 		blendFunc GL_SRC_ALPHA GL_ONE
 		alphaGen normalzfade 1.0 -0.7 0.5
 	}
@@ -335,11 +364,10 @@ entityOnFire1
 
 entityOnFire2
 {
-	nopicmip
-	nomipmap
+	allowCompress
 	{
-		//animmapcomp 20 sprites/clnfire_lg/spr000.tga sprites/clnfire_lg/spr001.tga sprites/clnfire_lg/spr002.tga sprites/clnfire_lg/spr003.tga sprites/clnfire_lg/spr004.tga sprites/clnfire_lg/spr005.tga sprites/clnfire_lg/spr006.tga sprites/clnfire_lg/spr007.tga sprites/clnfire_lg/spr008.tga sprites/clnfire_lg/spr009.tga sprites/clnfire_lg/spr010.tga sprites/clnfire_lg/spr011.tga sprites/clnfire_lg/spr012.tga sprites/clnfire_lg/spr013.tga sprites/clnfire_lg/spr014.tga sprites/clnfire_lg/spr015.tga
-		animmap 20 sprites/clnfire/spr000.tga sprites/clnfire/spr001.tga sprites/clnfire/spr002.tga sprites/clnfire/spr003.tga sprites/clnfire/spr004.tga sprites/clnfire/spr005.tga sprites/clnfire/spr006.tga sprites/clnfire/spr007.tga sprites/clnfire/spr008.tga sprites/clnfire/spr009.tga sprites/clnfire/spr010.tga sprites/clnfire/spr011.tga sprites/clnfire/spr012.tga sprites/clnfire/spr013.tga sprites/clnfire/spr014.tga sprites/clnfire/spr015.tga
+		animmapcomp 20 sprites/clnfire_lg/spr000.tga sprites/clnfire_lg/spr001.tga sprites/clnfire_lg/spr002.tga sprites/clnfire_lg/spr003.tga sprites/clnfire_lg/spr004.tga sprites/clnfire_lg/spr005.tga sprites/clnfire_lg/spr006.tga sprites/clnfire_lg/spr007.tga sprites/clnfire_lg/spr008.tga sprites/clnfire_lg/spr009.tga sprites/clnfire_lg/spr010.tga sprites/clnfire_lg/spr011.tga sprites/clnfire_lg/spr012.tga sprites/clnfire_lg/spr013.tga sprites/clnfire_lg/spr014.tga sprites/clnfire_lg/spr015.tga
+		animmapnocomp 20 sprites/clnfire/spr000.tga sprites/clnfire/spr001.tga sprites/clnfire/spr002.tga sprites/clnfire/spr003.tga sprites/clnfire/spr004.tga sprites/clnfire/spr005.tga sprites/clnfire/spr006.tga sprites/clnfire/spr007.tga sprites/clnfire/spr008.tga sprites/clnfire/spr009.tga sprites/clnfire/spr010.tga sprites/clnfire/spr011.tga sprites/clnfire/spr012.tga sprites/clnfire/spr013.tga sprites/clnfire/spr014.tga sprites/clnfire/spr015.tga
 		blendFunc GL_SRC_ALPHA GL_ONE
 		alphaGen normalzfade 1.0 -0.7 1.3
 	}
@@ -800,3 +828,62 @@ viewTeslaAltDamageEffect
 	}
 }
 
+sprites/aistate1
+{
+	{
+		map sprites/relaxed.tga
+		blendfunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
+
+sprites/aistate2
+{
+	{
+		map sprites/query.tga
+		blendfunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
+
+sprites/aistate3
+{
+	{
+		map sprites/alerted.tga
+		blendfunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
+
+sprites/aistate4
+{
+	{
+		map sprites/combat.tga
+		blendfunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
+
+
+// ===========================
+// Nerve Gun fire hitting grass/sand
+// ===========================
+dirt_splash
+{
+	cull none
+	entityMergable
+	{
+		map models/weaphits/sand_splash.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		rgbGen vertex
+		alphaGen vertex
+	}
+}
+
+water_splash
+{
+	cull none
+	entityMergable
+	{
+		map models/weaphits/water_splash.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		rgbGen vertex
+		alphaGen vertex
+	}
+}

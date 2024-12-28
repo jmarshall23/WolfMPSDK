@@ -1,19 +1,19 @@
-ui_mp/assets/menumodel/bj_head1
+ui/assets/menumodel/bj_head1
 {
 	nopicmip
 	nomipmaps
 	{
-		map ui_mp/assets/menumodel/bj_head1.tga
+		map ui/assets/menumodel/bj_head1.tga
 		rgbgen identity
 	}
 }
 
-ui_mp/assets/menumodel/bj_body1
+ui/assets/menumodel/bj_body1
 {
 	nopicmip
 	nomipmaps
 	{
-		map ui_mp/assets/menumodel/bj_body1.tga
+		map ui/assets/menumodel/bj_body1.tga
 		rgbgen identity
 	}
 }
@@ -24,7 +24,7 @@ ps_back2
   nopicmip
   nomipmaps
   {
-    map ui_mp/assets/ps_back03a.tga
+    map ui/assets/ps_back03a.tga
     rgbgen identity
   }
 }
@@ -34,7 +34,7 @@ ps_back1
   nopicmip
   nomipmaps
   {
-    map ui_mp/assets/ps_back1.tga
+    map ui/assets/ps_back1.tga
     rgbgen identity
   }
 }
@@ -44,7 +44,7 @@ uiBackground
   nopicmip
   nomipmaps
   {
-    map ui_mp/assets/background2.tga
+    map ui/assets/background2.tga
     rgbgen identity
   }
 }
@@ -54,7 +54,7 @@ uibackground5
   nopicmip
   nomipmaps
   {
-    map ui_mp/assets/background3.tga
+    map ui/assets/background3.tga
     rgbgen identity
   }
 	
@@ -67,11 +67,11 @@ uibackground5
 uiBackgroundMulti
 {
   {
-    map ui_mp/assets/background.tga
+    map ui/assets/background.tga
     rgbGen identity
   }
   {
-    map ui_mp/assets/multi_alpha.tga
+    map ui/assets/multi_alpha.tga
     blendfunc gl_zero gl_src_alpha
     rgbGen identity
     tcMod scroll 0.05 0.05
@@ -132,10 +132,10 @@ textures/screenswitch
   }
 }
 
-ui_mp/assets/pagans_shader1_2
+ui/assets/pagans_shader1_2
 {
 	{
-		clampmap ui_mp/assets/pagans.tga
+		clampmap ui/assets/pagans.tga
 		rgbgen identity
 		blendfunc add
 		//rgbgen wave sin .25 0 0 0
@@ -145,7 +145,7 @@ ui_mp/assets/pagans_shader1_2
 menuflare
 {
 	{
-		clampmap ui_mp/assets/menuflare.tga
+		clampmap ui/assets/menuflare.tga
 		blendfunc add
 		tcmod rotate 30
 		rgbgen wave triangle 1 .05 0 .1

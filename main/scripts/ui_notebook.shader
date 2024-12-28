@@ -3,6 +3,6 @@ notebook1
 	nopicmip
 	nomipmaps
 	{
-		map ui_mp/assets/notebook1.tga
+		map ui/assets/notebook1.tga
 	}
 }

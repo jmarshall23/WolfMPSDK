@@ -1,7 +1,7 @@
 textures/lights/light_m4_white
 {
     //off white KP light
-    q3map_lightimage textures/lights/light_m4.blend.tga
+    q3map_lightimage textures/lightimage/light_m4.blend.tga
     qer_editorimage textures/lights/light_m4.tga
     q3map_surfacelight 5000
     light 1
@@ -24,7 +24,8 @@ textures/lights/light_m4_white
 textures/lights/light_m4
 {
     //off white KP light
-    q3map_lightimage textures/lights/light_m4.blend.tga
+    q3map_lightimage textures/lightimage/light_m4.blend.tga
+
     qer_editorimage textures/lights/light_m4.tga
     q3map_surfacelight 5000
     light 1
@@ -46,8 +47,6 @@ textures/lights/light_m4
 
 textures/lights/light_m5_red
 {
-    //q3map_lightimage textures/lights/light_m5.blend.tga
-    //red KP light
     qer_editorimage textures/lights/light_m5.tga
     q3map_surfacelight 5000
     light 1
@@ -70,7 +69,7 @@ textures/lights/light_m5_red
 textures/lights/light_m6_bwhite
 {
     //bright white KP light
-    q3map_lightimage textures/lights/light_m6.blend.tga
+    q3map_lightimage textures/lightimage/light_m6.blend.tga
     qer_editorimage textures/lights/light_m6.tga
     q3map_surfacelight 5000
     light 1
@@ -94,7 +93,7 @@ textures/lights/light_m6_bwhite
 textures/lights/light_m6_100
 {
     //bright white KP light
-    q3map_lightimage textures/lights/light_m6.blend.tga
+    q3map_lightimage textures/lightimage/light_m6.blend.tga
     qer_editorimage textures/lights/light_m6.tga
     q3map_surfacelight 100
     light 1
@@ -117,7 +116,7 @@ textures/lights/light_m6_100
 textures/lights/light_m9_white
 {
     //off white KP light
-    q3map_lightimage textures/lights/light_m9.blend.tga
+    q3map_lightimage textures/lightimage/light_m9.blend.tga
     qer_editorimage textures/lights/light_m9.tga
     q3map_surfacelight 5000
     light 1
@@ -162,9 +161,36 @@ textures/lights/window_m02
 textures/lights/light_c01_8k
 {
     //bright white KP light
-    q3map_lightimage textures/lights/light_c01.blend.tga
+ //   q3map_lightimage textures/lights/light_c01.blend.tga
+
+	q3map_lightimage textures/lightimage/light_c01_color.tga
     qer_editorimage textures/lights/light_c01.tga
     q3map_surfacelight 8000
+    light 1
+    surfaceparm nomarks
+    {
+        map $lightmap
+        rgbGen identity
+    }
+    {
+        map textures/lights/light_c01.tga
+        blendFunc GL_DST_COLOR GL_ZERO
+        rgbGen identity
+    }
+    {
+        map textures/lights/light_c01.blend.tga
+        blendFunc GL_ONE GL_ONE
+    }
+}
+
+textures/lights/light_c01_4k
+{
+    //bright white KP light
+ //   q3map_lightimage textures/lights/light_c01.blend.tga
+
+	q3map_lightimage textures/lightimage/light_c01_color.tga
+    qer_editorimage textures/lights/light_c01.tga
+    q3map_surfacelight 4000
     light 1
     surfaceparm nomarks
     {
@@ -185,7 +211,9 @@ textures/lights/light_c01_8k
 textures/lights/light_c01_10k
 {
     //bright white KP light
-    q3map_lightimage textures/lights/light_c01.blend.tga
+    //q3map_lightimage textures/lights/light_c01.blend.tga
+
+	q3map_lightimage textures/lightimage/light_c01_color.tga
     qer_editorimage textures/lights/light_c01.tga
     q3map_surfacelight 10000
     light 1
@@ -208,7 +236,9 @@ textures/lights/light_c01_10k
 textures/lights/light_c01_10k_noblock
 {
     //bright white KP light
-    q3map_lightimage textures/lights/light_c01.blend.tga
+   // q3map_lightimage textures/lights/light_c01.blend.tga
+
+	q3map_lightimage textures/lightimage/light_c01_color.tga
     qer_editorimage textures/lights/light_c01.tga
     q3map_surfacelight 10000
     light 1
@@ -234,7 +264,9 @@ textures/lights/light_c01_10k_noblock
 textures/lights/light_c01_2k
 {
     //bright white KP light
-    q3map_lightimage textures/lights/light_c01.blend.tga
+   // q3map_lightimage textures/lights/light_c01.blend.tga
+
+	q3map_lightimage textures/lightimage/light_c01_color.tga
     qer_editorimage textures/lights/light_c01.tga
     q3map_surfacelight 2000
     light 1
@@ -257,7 +289,9 @@ textures/lights/light_c01_2k
 textures/lights/light_c01
 {
     //bright white KP light
-    q3map_lightimage textures/lights/light_c01.blend.tga
+ //   q3map_lightimage textures/lights/light_c01.blend.tga
+
+	q3map_lightimage textures/lightimage/light_c01_color.tga
     qer_editorimage textures/lights/light_c01.tga
     q3map_surfacelight 5000
     light 1
@@ -280,7 +314,7 @@ textures/lights/light_c01
 textures/lights/light_c02
 {
     //bright white KP light
-    q3map_lightimage textures/lights/light_c02.blend.tga
+    q3map_lightimage textures/lightimage/light_c02.blend.tga
     qer_editorimage textures/lights/light_c02.tga
     q3map_surfacelight 2500
     light 1
@@ -303,7 +337,7 @@ textures/lights/light_c02
 textures/lights/light_c02_10000
 {
     //bright white KP light
-    q3map_lightimage textures/lights/light_c02.blend.tga
+    q3map_lightimage textures/lightimage/light_c02.blend.tga
     qer_editorimage textures/lights/light_c02.tga
     q3map_surfacelight 10000
     light 1
@@ -326,7 +360,7 @@ textures/lights/light_c02_10000
 textures/lights/light_c02_20000
 {
     //bright white KP light
-    q3map_lightimage textures/lights/light_c02.blend.tga
+    q3map_lightimage textures/lightimage/light_c02.blend.tga
     qer_editorimage textures/lights/light_c02.tga
     q3map_surfacelight 10000
     light 1
@@ -349,7 +383,7 @@ textures/lights/light_c02_20000
 textures/lights/light_c03
 {
     //bright white KP light
-    q3map_lightimage textures/lights/light_c03.blend.tga
+    q3map_lightimage textures/lightimage/light_c03.blend.tga
     qer_editorimage textures/lights/light_c03.tga
     q3map_surfacelight 2500
     light 1
@@ -372,7 +406,7 @@ textures/lights/light_c03
 textures/lights/light_c04
 {
     //bright white KP light
-    q3map_lightimage textures/lights/light_c04.blend.tga
+    q3map_lightimage textures/lightimage/light_c04.blend.tga
     qer_editorimage textures/lights/light_c04.tga
     q3map_surfacelight 2500
     light 1
@@ -392,10 +426,57 @@ textures/lights/light_c04
     }
 }
 
+textures/lights/light_c04_5k
+{
+    //bright white KP light
+    q3map_lightimage textures/lightimage/light_c04.blend.tga
+    qer_editorimage textures/lights/light_c04.tga
+    q3map_surfacelight 5000
+    light 1
+    surfaceparm nomarks
+    {
+        map $lightmap
+        rgbGen identity
+    }
+    {
+        map textures/lights/light_c04.tga
+        blendFunc GL_DST_COLOR GL_ZERO
+        rgbGen identity
+    }
+    {
+        map textures/lights/light_c04.blend.tga
+        blendFunc GL_ONE GL_ONE
+    }
+}
+
+textures/lights/light_c04_10k
+{
+    //bright white KP light
+    q3map_lightimage textures/lightimage/light_c04.blend.tga
+    qer_editorimage textures/lights/light_c04.tga
+    q3map_surfacelight 10000
+    light 1
+    surfaceparm nomarks
+    {
+        map $lightmap
+        rgbGen identity
+    }
+    {
+        map textures/lights/light_c04.tga
+        blendFunc GL_DST_COLOR GL_ZERO
+        rgbGen identity
+    }
+    {
+        map textures/lights/light_c04.blend.tga
+        blendFunc GL_ONE GL_ONE
+    }
+}
+
+
 textures/lights/light_c04_nolight
 {
     //bright white KP light
-    q3map_lightimage textures/lights/light_c04.blend.tga
+    q3map_lightimage textures/lightimage/light_c04.blend.tga
     qer_editorimage textures/lights/light_c04.tga
     surfaceparm nomarks
     {
@@ -416,7 +497,7 @@ textures/lights/light_c04_nolight
 textures/lights/light_c04_10000
 {
     //bright white KP light
-    q3map_lightimage textures/lights/light_c04.blend.tga
+    q3map_lightimage textures/lightimage/light_c04.blend.tga
     qer_editorimage textures/lights/light_c04.tga
     q3map_surfacelight 10000
     light 1
@@ -439,7 +520,7 @@ textures/lights/light_c04_10000
 textures/lights/light_c04_20000
 {
     //bright white KP light
-    q3map_lightimage textures/lights/light_c04.blend.tga
+    q3map_lightimage textures/lightimage/light_c04.blend.tga
     qer_editorimage textures/lights/light_c04.tga
     q3map_surfacelight 10000
     light 1
@@ -462,7 +543,7 @@ textures/lights/light_c04_20000
 textures/lights/light_c05
 {
     //bright white KP light
-    q3map_lightimage textures/lights/light_c05.blend.tga
+    q3map_lightimage textures/lightimage/light_c05.blend.tga
     qer_editorimage textures/lights/light_c05.tga
     q3map_surfacelight 2500
     light 1
@@ -485,7 +566,7 @@ textures/lights/light_c05
 textures/lights/light_c05_10000
 {
     //bright white KP light
-    q3map_lightimage textures/lights/light_c05.blend.tga
+    q3map_lightimage textures/lightimage/light_c05.blend.tga
     qer_editorimage textures/lights/light_c05.tga
     q3map_surfacelight 10000
     light 1
@@ -508,7 +589,7 @@ textures/lights/light_c05_10000
 textures/lights/light_c05_20000
 {
     //bright white KP light
-    q3map_lightimage textures/lights/light_c05.blend.tga
+    q3map_lightimage textures/lightimage/light_c05.blend.tga
     qer_editorimage textures/lights/light_c05.tga
     q3map_surfacelight 10000
     light 1
@@ -531,7 +612,7 @@ textures/lights/light_c05_20000
 textures/lights/light_c06
 {
     //bright white KP light
-    q3map_lightimage textures/lights/light_c06.blend.tga
+    q3map_lightimage textures/lightimage/light_c06.blend.tga
     qer_editorimage textures/lights/light_c06.tga
     q3map_surfacelight 2500
     light 1
@@ -554,7 +635,7 @@ textures/lights/light_c06
 textures/lights/light_c06_10000
 {
     //bright white KP light
-    q3map_lightimage textures/lights/light_c06.blend.tga
+    q3map_lightimage textures/lightimage/light_c06.blend.tga
     qer_editorimage textures/lights/light_c06.tga
     q3map_surfacelight 10000
     light 1
@@ -577,9 +658,9 @@ textures/lights/light_c06_10000
 textures/lights/light_c06_20000
 {
     //bright white KP light
-    q3map_lightimage textures/lights/light_c06.blend.tga
+    q3map_lightimage textures/lightimage/light_c06.blend.tga
     qer_editorimage textures/lights/light_c06.tga
-    q3map_surfacelight 10000
+    q3map_surfacelight 20000
     light 1
     surfaceparm nomarks
     {
@@ -600,7 +681,7 @@ textures/lights/light_c06_20000
 textures/lights/light_c06_25000
 {
     //bright white KP light
-    q3map_lightimage textures/lights/light_c06.blend.tga
+    q3map_lightimage textures/lightimage/light_c06.blend.tga
     qer_editorimage textures/lights/light_c06.tga
     q3map_surfacelight 25000
     light 1
@@ -624,7 +705,7 @@ textures/lights/light_c06_25000
 textures/lights/light_m10_bwhite
 {
     //bright white KP light
-    q3map_lightimage textures/lights/light_m10.blend.tga
+    q3map_lightimage textures/lightimage/light_m10.blend.tga
     qer_editorimage textures/lights/light_m10.tga
     q3map_surfacelight 5000
     light 1
@@ -647,7 +728,7 @@ textures/lights/light_m10_bwhite
 textures/lights/light_m25r
 {
     //bright white KP light
-    q3map_lightimage textures/lights/light_m25r.tga
+    q3map_lightimage textures/lightimage/light_m25r.tga
     qer_editorimage textures/lights/light_m25r.tga
     q3map_surfacelight 8000
     light 1
@@ -670,7 +751,7 @@ textures/lights/light_m25r
 textures/lights/light_m25b
 {
     //bright white KP light
-    q3map_lightimage textures/lights/light_msb1.tga
+    q3map_lightimage textures/lightimage/light_msb1.tga
     qer_editorimage textures/lights/light_m25b.tga
     q3map_surfacelight 8000
     light 1
@@ -694,7 +775,7 @@ textures/lights/light_m25b
 textures/lights/light_m25b_2k
 {
     //bright white KP light
-    q3map_lightimage textures/lights/light_msb1.tga
+    q3map_lightimage textures/lightimage/light_msb1.tga
     qer_editorimage textures/lights/light_m25b.tga
     q3map_surfacelight 2000
     light 1
@@ -719,7 +800,7 @@ textures/lights/light_m25b_2k
 textures/lights/light_m11_max
 {
     //red KP light
-    q3map_lightimage textures/lights/test.tga
+    q3map_lightimage textures/lightimage/test.tga
     qer_editorimage textures/lights/light_m11.tga
     q3map_surfacelight 5000
     light 1
@@ -787,7 +868,7 @@ textures/lights/light_m12_small
 textures/lights/mlight_10k
 {
     //small white KP light
-    q3map_lightimage textures/lights/light_m15.blend.tga
+    q3map_lightimage textures/lightimage/light_m15.blend.tga
     qer_editorimage textures/lights/light_m15.tga
     q3map_surfacelight 10000
     light 1
@@ -810,7 +891,7 @@ textures/lights/mlight_10k
 textures/lights/mlight_9k
 {
     //small white KP light
-    q3map_lightimage textures/lights/light_m15.blend.tga
+    q3map_lightimage textures/lightimage/light_m15.blend.tga
     qer_editorimage textures/lights/light_m15.tga
     q3map_surfacelight 9000
     light 1
@@ -833,7 +914,7 @@ textures/lights/mlight_9k
 textures/lights/mlight_8k
 {
     //small white KP light
-    q3map_lightimage textures/lights/light_m15.blend.tga
+    q3map_lightimage textures/lightimage/light_m15.blend.tga
     qer_editorimage textures/lights/light_m15.tga
     q3map_surfacelight 8000
     light 1
@@ -856,7 +937,7 @@ textures/lights/mlight_8k
 textures/lights/mlight_7k
 {
     //small white KP light
-    q3map_lightimage textures/lights/light_m15.blend.tga
+    q3map_lightimage textures/lightimage/light_m15.blend.tga
     qer_editorimage textures/lights/light_m15.tga
     q3map_surfacelight 7000
     light 1
@@ -879,7 +960,7 @@ textures/lights/mlight_7k
 textures/lights/mlight_6k
 {
     //small white KP light
-    q3map_lightimage textures/lights/light_m15.blend.tga
+    q3map_lightimage textures/lightimage/light_m15.blend.tga
     qer_editorimage textures/lights/light_m15.tga
     q3map_surfacelight 6000
     light 1
@@ -902,7 +983,7 @@ textures/lights/mlight_6k
 textures/lights/mlight_5k
 {
     //small white KP light
-    q3map_lightimage textures/lights/light_m15.blend.tga
+    q3map_lightimage textures/lightimage/light_m15.blend.tga
     qer_editorimage textures/lights/light_m15.tga
     q3map_surfacelight 5000
     light 1
@@ -925,7 +1006,7 @@ textures/lights/mlight_5k
 textures/lights/light_m15_small
 {
     //small white KP light
-    q3map_lightimage textures/lights/light_m15.blend.tga
+    q3map_lightimage textures/lightimage/light_m15.blend.tga
     qer_editorimage textures/lights/light_m15.tga
     q3map_surfacelight 10000
     light 1
@@ -970,7 +1051,7 @@ textures/lights/light_m16_small
 textures/lights/light_m17_small
 {
     //small white KP light
-    q3map_lightimage textures/lights/light_m17.blend.tga
+    q3map_lightimage textures/lightimage/light_m17.blend.tga
     qer_editorimage textures/lights/light_m17.tga
     q3map_surfacelight 10000
     light 1
@@ -1049,8 +1130,7 @@ textures/lights/light_m18_small
 
 textures/lights/light_m11_red_2500
 {
-    //q3map_lightimage textures/lights/light_m11.blend.tga
-    //red KP light
+
     qer_editorimage textures/lights/light_m11.tga
     q3map_surfacelight 2500
     light 1
@@ -1074,7 +1154,7 @@ textures/lights/light_m11_red_2500
 textures/lights/light_test_250
 {
     //surfaceparm nodraw
-    q3map_lightimage textures/lights/light_test_250.tga
+    q3map_lightimage textures/lightimage/light_test_250.tga
     qer_editorimage textures/lights/light_test_250.tga
     q3map_surfacelight 50
     light 1
@@ -1102,7 +1182,7 @@ textures/lights/light_test_temp
 {
     //surfaceparm nodraw
     //bright white KP light
-    q3map_lightimage textures/lights/light_m10.blend.tga
+    q3map_lightimage textures/lightimage/light_m10.blend.tga
     qer_editorimage textures/lights/light_m10.tga
     q3map_surfacelight 5000
     light 1
@@ -1143,7 +1223,7 @@ textures/lights/light_test_350
 textures/lights/mlight_30k
 {
     //small white KP light
-    q3map_lightimage textures/lights/light_m15.blend.tga
+    q3map_lightimage textures/lightimage/light_m15.blend.tga
     qer_editorimage textures/lights/light_m15.tga
     q3map_surfacelight 30000
     light 1
@@ -1327,7 +1407,7 @@ textures/lights/light_m20_fb
 textures/lights/light_m30
 {
     //bright white KP light
-    q3map_lightimage textures/lights/light_m30.tga
+    q3map_lightimage textures/lightimage/light_m30.tga
     qer_editorimage textures/lights/light_m30.tga
     q3map_surfacelight 5000
     light 1
@@ -1350,7 +1430,7 @@ textures/lights/light_m30
 textures/lights/light_m30r
 {
     //bright white KP light
-    q3map_lightimage textures/lights/light_m30r.tga
+    q3map_lightimage textures/lightimage/light_m30r.tga
     qer_editorimage textures/lights/light_m30r.tga
     q3map_surfacelight 5000
     light 1
@@ -1373,7 +1453,7 @@ textures/lights/light_m30r
 textures/lights/light_m31
 {
     //cull twosided
-    q3map_lightimage textures/lights/light_m31.tga
+    q3map_lightimage textures/lightimage/light_m31.tga
     q3map_surfacelight 5000
     light 1
     surfaceparm nomarks
@@ -1538,8 +1618,7 @@ textures/lights/light_xlight3_5500
 
 textures/lights/light_m5_red20k
 {
-    //q3map_lightimage textures/lights/light_m5.blend.tga
-    //red KP light
+
     qer_editorimage textures/lights/light_m5.tga
     q3map_surfacelight 20000
     light 1
@@ -1577,7 +1656,7 @@ textures/lights/light_m1r
 
 textures/lights/light_tp_m01
 {
-    //q3map_lightimage textures/lights/light_m5.blend.tga
+
     qer_editorimage textures/lights/light_tp_m01.tga
     q3map_surfacelight 6000
     light 1
@@ -1599,7 +1678,6 @@ textures/lights/light_tp_m01
 
 textures/lights/light_tp_m02
 {
-    //q3map_lightimage textures/lights/light_m5.blend.tga
     qer_editorimage textures/lights/light_tp_m02.tga
     q3map_surfacelight 6000
     light 1
@@ -1621,7 +1699,7 @@ textures/lights/light_tp_m02
 
 textures/lights/light_tp_m03
 {
-    //q3map_lightimage textures/lights/light_m5.blend.tga
+
     qer_editorimage textures/lights/light_tp_m03.tga
     q3map_surfacelight 6000
     light 1
@@ -1643,7 +1721,7 @@ textures/lights/light_tp_m03
 
 textures/lights/light_tp_m04
 {
-    //q3map_lightimage textures/lights/light_m5.blend.tga
+
     qer_editorimage textures/lights/light_tp_m04.tga
     q3map_surfacelight 6000
     light 1
@@ -1665,7 +1743,7 @@ textures/lights/light_tp_m04
 
 textures/lights/light_tp_m05
 {
-    //q3map_lightimage textures/lights/light_m5.blend.tga
+
     qer_editorimage textures/lights/light_tp_m05.tga
 //  q3map_surfacelight 6000
 //  light 1
@@ -1687,7 +1765,7 @@ textures/lights/light_tp_m05
 
 textures/lights/light_tp_m06
 {
-    //q3map_lightimage textures/lights/light_m5.blend.tga
+
     qer_editorimage textures/lights/light_tp_m06.tga
     q3map_surfacelight 6000
     light 1
@@ -1751,31 +1829,31 @@ textures/lights/light_tp_m08
     }
 }
 //Modified by claire november 25/00
-textures/lights/light_xlight_2500
-{
-    qer_editorimage textures/lights/light_xlight_03.tga
-    q3map_surfacelight 2500
-    light 1
-    surfaceparm nomarks
-    {
-        map $lightmap
-        rgbGen identity
-    }
-    {
-        map textures/lights/light_xlight_03.tga
-        blendFunc GL_DST_COLOR GL_ZERO
-        rgbGen identity
-    }
-    {
-        map textures/lights/light_xlight_03.tga
-        blendFunc GL_ONE GL_ONE
-    }
-}
+//textures/lights/light_xlight_2500
+//{
+//   qer_editorimage textures/lights/light_xlight_03.tga
+//    q3map_surfacelight 2500
+//    light 1
+//    surfaceparm nomarks
+//    {
+//        map $lightmap
+//        rgbGen identity
+//    }
+//    {
+//        map textures/lights/light_xlight_03.tga
+//       blendFunc GL_DST_COLOR GL_ZERO
+//        rgbGen identity
+//    }
+//    {
+//        map textures/lights/light_xlight_03.tga
+//        blendFunc GL_ONE GL_ONE
+//    }
+//}
 
 
 textures/props/refer_light
 {
-   q3map_lightimage textures/lights/lgreen.tga
+   q3map_lightimage textures/lightimage/lgreen.tga
     //red KP light
     qer_editorimage textures/props/refer.tga
     q3map_surfacelight 150
@@ -1801,8 +1879,7 @@ textures/props/light
    q3map_lightimage textures/lights/lgreen.tga
     //red KP light
     qer_editorimage textures/props/light.tga
-    q3map_surfacelight 200
-
+    q3map_surfacelight 1000
     light 1
     surfaceparm nomarks
     {
@@ -1816,6 +1893,29 @@ textures/props/light
     }
     {
         map textures/props/light.tga
+        blendFunc GL_ONE GL_ONE
+    }
+}
+
+textures/nxlab/xlab_fan
+{
+    //bright white KP light
+    q3map_lightimage textures/lightimage/light_c02.blend.tga
+    qer_editorimage textures/lights/light_c02.tga
+    q3map_surfacelight 10000
+    light 1
+    surfaceparm nomarks
+    {
+        map $lightmap
+        rgbGen identity
+    }
+    {
+        map textures/lights/light_c02.tga
+        blendFunc GL_DST_COLOR GL_ZERO
+        rgbGen identity
+    }
+    {
+        map textures/lights/light_c02.blend.tga
         blendFunc GL_ONE GL_ONE
     }
 }

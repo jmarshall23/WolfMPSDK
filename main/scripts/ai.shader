@@ -17,3 +17,16 @@ textures/common/ai_nopasslarge
 	surfaceparm nomarks
 	surfaceparm	ai_nopasslarge
 }
+
+textures/common/ai_nosight_shoot_through
+{
+    qer_trans 0.3
+    surfaceparm nodraw
+    surfaceparm nonsolid
+    surfaceparm trans
+    surfaceparm nomarks
+    surfaceparm noimpact
+    surfaceparm playerclip
+    surfaceparm ai_nosight
+}
+

@@ -1,8 +1,7 @@
 blacksmokeanim1
 {
 	nofog
-	nomipmaps
-	nopicmip
+	allowCompress
 	cull none
 	{
 		map sprites/explode1/spr000.tga
@@ -13,8 +12,7 @@ blacksmokeanim1
 blacksmokeanim2
 {
 	nofog
-	nomipmaps
-	nopicmip
+	allowCompress
 	cull none
 	{
 		map sprites/explode1/spr001.tga
@@ -25,8 +23,7 @@ blacksmokeanim2
 blacksmokeanim3
 {
 	nofog
-	nomipmaps
-	nopicmip
+	allowCompress
 	cull none
 	{
 		map sprites/explode1/spr002.tga
@@ -37,8 +34,7 @@ blacksmokeanim3
 blacksmokeanim4
 {
 	nofog
-	nomipmaps
-	nopicmip
+	allowCompress
 	cull none
 	{
 		map sprites/explode1/spr003.tga
@@ -49,8 +45,7 @@ blacksmokeanim4
 blacksmokeanim5
 {
 	nofog
-	nomipmaps
-	nopicmip
+	allowCompress
 	cull none
 	{
 		map sprites/explode1/spr004.tga
@@ -61,8 +56,7 @@ blacksmokeanim5
 blacksmokeanim6
 {
 	nofog
-	nomipmaps
-	nopicmip
+	allowCompress
 	cull none
 	{
 		map sprites/explode1/spr005.tga
@@ -73,8 +67,7 @@ blacksmokeanim6
 blacksmokeanim7
 {
 	nofog
-	nomipmaps
-	nopicmip
+	allowCompress
 	cull none
 	{
 		map sprites/explode1/spr006.tga
@@ -85,8 +78,7 @@ blacksmokeanim7
 blacksmokeanim8
 {
 	nofog
-	nomipmaps
-	nopicmip
+	allowCompress
 	cull none
 	{
 		map sprites/explode1/spr007.tga
@@ -97,8 +89,7 @@ blacksmokeanim8
 blacksmokeanim9
 {
 	nofog
-	nomipmaps
-	nopicmip
+	allowCompress
 	cull none
 	{
 		map sprites/explode1/spr008.tga
@@ -109,8 +100,7 @@ blacksmokeanim9
 blacksmokeanim10
 {
 	nofog
-	nomipmaps
-	nopicmip
+	allowCompress
 	cull none
 	{
 		map sprites/explode1/spr009.tga
@@ -121,8 +111,7 @@ blacksmokeanim10
 blacksmokeanim11
 {
 	nofog
-	nomipmaps
-	nopicmip
+	allowCompress
 	cull none
 	{
 		map sprites/explode1/spr010.tga
@@ -133,8 +122,7 @@ blacksmokeanim11
 blacksmokeanim12
 {
 	nofog
-	nomipmaps
-	nopicmip
+	allowCompress
 	cull none
 	{
 		map sprites/explode1/spr011.tga
@@ -145,8 +133,7 @@ blacksmokeanim12
 blacksmokeanim13
 {
 	nofog
-	nomipmaps
-	nopicmip
+	allowCompress
 	cull none
 	{
 		map sprites/explode1/spr012.tga
@@ -157,8 +144,7 @@ blacksmokeanim13
 blacksmokeanim14
 {
 	nofog
-	nomipmaps
-	nopicmip
+	allowCompress
 	cull none
 	{
 		map sprites/explode1/spr013.tga
@@ -169,8 +155,7 @@ blacksmokeanim14
 blacksmokeanim15
 {
 	nofog
-	nomipmaps
-	nopicmip
+	allowCompress
 	cull none
 	{
 		map sprites/explode1/spr014.tga
@@ -181,8 +166,7 @@ blacksmokeanim15
 blacksmokeanim16
 {
 	nofog
-	nomipmaps
-	nopicmip
+	allowCompress
 	cull none
 	{
 		map sprites/explode1/spr015.tga
@@ -193,8 +177,7 @@ blacksmokeanim16
 blacksmokeanim17
 {
 	nofog
-	nomipmaps
-	nopicmip
+	allowCompress
 	cull none
 	{
 		map sprites/explode1/spr016.tga
@@ -205,8 +188,7 @@ blacksmokeanim17
 blacksmokeanim18
 {
 	nofog
-	nomipmaps
-	nopicmip
+	allowCompress
 	cull none
 	{
 		map sprites/explode1/spr017.tga
@@ -217,8 +199,7 @@ blacksmokeanim18
 blacksmokeanim19
 {
 	nofog
-	nomipmaps
-	nopicmip
+	allowCompress
 	cull none
 	{
 		map sprites/explode1/spr018.tga
@@ -229,8 +210,7 @@ blacksmokeanim19
 blacksmokeanim20
 {
 	nofog
-	nomipmaps
-	nopicmip
+	allowCompress
 	cull none
 	{
 		map sprites/explode1/spr019.tga
@@ -241,8 +221,7 @@ blacksmokeanim20
 blacksmokeanim21
 {
 	nofog
-	nomipmaps
-	nopicmip
+	allowCompress
 	cull none
 	{
 		map sprites/explode1/spr020.tga
@@ -253,8 +232,7 @@ blacksmokeanim21
 blacksmokeanim22
 {
 	nofog
-	nomipmaps
-	nopicmip
+	allowCompress
 	cull none
 	{
 		map sprites/explode1/spr021.tga
@@ -265,8 +243,7 @@ blacksmokeanim22
 blacksmokeanim23
 {
 	nofog
-	nomipmaps
-	nopicmip
+	allowCompress
 	cull none
 	{
 		map sprites/explode1/spr022.tga

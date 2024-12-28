@@ -346,8 +346,7 @@ textures/liquids/water_beach_original
 	}
 }
 
-//DHM - Nerve :: duplicate in liquid.shader
-textures/liquids/water_beach_oldold
+textures/liquids/water_beach
 {
 	qer_editorimage textures/liquids/ocean_m1b.tga
 	qer_trans .5
@@ -1129,3 +1128,46 @@ textures/common/leaksteam
 	surfaceparm markparticles
 //	emittertype steam
 }
+
+
+liquids/water_beach_sa1
+	{
+
+    surfaceparm areaportal
+
+		qer_editorimage textures/liquids/ocean_m1.tga
+		qer_trans .5
+		q3map_globaltexture
+		surfaceparm trans
+		surfaceparm nonsolid
+		surfaceparm water
+	
+		cull disable
+	//	deformVertexes wave 64 sin 3 .7 .8 .25
+		deformVertexes wave 32 sin 0 10 .75 .1
+	//	deformVertexes wave 32 sin 0 20 .25 .1	
+		{ 
+			map textures/liquids/ocean_m1.tga
+		//	blendFunc GL_dst_color GL_one
+			rgbgen identity
+			tcmod scale .8 .7
+		//	tcmod stretch 0 1 .01 0 .25 1
+			tcmod scroll .00 -.01
+		}
+	{
+		animMap 9 textures/liquids/ocean13.tga textures/liquids/ocean01.tga textures/liquids/ocean02.tga textures/liquids/ocean03.tga textures/liquids/ocean04.tga textures/liquids/ocean05.tga textures/liquids/ocean06.tga textures/liquids/ocean07.tga textures/liquids/ocean08.tga textures/liquids/ocean09.tga textures/liquids/ocean10.tga textures/liquids/ocean11.tga textures/liquids/ocean12.tga
+
+		blendFunc GL_dst_color GL_one
+		rgbGen identity
+		tcmod scroll .01 .01
+	}	
+
+	{
+	   	map $lightmap
+		blendFunc GL_dst_color GL_zero
+		rgbgen identity		
+	}	
+
+//	END
+	}
+

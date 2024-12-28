@@ -233,7 +233,7 @@ textures/test/soloflare1
 {
 	qer_editorimage textures/test/soloflare1.tga
 	q3map_surfacelight 5000
-	q3map_flare flareShader
+//	q3map_flare flareShader
 	surfaceparm nomarks
 	{
 		map $lightmap

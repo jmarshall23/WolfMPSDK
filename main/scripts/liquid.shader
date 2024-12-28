@@ -441,6 +441,7 @@ textures/liquids/xwater_waste
 	//	surfaceparm trans
 		surfaceparm nonsolid
 		surfaceparm water
+		surfaceparm lava
 	
 		cull disable
 		deformVertexes wave 64 sin .5 .2 0 .5	
@@ -976,7 +977,6 @@ textures/liquids/water_xlab1
 	
 		cull disable
 		deformVertexes wave 64 sin .25 .25 0 .5	
-
 		{ 
 			map textures/liquids/pool3d_5e.tga
 			blendFunc GL_dst_color GL_one
@@ -987,11 +987,13 @@ textures/liquids/water_xlab1
 	
 		{ 
 			map textures/liquids/pool3d_3f.tga
-			blendFunc GL_dst_color gl_one
+			blendFunc GL_dst_color GL_one
 			rgbgen identity
 			tcmod scale -1 -1
 			tcmod scroll .025 .025
-		}	
+		}
+
+	
 		{
 			map $lightmap
 			blendFunc GL_dst_color GL_zero
@@ -1306,59 +1308,62 @@ textures/liquids/river_m01
 
 textures/liquids/water_beach
 {
-	qer_editorimage textures/liquids/ocean_m1.tga
-	//qer_trans .5
+	qer_editorimage textures/liquids/ocean_m1b.tga
+	qer_trans .5
 	q3map_globaltexture
-	//surfaceparm trans
+	surfaceparm trans
 	surfaceparm nonsolid
 	surfaceparm water
 	surfaceparm nomarks	// don't play ripple effects when shooting into water
-	tesssize 384
+	tesssize 256
 	
-	//cull disable
+	cull disable
 	nofog
 	deformVertexes wave 160 sin 0 10 0 .3	// the chop
 
-	waterfogvars ( 0.1 0.1 0.1 ) 128
+	waterfogvars ( 0.1 0.1 0.1 ) 512
 //	waterfogvars ( 0.1 0.1 0.1 ) .005
-//	{
-//		fog on
-//		map $lightmap
-//		blendFunc GL_dst_color GL_zero
-//		rgbgen identity		
-//	}
+	{
+		fog on
+		map $lightmap
+		blendFunc GL_dst_color GL_zero
+		rgbgen identity		
+	}
+
 	{ 
 		fog on
 		map textures/liquids/ocean_m1.tga
 		rgbgen identity
 		tcmod scale .4 .2
-		tcmod scroll .0 .08
+		tcmod scroll .00 -.01
 	}	
-//	{ 
-//		map textures/liquids/ocean_m2.tga
-//		blendFunc GL_dst_color GL_one
-//		rgbgen identity		
-//		tcmod scale -.6 .5
-//		tcmod scroll -.01 -.01
-//	}
+
+	
+	{ 
+		map textures/liquids/ocean_m2.tga
+		blendFunc GL_dst_color GL_one
+		rgbgen identity		
+		tcmod scale -.6 .5
+		tcmod scroll -.01 -.01
+	}
 }
 
 textures/liquids/water_dam		
 {
-	qer_editorimage textures/liquids/ocean_m1.tga
+	qer_editorimage textures/liquids/ocean_m1b.tga
 	qer_trans .5
 	q3map_globaltexture
 	surfaceparm trans
 	surfaceparm nonsolid
 	surfaceparm water
 	cull disable
-     waterfogvars ( 0.1 0.35 0.1 ) 512
+     waterfogvars ( 0.1 0.115 0.1 ) 512
 
 	{ 
-		map textures/liquids/ocean_m1.tga
+		map textures/liquids/ocean_m1b.tga
 		rgbgen identity
 		tcmod scale .8 .7
-		tcmod scroll .00 -.01
+		tcmod scroll .00 -.03
 	}
 	
 	{
@@ -1368,6 +1373,82 @@ textures/liquids/water_dam
 	}
 	
 }
+textures/liquids/water_dam01.tga		
+{
+	qer_editorimage textures/liquids/water_dam01.tga
+	qer_trans .5
+	q3map_globaltexture
+	surfaceparm trans
+	surfaceparm nonsolid
+	surfaceparm water
+	cull disable
+     waterfogvars ( 0.1 0.115 0.1 ) 512
+
+	{ 
+		map textures/liquids/water_dam01.tga
+		rgbgen identity
+		tcmod scale .8 .7
+		tcmod scroll .00 -.03
+	}
+	
+	{
+	   	map $lightmap
+		blendFunc GL_dst_color GL_zero
+		rgbgen identity		
+	}
+	
+}
+textures/liquids/water_dam02.tga		
+{
+	qer_editorimage textures/liquids/water_dam02.tga
+	qer_trans .5
+	q3map_globaltexture
+	surfaceparm trans
+	surfaceparm nonsolid
+	surfaceparm water
+	cull disable
+     waterfogvars ( 0.1 0.115 0.1 ) 512
+
+	{ 
+		map textures/liquids/water_dam02.tga
+		rgbgen identity
+		tcmod scale .8 .7
+		tcmod scroll .00 -.03
+	}
+	
+	{
+	   	map $lightmap
+		blendFunc GL_dst_color GL_zero
+		rgbgen identity		
+	}
+	
+}
+textures/liquids/water_dam03.tga		
+{
+	qer_editorimage textures/liquids/water_dam03.tga
+	qer_trans .5
+	q3map_globaltexture
+	surfaceparm trans
+	surfaceparm nonsolid
+	surfaceparm water
+	cull disable
+     waterfogvars ( 0.1 0.115 0.1 ) 512
+
+	{ 
+		map textures/liquids/water_dam03.tga
+		rgbgen identity
+		tcmod scale .8 .7
+		tcmod scroll .00 -.03
+	}
+	
+	{
+	   	map $lightmap
+		blendFunc GL_dst_color GL_zero
+		rgbgen identity		
+	}
+	
+}
+
 
 
 textures/liquids/pond_m2
@@ -1385,7 +1466,7 @@ textures/liquids/pond_m2
 	nofog
 //	deformVertexes wave 160 sin 0 10 0 .3	// the chop
 
-	waterfogvars ( 0.1 0.1 0.1 ) 300
+	waterfogvars ( 0.25 0.15 0.1 ) 1024
 
 	{
 		fog on
@@ -1416,6 +1497,199 @@ textures/liquids/pond_m2
 	}
 }
 
+textures/liquids/water_endcastle
+
+//Sippy's Test Water #2
+		
+	{
+		qer_editorimage textures/liquids/pool3d_3f.tga
+		qer_trans .5
+		q3map_globaltexture
+		surfaceparm trans
+		surfaceparm nonsolid
+		surfaceparm water
+	
+		cull disable
+		deformVertexes wave 64 sin .25 .25 0 .5	
+
+	waterfogvars ( 0.25 0.15 0.1 ) 1024
+
+		{ 
+			map textures/liquids/pool3d_5e.tga
+			blendFunc GL_dst_color GL_one
+			rgbgen identity
+			tcmod scale .5 .5
+			tcmod scroll .025 .01
+		}
+	
+		{ 
+			map textures/liquids/pool3d_3f.tga
+			blendFunc GL_dst_color GL_one
+			rgbgen identity
+			tcmod scale -1 -1
+			tcmod scroll .025 .025
+		}
+
+	
+		{
+			map $lightmap
+			blendFunc GL_dst_color GL_zero
+			rgbgen identity		
+		}
+	
+	
+	}
+
+textures/liquids/water_norway
 
 
+//	*********************************************************
+//	*     			Rich				*
+//	*      		Comment all changes                   	*
+//	*********************************************************
+		
+	{
+		qer_editorimage textures/liquids/ocean_m1b.tga
+		qer_trans .5
+		q3map_globaltexture
+		surfaceparm trans
+		surfaceparm nonsolid
+		surfaceparm water
+		cull disable
+		deformVertexes wave 32 sin 0 10 .75 .1
+		waterfogvars ( 0.1 0.13 0.1 ) 600
+		tesssize 512		
+	
+		{ 
+			map textures/liquids/ocean_m1b.tga
+			rgbgen identity
+			tcmod scale .8 .7
+			tcmod scroll .00 -.01
+		}
+	
 
+		{
+	   		map $lightmap
+			blendFunc GL_dst_color GL_zero
+			rgbgen identity		
+		}
+	
+
+	}
+
+textures/liquids/dig_water1
+
+//	*********************************************************
+//	*      digger water for the sipinator			  *
+//	*      		Comment all changes                   *
+//	*********************************************************
+		
+	{
+		qer_editorimage textures/liquids/pool3d_3c.tga
+		qer_trans .5
+		q3map_globaltexture
+		surfaceparm trans
+		surfaceparm nonsolid
+		surfaceparm water
+		q3map_lightimage textures/liquids/bluewater.tga
+		q3map_surfacelight 100
+ 	      light 1
+		nofog
+		cull disable
+		
+		{ 
+		fog on
+			map textures/liquids/pool3d_5c.tga
+			blendFunc GL_dst_color GL_one
+			rgbgen identity
+			tcmod scale .5 .5
+			tcmod transform 1.5 0 1.5 1 1 2
+			tcmod scroll -.05 .001
+		}
+	
+		{ 
+		fog on
+			map textures/liquids/pool3d_6c.tga
+			blendFunc GL_dst_color GL_one
+			rgbgen identity
+			tcmod scale .5 .5
+			tcmod transform 0 1.5 1 1.5 2 1
+			tcmod scroll .025 -.001
+		}
+
+		{ 
+			map textures/liquids/pool3d_3c.tga
+			blendFunc GL_dst_color GL_one
+			rgbgen identity
+			tcmod scale .25 .5
+			tcmod scroll .001 .025
+		}
+	
+	//	{
+	//		map $lightmap
+	//		blendFunc GL_dst_color GL_zero
+	//		rgbgen identity		
+	//	}
+	
+
+//	END
+	}
+
+textures/liquids/xlabdm_water
+
+//	*********************************************************
+//	*      digger water for the sipinator			  *
+//	*      		Comment all changes                   *
+//	*********************************************************
+		
+	{
+		qer_editorimage textures/liquids/pool3d_3c.tga
+		qer_trans .5
+		q3map_globaltexture
+		surfaceparm trans
+		surfaceparm nonsolid
+		surfaceparm water
+		waterfogvars ( 0.1 0.1 0.12 ) 300
+		q3map_lightimage textures/liquids/bluewater.tga
+		q3map_surfacelight 100
+ 	      light 1
+		nofog
+		cull disable
+		
+		{ 
+		fog on
+			map textures/liquids/pool3d_5c.tga
+			blendFunc GL_dst_color GL_one
+			rgbgen identity
+			tcmod scale .5 .5
+			tcmod transform 1.5 0 1.5 1 1 2
+			tcmod scroll -.05 .001
+		}
+	
+		{ 
+		fog on
+			map textures/liquids/pool3d_6c.tga
+			blendFunc GL_dst_color GL_one
+			rgbgen identity
+			tcmod scale .5 .5
+			tcmod transform 0 1.5 1 1.5 2 1
+			tcmod scroll .025 -.001
+		}
+
+		{ 
+			map textures/liquids/pool3d_3c.tga
+			blendFunc GL_dst_color GL_one
+			rgbgen identity
+			tcmod scale .25 .5
+			tcmod scroll .001 .025
+		}
+	
+	//	{
+	//		map $lightmap
+	//		blendFunc GL_dst_color GL_zero
+	//		rgbgen identity		
+	//	}
+	
+
+//	END
+	}

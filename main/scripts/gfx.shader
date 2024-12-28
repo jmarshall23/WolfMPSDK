@@ -38,27 +38,24 @@ white
 		rgbgen vertex
 	}
 }
+
+
 console
 {
 	nopicmip
 	nocompress
 
 	{
-		map	gfx/colors/black.tga
-	}
-
-
-	{
-		map ui_mp/assets/SMOKE.tga
-		blendfunc blend
-//		blendfunc GL_ONE GL_ZERO
+		map ui/assets/SMOKE-16bit.tga
+		rgbGen const ( 0.3 0.3 0.3 )
+		blendfunc GL_ONE GL_ZERO
 		tcmod scale 1.5 .75
-		tcmod scroll 0.025 .05 
+		tcmod scroll 0.025 .05
 	}
-
 	{
-		map ui_mp/assets/SMOKE.tga
-		blendfunc blend
+		map ui/assets/SMOKE-16bit.tga
+		blendfunc GL_ONE GL_ONE
+		rgbGen const ( 0.2 0.2 0.2 )
 		tcmod scale .5 .25
 		tcmod scroll 0 .05 
 	}
@@ -69,31 +66,16 @@ console2
 	nopicmip
 	nocompress
 	{
-		map ui_mp/assets/wolficonback4.tga
 		blendfunc blend
-//		blendfunc GL_ONE GL_ONE
-//		blendfunc GL_ONE GL_ONE_MINUS_SRC_COLOR
-		map ui_mp/assets/wolficonback4.tga	// the bg logo that goes over the console and under the text
+		map ui/assets/wolficonback4.tga	// the bg logo that goes over the console and under the text
 	}
 }
 
+
+
+
 menuback
 {
-
-
-
-
-	nopicmip
-//	{
-//		//map textures/sfx/protoflame.tga
-//		 map textures/sfx/specular3b.tga
-//			blendFunc GL_ONE GL_ZERO
-//			tcMod turb 0 .1 0 .2
-//			tcMod scale .4 .4
-//			tcmod scroll -.05  -.2
-//	} 
-
-
 
 	{
 		map textures/sfx/flag01.tga
@@ -961,7 +943,8 @@ icons/iconh_large
 {
 	nopicmip
 	{
-		map icons/iconh_large.tga
+//		map icons/iconh_large.tga
+		map icons/iconh_med.tga		// using this because large doesn't exist
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
 	}
 }
@@ -1055,8 +1038,6 @@ gfx/2d/cursor
 
 sprites/balloon3
 {
-	nocompress
-	nopicmip
 	{
 		map sprites/balloon4.tga
 		blendfunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
@@ -1084,24 +1065,49 @@ textures/animationTest
 
 spotLight
 {
+	nocompress
 	polygonOffset
 	{
-		clampmap sprites/splashalpha.tga
+		clampmap sprites/spotlight.tga
 		blendfunc	GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
 		rgbgen vertex
 	}
 }
 
+
+
+
 lightBeam
 {
+	nocompress
 	sort nearest
 	cull none
 	{
-		map *white
-		blendfunc	GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		map textures/sfx/white_grad.tga
+//		blendfunc GL_ONE GL_ZERO
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+//		blendfunc	GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
 		rgbgen vertex
 	}
 }
+
+
+
+//lightBeam
+//{
+//	nocompress
+//	sort nearest
+//	cull none
+//	{
+//		map *white
+//		blendfunc	GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+//		rgbgen vertex
+//	}
+//}
+
+
+
+
 
 teleportEffect
 {
@@ -1166,31 +1172,44 @@ markShadowTorso
 }
 
 // projectionShadow is used for cheap squashed model shadows
-projectionShadow
-{
-	polygonOffset
-	deformVertexes projectionShadow
-	{
-		map			*white
-		blendFunc GL_ONE GL_ZERO
-		rgbGen wave square 0 0 0 0				// just solid black
-	}	
-}
+//projectionShadow
+//{
+//	polygonOffset
+//	deformVertexes projectionShadow
+//	{
+//		map *white
+//		blendFunc GL_ONE GL_ZERO
+//		rgbGen wave square 0 0 0 0				// just solid black
+//	}	
+//}
 
 
 // wake is the mark on water surfaces for paddling players
 wake
 {
+
+
 	{
 		clampmap sprites/splashalpha.tga
-//		blendFunc GL_ONE GL_ONE
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+//		blendfunc blend
 		rgbGen vertex
-//		tcMod stretch sin .9 0.05 0 0.5
-//		rgbGen wave sin .7 .3 .25 .5
-		tcMod stretch sin .9 0.03 0 0.5
-		rgbGen wave sin .7 .07 .25 .5
-	}	
+		tcMod stretch sin 1 0.2 0 0.2 
+//		alphaGen sin 0.5 0.3 0 0.2 
+//		rgbGen wave sin .7 .07 .25 .5
+		rgbGen wave sin 0.3 0.3 0 0.2
+	}
+
+//	{
+//		clampmap sprites/splashalpha.tga
+//		//		blendFunc GL_ONE GL_ONE
+//		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+//		rgbGen vertex
+//		//		tcMod stretch sin .9 0.05 0 0.5
+//		//		rgbGen wave sin .7 .3 .25 .5
+//		tcMod stretch sin .9 0.03 0 0.5
+//		rgbGen wave sin .7 .07 .25 .5
+//	}	
 }
 
 // this version is for projectiles/etc entering/leaving water
@@ -1832,7 +1851,19 @@ gfx/misc/reticlesimple
 	nomipmaps
 	{
 //		map gfx/misc/reticlesimple.tga
-		map gfx/misc/reticle_eq.tga
+//		map gfx/misc/reticle_eq.tga
+//		map gfx/misc/reticle_256.tga
+		clampmap gfx/misc/reticle_256.tga
+		blendfunc filter
+	}
+}
+
+gfx/misc/reticlesimple_quarter
+{
+	nopicmip
+	nomipmaps
+	{
+		clampmap gfx/misc/reticle_q.tga
 		blendfunc filter
 	}
 }
@@ -1906,22 +1937,25 @@ gfx/misc/snoopersimple
 
 }
 
-gfx/misc/binoc
-{
-	nopicmip
-	nomipmaps
-	{
-		map gfx/misc/binoc.tga
-		blendfunc filter
-	}
-}
 
 gfx/misc/binocsimple
 {
 	nopicmip
 	nomipmaps
 	{
-		map gfx/misc/binocsimple.tga
+//		map gfx/misc/binocsimple.tga
+		clampmap gfx/misc/binocsimple.tga
+		blendfunc filter
+	}
+}
+
+gfx/misc/binocsimple_quarter
+{
+	nopicmip
+	nomipmaps
+	{
+//		map gfx/misc/binocsimple_q.tga
+		clampmap gfx/misc/binocsimple_q.tga
 		blendfunc filter
 	}
 }
@@ -2047,7 +2081,6 @@ gfx/damage/glass_mrk
 // the main console background image
 gfx/2d/conback
 {
-	nocompress
 	nopicmip
 	nomipmaps
 	{
@@ -2057,7 +2090,6 @@ gfx/2d/conback
 
 gfx/2d/crosshair
 {
-	nocompress
 	nopicmip
 	{
 		map gfx/2d/crosshairj.tga
@@ -2072,105 +2104,101 @@ gfx/2d/crosshair
 
 gfx/2d/crosshairb
 {
-	nocompress
 	nopicmip
 	{
 		map gfx/2d/crosshairb.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbGen identity
+//		rgbGen identity
+		rgbGen vertex
 	}
 }
 
 gfx/2d/crosshairc
 {
-	nocompress
 	nopicmip
 	{
 		map gfx/2d/crosshairc.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbGen identity
+//		rgbGen identity
+		rgbGen vertex
 	}
 }
 
 gfx/2d/crosshaird
 {
-	nocompress
 	nopicmip
 	{
 		map gfx/2d/crosshaird.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbGen identity
+//		rgbGen identity
+		rgbGen vertex
 	}
 }
 
 gfx/2d/crosshaire
 {
-	nocompress
 	nopicmip
 	{
 		map gfx/2d/crosshaire.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbGen identity
+//		rgbGen identity
+		rgbGen vertex
 	}
 }
 
 gfx/2d/crosshairf
 {
-	nocompress
 	nopicmip
 	{
 		map gfx/2d/crosshairf.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbGen identity
+//		rgbGen identity
+		rgbGen vertex
 	}
 }
 
 gfx/2d/crosshairg
 {
-	nocompress
 	nopicmip
 	{
 		map gfx/2d/crosshairg.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbGen identity
+//		rgbGen identity
+		rgbGen vertex
 	}
 }
 
 gfx/2d/crosshairh
 {
-	nocompress
 	nopicmip
 	{
 		map gfx/2d/crosshairh.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbGen identity
+//		rgbGen identity
+		rgbGen vertex
 	}
 }
 
 gfx/2d/crosshairi
 {
-	nocompress
 	nopicmip
 	{
 		map gfx/2d/crosshairi.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbGen identity
+//		rgbGen identity
+		rgbGen vertex
 	}
 
 }
 gfx/2d/crosshairj
 {
-	nocompress
 	nopicmip
 	{
 		map gfx/2d/crosshairj.tga
-               
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-               
-		rgbGen identity
+//		rgbGen identity
+		rgbGen vertex
 	}
- 
-
 }
 
 
@@ -2257,123 +2285,90 @@ gfx/2d/blank
 }
 gfx/2d/numbers/zero_32b
 {
-	nomipmaps
 	nopicmip
-	nocompress
 	{
 		map gfx/2d/numbers/zero_32b.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbgen vertex
 	}
 }
 gfx/2d/numbers/one_32b
 {
 	nopicmip
-	nomipmaps
-	nocompress
 	{
 		map gfx/2d/numbers/one_32b.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbgen vertex
 	}
 }
 gfx/2d/numbers/two_32b
 {
 	nopicmip
-	nomipmaps
-	nocompress
 	{
 		map gfx/2d/numbers/two_32b.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbgen vertex
 	}
 }
 gfx/2d/numbers/three_32b
 {
 	nopicmip
-	nocompress
-	nomipmaps
 	{
 		map gfx/2d/numbers/three_32b.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbgen vertex
 	}
 }
 gfx/2d/numbers/four_32b
 {
 	nopicmip
-	nocompress
-	nomipmaps
 	{
 		map gfx/2d/numbers/four_32b.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbgen vertex
 	}
 }
 gfx/2d/numbers/five_32b
 {
 	nopicmip
-	nocompress
-	nomipmaps
 	{
 		map gfx/2d/numbers/five_32b.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbgen vertex
 	}
 }
 gfx/2d/numbers/six_32b
 {
 	nopicmip
-	nocompress
-	nomipmaps
 	{
 		map gfx/2d/numbers/six_32b.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbgen vertex
 	}
 }
 gfx/2d/numbers/seven_32b
 {
 	nopicmip
-	nocompress
-	nomipmaps
 	{
 		map gfx/2d/numbers/seven_32b.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbgen vertex
 	}
 }
 gfx/2d/numbers/eight_32b
 {
 	nopicmip
-	nocompress	
-	nomipmaps
 	{
 		map gfx/2d/numbers/eight_32b.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbgen vertex
 	}
 }
 gfx/2d/numbers/nine_32b
 {
 	nopicmip
-	nocompress
-	nomipmaps
 	{
 		map gfx/2d/numbers/nine_32b.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbgen vertex
 	}
 }
 gfx/2d/numbers/minus_32b
 {
 	nopicmip
-	nocompress
-	nomipmaps
 	{
 		map gfx/2d/numbers/minus_32b.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbgen vertex
 	}
 }
 

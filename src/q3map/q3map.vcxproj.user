@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LocalDebuggerCommand>C:\Projects\WolfMPSDK\bin_nt\q3map.exe</LocalDebuggerCommand>
+    <LocalDebuggerCommandArguments>-light C:\Projects\WolfMPSDK\main\maps\mp_beach.bsp</LocalDebuggerCommandArguments>
+    <LocalDebuggerWorkingDirectory>C:\Projects\WolfMPSDK\bin_nt</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugTTimo|x64'">
+    <LocalDebuggerCommand>C:\Projects\WolfMPSDK\bin_nt\q3map.exe</LocalDebuggerCommand>
+    <LocalDebuggerCommandArguments>-light C:\Projects\WolfMPSDK\main\maps\mp_beach.bsp</LocalDebuggerCommandArguments>
+    <LocalDebuggerWorkingDirectory>C:\Projects\WolfMPSDK\bin_nt</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LocalDebuggerCommand>C:\Projects\WolfMPSDK\bin_nt\q3map.exe</LocalDebuggerCommand>
+    <LocalDebuggerCommandArguments>-light C:\Projects\WolfMPSDK\main\maps\mp_beach.bsp</LocalDebuggerCommandArguments>
+    <LocalDebuggerWorkingDirectory>C:\Projects\WolfMPSDK\bin_nt</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseTTimo|x64'">
+    <LocalDebuggerCommand>C:\Projects\WolfMPSDK\bin_nt\q3map.exe</LocalDebuggerCommand>
+    <LocalDebuggerCommandArguments>-light C:\Projects\WolfMPSDK\main\maps\mp_beach.bsp</LocalDebuggerCommandArguments>
+    <LocalDebuggerWorkingDirectory>C:\Projects\WolfMPSDK\bin_nt</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+</Project>

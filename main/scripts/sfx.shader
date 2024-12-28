@@ -656,7 +656,7 @@ textures/sfx/beam
 textures/sfx/beam_dusty2
 {
 	nocompress
-	qer_editorimage textures/sfx/beam.tga
+	qer_editorimage textures/sfx/beam_1.tga
         surfaceparm trans	
         surfaceparm nomarks	
         surfaceparm nonsolid
@@ -989,7 +989,95 @@ textures/sfx/saftey_glass
 
 }
 
-  
+textures/sfx/saftey_glass2a
+{
+	qer_editorimage textures/common/s_glass.tga		
+	surfaceparm alphashadow
+	surfaceparm glass 
+	surfaceparm trans
+//	cull none
+	qer_trans 	0.5
+	surfaceparm trans
+
+	{
+		map textures/common/s_glass2.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		rgbGen lightingdiffuse
+	}
+
+}
+
+textures/sfx/saftey_glass2b
+{
+	qer_editorimage textures/common/s_glass.tga		
+//	surfaceparm alphashadow
+//	surfaceparm glass 
+//	surfaceparm trans 
+//	cull none
+	qer_trans 	0.5
+//	surfaceparm trans 
+
+	{
+		map textures/common/s_glass2.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		rgbGen vertex
+	}
+
+}
+
+textures/sfx/saftey_glass4a
+{
+	qer_editorimage textures/common/s_glass.tga		
+	surfaceparm alphashadow
+	surfaceparm glass 
+	surfaceparm trans
+//	cull none
+	qer_trans 	0.5
+	surfaceparm trans
+
+	{
+		map textures/common/s_glass2.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		rgbGen lightingdiffuse
+	}
+
+}
+
+textures/sfx/saftey_glass3a
+{
+	qer_editorimage textures/common/s_glass.tga		
+	surfaceparm alphashadow
+	surfaceparm glass 
+	surfaceparm trans
+//	cull none
+	qer_trans 	0.5
+	surfaceparm trans
+
+	{
+		map textures/common/s_glass2.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		rgbGen lightingdiffuse
+	}
+
+}
+textures/xlab_props/xwindow_c01temp
+{
+	qer_editorimage textures/xlab_props/xwindow_c01temp.tga		
+	surfaceparm alphashadow
+	surfaceparm glass 
+	surfaceparm trans
+//	cull none
+	qer_trans 	0.5
+	surfaceparm trans
+
+	{
+		map textures/xlab_props/xwindow_c01temp.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		rgbGen vertex
+	}
+
+}
+
 textures/sfx/tramglass2_ice
 {
 	qer_editorimage textures/common/dirtymirror_ice.tga		
@@ -1051,17 +1139,18 @@ textures/sfx/fan
 	{
 		clampmap textures/sfx/fan.tga
 		tcMod rotate 256 
-		blendFunc GL_ONE GL_ZERO
-		alphaFunc GE128
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+//		blendFunc GL_ONE GL_ZERO
+//		alphaFunc GE128
 		depthWrite
-		rgbGen identity
+		rgbGen lightingdiffuse
 	}
-	{
-		map $lightmap
-		rgbGen identity
-		blendFunc GL_DST_COLOR GL_ZERO
-		depthFunc equal
-	}
+//	{
+//		map $lightmap
+//		rgbGen identity
+//		blendFunc GL_DST_COLOR GL_ZERO
+//		depthFunc equal
+//	}
 }
 
 textures/sfx/fan2
@@ -2102,7 +2191,7 @@ textures/sfx/c_flame
 	cull none
 
 
-	q3map_lightimage textures/sfx/flame1_scale.tga
+	q3map_lightimage textures/lightimage/flame1_scale.tga
 	q3map_surfacelight 100
 	qer_editorimage textures/sfx/c_flame1.tga
 	{
@@ -2140,7 +2229,7 @@ textures/sfx/xflame2
 	surfaceparm nolightmap
 	surfaceparm nodlight
 	cull none
-	q3map_lightimage textures/sfx/flame_COLOR.tga
+	q3map_lightimage textures/lightimage/flame_COLOR.tga
 	q3map_surfacelight 10
 	qer_editorimage textures/sfx/flame1.tga
 	{
@@ -2177,7 +2266,7 @@ textures/sfx/xflame2_1200
 	surfaceparm nolightmap
 	surfaceparm nodlight
 	cull none
-	q3map_lightimage textures/sfx/flame_COLOR.tga
+	q3map_lightimage textures/lightimage/flame_COLOR.tga
 	q3map_surfacelight 1200
 	qer_editorimage textures/sfx/flame1.tga
 	{
@@ -2197,6 +2286,41 @@ textures/sfx/xflame2_1200
 	}
 }
 
+textures/sfx/xflame2_nolight
+{
+	//----(SA) added "lick"
+	deformVertexes wave 194 sin 0 2 0 .5
+	deformVertexes wave 30 sin 0 1 0 .9
+	deformVertexes wave 194 sin 0 1 0 .6
+	//----(SA) end
+
+	nofog	// fogs properly
+	surfaceparm nomarks
+	surfaceparm nolightmap
+	surfaceparm nodlight
+	cull none
+	q3map_lightimage textures/lightimage/flame_COLOR.tga
+	q3map_surfacelight 0
+	qer_editorimage textures/sfx/flame1.tga
+	{
+		animMap 8 textures/sfx/flame1.tga textures/sfx/flame2.tga textures/sfx/flame3.tga textures/sfx/flame4.tga textures/sfx/flame5.tga textures/sfx/flame6.tga textures/sfx/flame7.tga textures/sfx/flame8.tga
+		blendFunc GL_SRC_ALPHA GL_ONE
+		rgbGen wave sawtooth 0 1 0 8
+	}	
+	{
+		animMap 8 textures/sfx/flame8.tga textures/sfx/flame1.tga textures/sfx/flame2.tga textures/sfx/flame3.tga textures/sfx/flame4.tga textures/sfx/flame5.tga textures/sfx/flame6.tga textures/sfx/flame7.tga
+		blendFunc GL_SRC_ALPHA GL_ONE
+		rgbGen wave inverseSawtooth 0 1 0 8
+	}	
+	{
+		map textures/sfx/flameball.tga
+		blendFunc GL_SRC_ALPHA GL_ONE
+		rgbGen wave sin .6 .2 0 .6
+	}
+}
+
+
+
 textures/sfx/xflame2_1400
 {
 	//----(SA) added "lick"
@@ -2210,7 +2334,7 @@ textures/sfx/xflame2_1400
 	surfaceparm nolightmap
 	surfaceparm nodlight
 	cull none
-	q3map_lightimage textures/sfx/flame_COLOR.tga
+	q3map_lightimage textures/lightimage/flame_COLOR.tga
 	q3map_surfacelight 1400
 	qer_editorimage textures/sfx/flame1.tga
 	{
@@ -2244,7 +2368,7 @@ textures/sfx/xflame2_400
 	surfaceparm nolightmap
 	surfaceparm nodlight
 	cull none
-	q3map_lightimage textures/sfx/flame_COLOR.tga
+	q3map_lightimage textures/lightimage/flame_COLOR.tga
 	q3map_surfacelight 400
 	qer_editorimage textures/sfx/flame1.tga
 	{
@@ -2277,7 +2401,7 @@ textures/sfx/xflame2_600
 	surfaceparm nolightmap
 	surfaceparm nodlight
 	cull none
-	q3map_lightimage textures/sfx/flame_COLOR.tga
+	q3map_lightimage textures/lightimage/flame_COLOR.tga
 	q3map_surfacelight 600
 	qer_editorimage textures/sfx/flame1.tga
 	{
@@ -2310,7 +2434,7 @@ textures/sfx/xflame2_800
 	surfaceparm nolightmap
 	surfaceparm nodlight
 	cull none
-	q3map_lightimage textures/sfx/flame_COLOR.tga
+	q3map_lightimage textures/lightimage/flame_COLOR.tga
 	q3map_surfacelight 800
 	qer_editorimage textures/sfx/flame1.tga
 	{
@@ -2343,7 +2467,7 @@ textures/sfx/xflame2_1750
 	surfaceparm nolightmap
 	surfaceparm nodlight
 	cull none
-	q3map_lightimage textures/sfx/flame_COLOR.tga
+	q3map_lightimage textures/lightimage/flame_COLOR.tga
 	q3map_surfacelight 1750
 	qer_editorimage textures/sfx/flame1.tga
 	{
@@ -2378,7 +2502,7 @@ textures/sfx/xflame2_1800
 	surfaceparm nolightmap
 	surfaceparm nodlight
 	cull none
-	q3map_lightimage textures/sfx/flame_COLOR.tga
+	q3map_lightimage textures/lightimage/flame_COLOR.tga
 	q3map_surfacelight 1800
 	qer_editorimage textures/sfx/flame1.tga
 	
@@ -2418,7 +2542,7 @@ textures/sfx/xflame2_2250
 	surfaceparm nolightmap
 	surfaceparm nodlight
 	cull none
-	q3map_lightimage textures/sfx/flame_COLOR.tga
+	q3map_lightimage textures/lightimage/flame_COLOR.tga
 	q3map_surfacelight 2250
 	qer_editorimage textures/sfx/flame1.tga
 	{
@@ -2452,7 +2576,7 @@ textures/sfx/xflame2_3000
 	surfaceparm nolightmap
 	surfaceparm nodlight
 	cull none
-	q3map_lightimage textures/sfx/flame_COLOR.tga
+	q3map_lightimage textures/lightimage/flame_COLOR.tga
 	q3map_surfacelight 3000
 	qer_editorimage textures/sfx/flame1.tga
 
@@ -2487,7 +2611,7 @@ textures/sfx/xflame2_3250
 	surfaceparm nolightmap
 	surfaceparm nodlight
 	cull none
-	q3map_lightimage textures/sfx/flame_COLOR.tga
+	q3map_lightimage textures/lightimage/flame_COLOR.tga
 	q3map_surfacelight 3250
 	qer_editorimage textures/sfx/flame1.tga
 
@@ -2522,7 +2646,7 @@ textures/sfx/xflame2_3750
 	surfaceparm nolightmap
 	surfaceparm nodlight
 	cull none
-	q3map_lightimage textures/sfx/flame_COLOR.tga
+	q3map_lightimage textures/lightimage/flame_COLOR.tga
 	q3map_surfacelight 3750
 	qer_editorimage textures/sfx/flame1.tga
 
@@ -2557,7 +2681,7 @@ textures/sfx/xflame2_5000
 	surfaceparm nolightmap
 	surfaceparm nodlight
 	cull none
-	q3map_lightimage textures/sfx/flame_COLOR.tga
+	q3map_lightimage textures/lightimage/flame_COLOR.tga
 	q3map_surfacelight 5000
 	qer_editorimage textures/sfx/flame1.tga
 
@@ -2594,7 +2718,7 @@ textures/sfx/xflame2_6000
 	surfaceparm nolightmap
 	surfaceparm nodlight
 	cull none
-	q3map_lightimage textures/sfx/flame_COLOR.tga
+	q3map_lightimage textures/lightimage/flame_COLOR.tga
 	q3map_surfacelight 6000
 	qer_editorimage textures/sfx/flame1.tga
 
@@ -2631,7 +2755,7 @@ textures/sfx/xflame2_7500
 	surfaceparm nolightmap
 	surfaceparm nodlight
 	cull none
-	q3map_lightimage textures/sfx/flame_COLOR.tga
+	q3map_lightimage textures/lightimage/flame_COLOR.tga
 	q3map_surfacelight 7500
 	qer_editorimage textures/sfx/flame1.tga
 
@@ -2667,7 +2791,7 @@ textures/sfx/xflame2_2250_bu
 	surfaceparm nolightmap
 	surfaceparm nodlight
 	cull none
-	q3map_lightimage textures/sfx/flame_COLOR.tga
+	q3map_lightimage textures/lightimage/flame_COLOR.tga
 	q3map_surfacelight 2250
 	qer_editorimage textures/sfx/flame1.tga
 	
@@ -2708,7 +2832,7 @@ textures/sfx/xflame2_3000_bu
 	surfaceparm nolightmap
 	surfaceparm nodlight
 	cull none
-	q3map_lightimage textures/sfx/flame_COLOR.tga
+	q3map_lightimage textures/lightimage/flame_COLOR.tga
 	q3map_surfacelight 3000
 	qer_editorimage textures/sfx/flame1.tga
 	
@@ -2742,7 +2866,7 @@ textures/sfx/xflame2_2500_nolick
 	surfaceparm nolightmap
 	surfaceparm nodlight
 	cull none
-	q3map_lightimage textures/sfx/flame_COLOR.tga
+	q3map_lightimage textures/lightimage/flame_COLOR.tga
 	q3map_surfacelight 2500
 	qer_editorimage textures/sfx/flame1.tga
 
@@ -2770,7 +2894,7 @@ textures/sfx/xflame2_3500_nolick
 	surfaceparm nolightmap
 	surfaceparm nodlight
 	cull none
-	q3map_lightimage textures/sfx/flame_COLOR.tga
+	q3map_lightimage textures/lightimage/flame_COLOR.tga
 	q3map_surfacelight 3500
 	qer_editorimage textures/sfx/flame1.tga
 
@@ -2798,7 +2922,7 @@ textures/sfx/xflame2_5000_nolick
 	surfaceparm nolightmap
 	surfaceparm nodlight
 	cull none
-	q3map_lightimage textures/sfx/flame_COLOR.tga
+	q3map_lightimage textures/lightimage/flame_COLOR.tga
 	q3map_surfacelight 5000
 	qer_editorimage textures/sfx/flame1.tga
 
@@ -2826,7 +2950,7 @@ textures/sfx/xflame2_1750_nolick
 	surfaceparm nolightmap
 	surfaceparm nodlight
 	cull none
-	q3map_lightimage textures/sfx/flame_COLOR.tga
+	q3map_lightimage textures/lightimage/flame_COLOR.tga
 	q3map_surfacelight 1750
 	qer_editorimage textures/sfx/flame1.tga
 
@@ -2862,7 +2986,7 @@ textures/sfx/xflame2_3250_bu
 	surfaceparm nolightmap
 	surfaceparm nodlight
 	cull none
-	q3map_lightimage textures/sfx/flame_COLOR.tga
+	q3map_lightimage textures/lightimage/flame_COLOR.tga
 	q3map_surfacelight 3250
 	qer_editorimage textures/sfx/flame1.tga
 	
@@ -2902,7 +3026,7 @@ textures/sfx/xflame2_small
 	surfaceparm nomarks
 	surfaceparm nolightmap
 	cull none
-	q3map_lightimage textures/sfx/flame_COLOR.tga
+	q3map_lightimage textures/lightimage/flame_COLOR.tga
 	q3map_surfacelight 50
 	qer_editorimage textures/sfx/flame1.tga
 	
@@ -3180,7 +3304,7 @@ textures/sfx/flameanim_dimmer
 	//	*	Please Comment Changes			*
 	//	*************************************************
 	qer_editorimage textures/sfx/flame6.tga
-	q3map_lightimage textures/sfx/flame6.tga
+	q3map_lightimage textures/lightimage/flame6.tga
 	surfaceparm trans
 	surfaceparm nomarks
 	surfaceparm nolightmap
@@ -3218,7 +3342,7 @@ textures/sfx/flameanim_blue
 	//	*	Please Comment Changes			*
 	//	*************************************************
 	qer_editorimage textures/sfx/b_flame7.tga
-	q3map_lightimage textures/sfx/b_flame7.tga
+	q3map_lightimage textures/lightimage/b_flame7.tga
 	surfaceparm trans
 	surfaceparm nomarks
 	surfaceparm nolightmap
@@ -3256,7 +3380,7 @@ textures/sfx/flameanim_blue_pj
 	//	*	Please Comment Changes			*
 	//	*************************************************
 	qer_editorimage textures/sfx/b_flame7.tga
-	q3map_lightimage textures/sfx/b_flame7.tga
+	q3map_lightimage textures/lightimage/b_flame7.tga
 	surfaceparm trans
 	surfaceparm nomarks
 	surfaceparm nolightmap
@@ -3295,7 +3419,7 @@ textures/sfx/flameanim_blue_nolight
 	//	*	Please Comment Changes			*
 	//	*************************************************
 	qer_editorimage textures/sfx/b_flame7.tga
-	q3map_lightimage textures/sfx/b_flame7.tga
+	q3map_lightimage textures/lightimage/b_flame7.tga
 	surfaceparm trans
 	surfaceparm nomarks
 	surfaceparm nolightmap
@@ -3333,7 +3457,7 @@ textures/sfx/flameanim_red
 	//	*	Please Comment Changes			*
 	//	*************************************************
 	qer_editorimage textures/sfx/r_flame3.tga
-	q3map_lightimage textures/sfx/r_flame3.tga
+	q3map_lightimage textures/lightimage/r_flame3.tga
 	surfaceparm trans
 	surfaceparm nomarks
 	surfaceparm nolightmap
@@ -3372,7 +3496,7 @@ textures/sfx/flameanim_red_pj
 	//	*	Please Comment Changes			*
 	//	*************************************************
 	qer_editorimage textures/sfx/r_flame3.tga
-	q3map_lightimage textures/sfx/r_flame3.tga
+	q3map_lightimage textures/lightimage/r_flame3.tga
 	surfaceparm trans
 	surfaceparm nomarks
 	surfaceparm nolightmap
@@ -3410,7 +3534,7 @@ textures/sfx/flameanim_red_nolight
 	//	*	Please Comment Changes			*
 	//	*************************************************
 	qer_editorimage textures/sfx/r_flame3.tga
-	q3map_lightimage textures/sfx/r_flame3.tga
+	q3map_lightimage textures/lightimage/r_flame3.tga
 	surfaceparm trans
 	surfaceparm nomarks
 	surfaceparm nolightmap
@@ -3447,7 +3571,7 @@ textures/sfx/flameanim_green_pj
 	//	*	Please Comment Changes			*
 	//	*************************************************
 	qer_editorimage textures/sfx/g_flame6.tga
-	q3map_lightimage textures/sfx/g_flame6.tga
+	q3map_lightimage textures/lightimage/g_flame6.tga
 	surfaceparm trans
 	surfaceparm nomarks
 	surfaceparm nolightmap
@@ -3485,7 +3609,7 @@ textures/sfx/xflame1side
 		//q3map_lightimage textures/sfx/flame1.tga
 		surfaceparm trans
 		surfaceparm nomarks
-		q3map_lightimage textures/sfx/flame_COLOR.tga /// maxx color
+		q3map_lightimage textures/lightimage/flame_COLOR.tga /// maxx color
 		qer_editorimage textures/sfx/flame1.tga
 		surfaceparm nolightmap
 		cull none
@@ -3604,7 +3728,7 @@ textures/sfx/xflame1
 	surfaceparm nomarks
 	surfaceparm nolightmap
 	cull none
-	q3map_lightimage textures/sfx/flame_COLOR.tga
+	q3map_lightimage textures/lightimage/flame_COLOR.tga
 	q3map_surfacelight 7500
 	qer_editorimage textures/sfx/flame1.tga
 	
@@ -3638,7 +3762,7 @@ textures/sfx/xflamebright
 	surfaceparm nomarks
 	surfaceparm nolightmap
 	cull none
-	q3map_lightimage textures/sfx/flame_COLOR.tga
+	q3map_lightimage textures/lightimage/flame_COLOR.tga
 	q3map_surfacelight 3000
 	qer_editorimage textures/sfx/flame1.tga
 	{
@@ -5224,6 +5348,39 @@ textures/sfx/fog_crypt
 	q3map_surfacelight 1
 //	fogparms ( .15 .15 .17 ) 768
 	fogparms ( .2 .2 .2 ) 384
+//	fogparms ( .5 .5 .5 ) 128
+
+		
+
+	{
+		map textures/liquids/kc_fogcloud3.tga
+		blendfunc gl_dst_color gl_zero
+		tcmod scale -.05 -.05
+		tcmod scroll .01 -.01
+		rgbgen identity
+	}
+
+	{
+		map textures/liquids/kc_fogcloud3.tga
+		blendfunc gl_dst_color gl_zero
+		tcmod scale .05 .05
+		tcmod scroll .01 -.01
+		rgbgen identity
+	}
+}
+
+textures/sfx/fog_xlabs
+{
+	qer_editorimage textures/sfx/fog_grey1.tga
+	surfaceparm	trans
+	surfaceparm	nonsolid
+	surfaceparm	fog
+	surfaceparm	nolightmap
+	q3map_globaltexture
+	q3map_surfacelight 1
+//	fogparms ( .15 .15 .17 ) 768
+//	fogparms ( .2 .2 .2 ) 384
+	fogparms ( .5 .5 .5 ) 128
 
 		
 
@@ -5317,8 +5474,21 @@ textures/sfx/fog_newcrypt_128
 	surfaceparm	nolightmap
 	q3map_globaltexture
 	q3map_surfacelight 1
+	fogparms ( .15 .15 .16 ) 196
+//	fogparms ( .18 .16 .15 ) 196
+}
+
+textures/sfx/fog_xlabs
+{
+	qer_editorimage textures/sfx/fog_grey1.tga
+	surfaceparm	trans
+	surfaceparm	nonsolid
+	surfaceparm	fog
+	surfaceparm	nolightmap
+	q3map_globaltexture
+	q3map_surfacelight 1
 //	fogparms ( .15 .15 .16 ) 196
-	fogparms ( .18 .16 .15 ) 196
+	fogparms ( .22 .22 .22 ) 48
 
 
 	{
@@ -5526,7 +5696,7 @@ textures/sfx/xfiretest1
 	//surfaceparm nonsolid
 	surfaceparm nolightmap
 
-//	q3map_lightimage textures/sfx/flame_COLOR.tga
+//	q3map_lightimage textures/lightimage/flame_COLOR.tga
 
 	q3map_surfacelight 1000
 	tesssize 64
@@ -5561,7 +5731,7 @@ textures/sfx/xfiretest2
 	surfaceparm noimpact
 	surfaceparm nolightmap
 
-//	q3map_lightimage textures/sfx/flame_COLOR.tga
+//	q3map_lightimage textures/lightimage/flame_COLOR.tga
 
 	q3map_surfacelight 1000
 	tesssize 64
@@ -6602,7 +6772,7 @@ textures/sfx/c_flame_675
 	surfaceparm nolightmap
 	cull none
           
-	q3map_lightimage textures/sfx/flame1_scale.tga
+	q3map_lightimage textures/lightimage/flame1_scale.tga
 	q3map_surfacelight 675
 	qer_editorimage textures/sfx/c_flame1.tga
 	{
@@ -6640,7 +6810,7 @@ textures/sfx/c_flame_300
 	cull none
 
 	
-	q3map_lightimage textures/sfx/flame1_scale.tga
+	q3map_lightimage textures/lightimage/flame1_scale.tga
 	q3map_surfacelight 300
 	qer_editorimage textures/sfx/c_flame1.tga
 	{
@@ -6676,7 +6846,7 @@ textures/sfx/c_flame_100
 	surfaceparm nolightmap
 	cull none
 	
-	q3map_lightimage textures/sfx/flame1_scale.tga
+	q3map_lightimage textures/lightimage/flame1_scale.tga
 	q3map_surfacelight 10000
 	qer_editorimage textures/sfx/c_flame1.tga
 	{
@@ -6715,7 +6885,7 @@ textures/sfx/c_flame_150
 	surfaceparm nolightmap
 	cull none
 
-	q3map_lightimage textures/sfx/flame1_scale.tga
+	q3map_lightimage textures/lightimage/flame1_scale.tga
 	q3map_surfacelight 10000
 	qer_editorimage textures/sfx/c_flame1.tga
 	{
@@ -6753,7 +6923,7 @@ textures/sfx/c_flame_200
 	surfaceparm nolightmap
 	cull none
 	
-	q3map_lightimage textures/sfx/flame1_scale.tga
+	q3map_lightimage textures/lightimage/flame1_scale.tga
 	q3map_surfacelight 10000
 	qer_editorimage textures/sfx/c_flame1.tga
 	{
@@ -6788,7 +6958,7 @@ textures/sfx/c_flame_10
 //	nomipmap
 	cull none
 
-	q3map_lightimage textures/sfx/flame1_scale.tga
+	q3map_lightimage textures/lightimage/flame1_scale.tga
 	q3map_surfacelight 10
 	qer_editorimage textures/sfx/c_flame1.tga
 
@@ -6825,7 +6995,7 @@ textures/sfx/c_flame_10a
 	surfaceparm nolightmap
 	cull none
 	
-	q3map_lightimage textures/sfx/flame1_scale.tga
+	q3map_lightimage textures/lightimage/flame1_scale.tga
 	q3map_surfacelight 10
 	qer_editorimage textures/sfx/c_flame1.tga
 	{
@@ -6861,7 +7031,7 @@ textures/sfx/c_flame_10b
 	surfaceparm nolightmap
 	cull none
 
-	q3map_lightimage textures/sfx/flame1_scale.tga
+	q3map_lightimage textures/lightimage/flame1_scale.tga
 	q3map_surfacelight 10
 	qer_editorimage textures/sfx/c_flame1.tga
 	{
@@ -6897,7 +7067,7 @@ textures/sfx/c_flame_10c
 	surfaceparm nolightmap
 	cull none
 	
-	q3map_lightimage textures/sfx/flame1_scale.tga
+	q3map_lightimage textures/lightimage/flame1_scale.tga
 	q3map_surfacelight 10
 	qer_editorimage textures/sfx/c_flame1.tga
 	{
@@ -7094,7 +7264,7 @@ textures/sfx/xflame2_10000
 	surfaceparm nolightmap
 	surfaceparm nodlight
 	cull none
-	q3map_lightimage textures/sfx/flame_COLOR.tga
+	q3map_lightimage textures/lightimage/flame_COLOR.tga
 	q3map_surfacelight 7500
 	qer_editorimage textures/sfx/flame1.tga
 
@@ -7151,3 +7321,95 @@ textures/sfx/fog_darkroad
 		rgbgen identity
 	}
 }
+
+textures/sfx/fog_black_dam
+{
+	qer_editorimage textures/sfx/fog_grey1.tga
+	surfaceparm	trans
+	surfaceparm	nonsolid
+	surfaceparm	fog
+	surfaceparm	nolightmap
+	q3map_globaltexture
+//	q3map_surfacelight 1
+	fogparms ( 0.00001 .00001 .000015 ) 128
+
+		
+
+	{
+		map textures/liquids/kc_fogcloud3.tga
+		blendfunc gl_dst_color gl_zero
+		tcmod scale -.05 -.05
+//		tcmod scroll .01 -.01
+		rgbgen identity
+	}
+}
+
+textures/sfx/fog_brief
+{
+	qer_editorimage textures/sfx/fog_grey1.tga
+	surfaceparm	trans
+	surfaceparm	nonsolid
+	surfaceparm	fog
+	surfaceparm	nolightmap
+	q3map_globaltexture
+	q3map_surfacelight 1
+	fogparms ( .15 .15 .17 ) 2000
+
+		
+
+	{
+		map textures/liquids/kc_fogcloud3.tga
+		blendfunc gl_dst_color gl_zero
+		tcmod scale -.05 -.05
+		tcmod scroll .01 -.01
+		rgbgen identity
+	}
+
+	{
+		map textures/liquids/kc_fogcloud3.tga
+		blendfunc gl_dst_color gl_zero
+		tcmod scale .05 .05
+		tcmod scroll .01 -.01
+		rgbgen identity
+	}
+}
+
+
+
+textures/intro/slide1a
+{
+
+	polygonOffset
+	entityMergable
+	qer_editorimage textures/intro/slide1.tga
+	surfaceparm nodamage
+	q3map_surfacelight 200
+
+	
+	{
+		animMap .2 textures/intro/slide1.tga textures/intro/slide2.tga textures/intro/slide3.tga textures/intro/slide4.tga textures/intro/slide5.tga 
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		rgbGen identity
+//		alphaGen vertex
+//		blendFunc GL_ONE GL_ONE
+//		rgbGen wave inverseSawtooth 0 1 0 2
+	}
+	
+}
+
+textures/sfx/fog_castle_128
+{
+	qer_editorimage textures/sfx/fog_grey1.tga
+	surfaceparm	trans
+	surfaceparm	nonsolid
+	surfaceparm	fog
+	surfaceparm	nolightmap
+	q3map_globaltexture
+	q3map_surfacelight 1
+//	fogparms ( .15 .15 .16 ) 196
+	fogparms ( .12 .1 .09 ) 196
+}
+
+
+
+

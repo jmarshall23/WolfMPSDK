@@ -1491,7 +1491,9 @@ textures/skies/town_sky
 	q3map_lightsubdivide 512 
 	q3map_sun	1.0 0.63 0.4 50 200 50
 	q3map_surfacelight 115
-	fogvars ( .13 .13 .14 ) .001
+//	fogvars ( .13 .13 .14 ) .001
+//	fogvars ( .16 .16 .16 ) .0003
+	fogvars ( .11 .11 .11 ) .0002
 
 	skyparms full 200 -
 	
@@ -1509,40 +1511,33 @@ textures/skies/town_sky
 	}
 }
 
-textures/skies/sky_wreck
+textures/skies/sky_rocket
 {
-	qer_editorimage textures/skies/sky_m01dmcmp
+	qer_editorimage textures/skies/topclouds.tga
 	surfaceparm noimpact
 	surfaceparm nolightmap
-	surfaceparm nodlight
-	surfaceparm sky
 	q3map_globaltexture
 	q3map_lightsubdivide 512 
-	q3map_sun	0.274632 0.274632 0.358662 50 135 45
-	q3map_surfacelight 100
-//	fogvars ( .13 .13 .14 ) .001	
-//	skyfogvars ( .23 .23 .24 ) .2
-	fogvars ( .16 .15 .15 ) .0005	
-	skyfogvars ( .23 .23 .24 ) .2
-
+	q3map_sun	1.0 0.63 0.4 50 200 50
+	q3map_surfacelight 115
+	fogvars ( .13 .13 .13 ) .0005
 
 	skyparms full 200 -
-
-
+	
 	{
 		map textures/skies/dimclouds.tga
 		tcMod scroll 0.002 0.002
-		tcMod scale 8.0 8.0
+		tcMod scale 3 3
 		depthWrite
 	}
-	
 	{
 		map textures/skies/dimclouds.tga
 		blendfunc GL_ONE GL_ONE
 		tcMod scroll -0.001 -0.005
-		tcMod scale 10 10
+		tcMod scale 5 5
 	}
 }
+
 
 textures/skies/sky_swf
 {
@@ -1556,21 +1551,29 @@ textures/skies/sky_swf
 	q3map_sun	1.0 0.63 0.4 50 200 50
 	q3map_surfacelight 115
 	fogvars ( .2 .2 .2 ) .0002
-
+	nopicmip
+	nocompress
 	skyparms full 200 -
 	
+
 	{
-		map textures/skies/dimclouds.tga
+		map textures/skies/dimclouds2.tga
+		rgbGen const ( 0.3 0.3 0.3 )
+		blendfunc GL_ONE GL_ZERO
 		tcMod scroll 0.002 0.002
-		tcMod scale 3 3
-		depthWrite
+		tcMod scale 8.0 8.0
 	}
+	
 	{
-		map textures/skies/dimclouds.tga
+		map textures/skies/dimclouds2.tga
 		blendfunc GL_ONE GL_ONE
-		tcMod scroll -0.001 -0.005
-		tcMod scale 5 5
+		rgbGen const ( 0.2 0.2 0.2 )
+		tcMod scroll -0.001 -0.004
+		tcMod scale 10 10
+
+
 	}
+
 }
 
 textures/skies/sky_fac
@@ -1584,22 +1587,28 @@ textures/skies/sky_fac
 	q3map_lightsubdivide 512 
 	q3map_sun	1.0 0.63 0.4 25 200 50
 	q3map_surfacelight 55
-	fogvars ( .13 .13 .14 ) .00085
-	skyfogvars ( .23 .23 .24 ) .15
-
+	fogvars ( .096 .09 .09 ) .0005
+//	skyfogvars ( .23 .23 .24 ) .15
+	nopicmip
+	nocompress
 	skyparms full 200 -
 	
 	{
-		map textures/skies/dimclouds.tga
+		map textures/skies/dimclouds2.tga
+		rgbGen const ( 0.3 0.3 0.3 )
+		blendfunc GL_ONE GL_ZERO
 		tcMod scroll 0.002 0.002
 		tcMod scale 8.0 8.0
-		depthWrite
 	}
+	
 	{
-		map textures/skies/dimclouds.tga
+		map textures/skies/dimclouds2.tga
 		blendfunc GL_ONE GL_ONE
+		rgbGen const ( 0.2 0.2 0.2 )
 		tcMod scroll -0.001 -0.004
 		tcMod scale 10 10
+
+
 	}
 }
 
@@ -1614,22 +1623,25 @@ textures/skies/sky_trainyard
 	q3map_lightsubdivide 512 
 	q3map_sun	1.0 0.63 0.4 25 200 50
 	q3map_surfacelight 55
-	fogvars ( .13 .13 .14 ) .0004
-	skyfogvars ( .23 .23 .24 ) .20
-
-
+	fogvars ( .096 .09 .09 ) .0004
+//	skyfogvars ( .23 .23 .24 ) .15
+	nopicmip
+	nocompress
 	skyparms full 200 -
 	
 	{
-		map textures/skies/dimclouds.tga
+		map textures/skies/dimclouds2.tga
+		rgbGen const ( 0.3 0.3 0.3 )
+		blendfunc GL_ONE GL_ZERO
 		tcMod scroll 0.002 0.002
-		tcMod scale 8 8
-		depthWrite
+		tcMod scale 8.0 8.0
 	}
+	
 	{
-		map textures/skies/dimclouds.tga
+		map textures/skies/dimclouds2.tga
 		blendfunc GL_ONE GL_ONE
-		tcMod scroll -0.001 -0.005
+		rgbGen const ( 0.2 0.2 0.2 )
+		tcMod scroll -0.001 -0.004
 		tcMod scale 10 10
 	}
 }
@@ -1726,7 +1738,8 @@ textures/skies/sky_newcrypt
 	q3map_lightsubdivide 512 
 	q3map_sun	1.0 0.63 0.4 65 220 18
 	q3map_surfacelight 0
-	fogvars ( .135 .13 .13 ) .0006
+	fogvars ( .135 .13 .13 ) .0002
+//	fogvars ( .135 .13 .13 ) .0006
 //	skyfogvars ( .23 .23 .24 ) .5
 
 	surfaceparm nodlight	// (SA) added so dlights don't affect surface
@@ -1913,7 +1926,6 @@ textures/skies/town_sky2
 //}
 
 
-// JPW NERVE: fixed textures to use entire color space so it doesn't band on 16-bit displays
 textures/skies/town_skydak
 {
 	qer_editorimage textures/skies/topclouds.tga
@@ -1930,18 +1942,16 @@ textures/skies/town_skydak
 	skyparms full 200 -
 	
 	{
-		map textures/skies/dimclouds-jpw.tga
+		map textures/skies/dimclouds.tga
 		tcMod scroll 0.002 0.002
 		tcMod scale 3 3
 		depthWrite
-		rgbGen const ( 0.4 0.4 0.4 )
 	}
 	{
-		map textures/skies/dimclouds-jpw.tga
+		map textures/skies/dimclouds.tga
 		blendfunc GL_ONE GL_ONE
 		tcMod scroll -0.001 -0.005
 		tcMod scale 5 5
-		rgbGen const ( 0.5 0.5 0.5 )
 	}
 }
 
@@ -2243,12 +2253,6 @@ textures/skies/sky_baseout
 	}
 }
 
-//*******************************************************
-//*              Rich's Wilderness sky 
-//*
-//* Note: Original qer_editorimage is sky_m01, m01dm
-//*
-//*******************************************************
 textures/skies/rf_wildsky
 {
 	qer_editorimage textures/skies/sky_m01dmcmp
@@ -2278,9 +2282,7 @@ textures/skies/rf_wildsky
 		blendfunc GL_ONE GL_ONE
 	///	tcMod scroll 0.0025 0.0025
 		tcMod scale 12.0 12.0
-	}
-
-	
+	}	
 }
 
 textures/skies/sky_tram
@@ -2303,12 +2305,6 @@ textures/skies/sky_tram
 	}
 }
 
-//*******************************************************
-//*              Rich's tramb sky 
-//*
-//* Note: Original qer_editorimage is sky_m01, m01dm
-//*
-//*******************************************************
 textures/skies/rf_trambsky
 {
 	qer_editorimage textures/skies/sky_m01dmcmp
@@ -2343,12 +2339,6 @@ textures/skies/rf_trambsky
 	
 }
 
-//*******************************************************
-//*              Rich's Chateau sky 
-//*
-//* Note: Original qer_editorimage is sky_m01, m01dm
-//*
-//*******************************************************
 textures/skies/rf_chatsky
 {
 	qer_editorimage textures/skies/sky_m01dmcmp
@@ -2382,9 +2372,7 @@ textures/skies/rf_chatsky
 }
 
 textures/skies/xlabsky
-
 //Sippy's Xlab sky - based on solosky1
-
 {
 	qer_editorimage textures/skies/sky_m01
 	surfaceparm noimpact
@@ -2414,7 +2402,6 @@ textures/skies/xlabsky
 /// maxx test fog - awf //////
 
 textures/skies/test_fog
-
 {
 	qer_editorimage textures/skies/topclouds.tga
 	surfaceparm noimpact
@@ -2440,9 +2427,6 @@ textures/skies/test_fog
 }
 
 textures/skies/dig_sky
-
-//Sippy's test Dig sky 06/14/00
-
 {
 	qer_editorimage textures/skies/topclouds.tga
 	surfaceparm noimpact
@@ -2469,12 +2453,6 @@ textures/skies/dig_sky
 	}
 }
 
-//*******************************************************
-//*              Rich's Assault Sky
-//*
-//* Note: Original qer_editorimage is sky_m01, m01dm
-//*
-//*******************************************************
 textures/skies/rf_asssky
 
 {
@@ -2494,13 +2472,9 @@ textures/skies/rf_asssky
 		blendfunc GL_ONE GL_ONE
 		tcMod scale 12.0 12.0
 	}
-
-	
 }
 
-
 textures/skies/maxx_test
-
 {
 	qer_editorimage textures/env/st_up
 	surfaceparm noimpact
@@ -2522,20 +2496,8 @@ textures/skies/maxx_test
 		tcMod scale 12.0 12.0
 		depthWrite
 	}
-//	{
-//		map textures/skies/sky_m01.tga
-//		blendfunc GL_ONE GL_ONE
-//		//tcMod scroll -0.01 -0.012
-//		tcMod scale 12.0 12.0
-//	}
 }
 
-//*******************************************************
-//*              Rich's Beach Sky
-//*
-//* Note: Original qer_editorimage is sky_m01, m01dm
-//*
-//*******************************************************
 textures/skies/rf_beachsky
 
 {
@@ -2559,14 +2521,7 @@ textures/skies/rf_beachsky
 	
 }
 
-//*******************************************************
-//*              Rich's Beach Sky II
-//*
-//* Note: Original qer_editorimage is sky_m01, m01dm
-//*
-//*******************************************************
 textures/skies/rf_beachsky2
-
 {
 	qer_editorimage textures/skies/sky_m01dmcmp
 	surfaceparm noimpact
@@ -2584,9 +2539,7 @@ textures/skies/rf_beachsky2
 		map textures/skies/sky_m01dmcmp.tga
 		blendfunc GL_ONE GL_ONE
 		tcMod scale 12.0 12.0
-	}
-
-	
+	}	
 }
 
 textures/skies/graveyard_sky
@@ -2604,7 +2557,6 @@ textures/skies/graveyard_sky
 	skyfogvars ( .23 .23 .24 ) .5
 
 	surfaceparm nodlight	// (SA) added so dlights don't affect surface
-
 	skyparms full 200 -
 	
 	{
@@ -2621,15 +2573,8 @@ textures/skies/graveyard_sky
 		tcMod scroll -0.001 -0.005
 		tcMod scale 10 10
 	}
-
 }
 
-//*******************************************************
-//*              Rich's Beach Sky III
-//*
-//* Note: Original qer_editorimage is sky_m01, m01dm
-//*
-//*******************************************************
 textures/skies/rf_beachsky3
 
 {
@@ -2648,13 +2593,10 @@ textures/skies/rf_beachsky3
 		map textures/skies/sky_m01dmcmp.tga
 		blendfunc GL_ONE GL_ONE
 		tcMod scale 12.0 12.0
-	}
-
-	
+	}	
 }
 
 textures/skies/dimclouds_mb
-
 {
 
 	surfaceparm noimpact
@@ -2665,16 +2607,12 @@ textures/skies/dimclouds_mb
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
 		tcMod scale .5 .5
 		tcMod scroll 0.02 0.05
-			   rgbGen vertex
-	}
-
-	
+		rgbGen vertex
+	}	
 }
 
 textures/skies/a_box1
-
 {
-
 	surfaceparm noimpact
 	surfaceparm nolightmap
 
@@ -2684,15 +2622,12 @@ textures/skies/a_box1
 		tcMod scale 0.5 0.5
 		tcMod scroll 0.02 0.05
 		rgbGen vertex
-	}
-
-	
+	}	
 }
 
 textures/skies/a_box2
 
 {
-
 	surfaceparm noimpact
 	surfaceparm nolightmap
 
@@ -2700,9 +2635,7 @@ textures/skies/a_box2
 		map textures/skies/a_box2.tga
 		blendFunc GL_DST_COLOR GL_ZERO
 		rgbGen identity
-	}
-
-	
+	}	
 }
 
 textures/skies/a_skybox
@@ -2734,34 +2667,6 @@ textures/skies/a_skybox
 	}
 }
 
-//Sippy's test Frog sky 09/20/00
-textures/skies/frog_sky
-{
-	qer_editorimage textures/skies/topclouds.tga
-	surfaceparm noimpact
-	surfaceparm nolightmap
-	q3map_globaltexture
-	q3map_lightsubdivide 512 
-	q3map_sun	1.0 0.63 0.4 100 25 75
-	q3map_surfacelight 115
-	fogvars ( .13 .13 .14 ) .001
-
-	skyparms full 200 -
-	
-	{
-		map textures/skies/dimclouds.tga
-		tcMod scroll 0.002 0.002
-		tcMod scale 3 3
-		depthWrite
-	}
-	{
-		map textures/skies/dimclouds.tga
-		blendfunc GL_ONE GL_ONE
-		tcMod scroll -0.001 -0.005
-		tcMod scale 5 5
-	}
-}
-
 textures/skies/sky_escape1
 {
 	qer_editorimage textures/skies/topclouds.tga
@@ -2773,25 +2678,24 @@ textures/skies/sky_escape1
 	q3map_sun	1.0 0.63 0.4 65 220 18
 	q3map_surfacelight 45
 	fogvars ( .15 .15 .155 ) .000375
-	skyfogvars ( .23 .23 .24 ) .07
+	//skyfogvars ( .23 .23 .24 ) .5
 
 	skyparms full 200 -
-// JPW NERVE -- fixed for 16-bit color to prevent too much banding
+	
 	{
-		map textures/skies/dimclouds-jpw.tga
+		map textures/skies/dimclouds.tga
 		tcMod scroll 0.002 0.002
-		tcMod scale 4 4
+		tcMod scale 1 1
+		tcMod turb 0 0.05 0 .08
+
 		depthWrite
-		rgbGen const ( 0.4 0.4 0.4 )
 	}
 	{
-		map textures/skies/dimclouds-jpw.tga
+		map textures/skies/dimclouds.tga
 		blendfunc GL_ONE GL_ONE
 		tcMod scroll -0.001 -0.005
-		tcMod scale 5 5
-		rgbGen const ( 0.3 0.3 0.3 )
-	}	
-// jpw
+		tcMod scale 10 10
+	}
 }
 
 textures/skies/sky_forest
@@ -2907,7 +2811,8 @@ textures/skies/mx_forestsky2
 //	skyfogvars ( .23 .23 .24 ) .1
 
 	skyparms full 200 -
-	
+
+
 	{
 		map textures/skies/newclouds.tga
 		tcMod scroll -0.001 -0.003
@@ -2922,7 +2827,10 @@ textures/skies/mx_forestsky2
 		tcMod scale 2 1
 	}
 
+	
+
 }
+
 textures/skies/mx_training
 {
 	qer_editorimage textures/skies/topclouds.tga
@@ -2940,24 +2848,94 @@ textures/skies/mx_training
 //	skyfogvars ( .23 .23 .24 ) .1
 
 	skyparms full 200 -
-	
+
 	{
 		map textures/skies/newclouds.tga
 		tcMod scroll -0.001 -0.003
 		tcMod scale 6 6
 		depthWrite
-	}
+	}	
 
-	{
-		map textures/skies/assa_clouds1.tga
-		blendfunc blend
-		tcMod scroll 0.0005 0.00
-		tcMod scale 2 1
-	}
+
+//	{
+//		map textures/skies/t_sky1.tga
+//		blendfunc blend
+//		tcMod scroll 0.001 0.00
+///		tcMod scale 5 5
+//	}
 
 }
 
+textures/skies/sky_osa
+{
+	qer_editorimage textures/skies/topclouds.tga
+	q3map_lightimage textures/skies/n_blue.tga
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nodlight
+        lightgridmulamb .7
+	q3map_globaltexture
+	q3map_lightsubdivide 2048
+	q3map_sun	1.0 0.8 0.6 130 95 50
+	q3map_surfacelight 25							
 
+	fogvars ( .3 .3 .38 ) .000065
+//	fogvars ( .3 .3 .305 ) .000095
+//	skyfogvars ( .23 .23 .24 ) .1
+
+	skyparms full 200 -
+
+	{
+		map textures/skies/newclouds.tga
+		tcMod scroll -0.001 -0.003
+		tcMod scale 6 6
+		depthWrite
+	}	
+
+
+//	{
+//		map textures/skies/t_sky1.tga
+//		blendfunc blend
+//		tcMod scroll 0.001 0.00
+///		tcMod scale 5 5
+//	}
+
+}
+
+textures/skies/sky_osa_skybox
+{
+	qer_editorimage textures/skies/topclouds.tga
+	q3map_lightimage textures/skies/n_blue.tga
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nodlight
+	q3map_globaltexture
+	q3map_lightsubdivide 2048
+	q3map_sun	1.0 0.8 0.6 60 95 50
+	q3map_surfacelight 25							
+
+	fogvars ( .3 .3 .38 ) .000065
+//	fogvars ( .3 .3 .305 ) .000095
+//	skyfogvars ( .23 .23 .24 ) .1
+
+	skyparms full 200 -
+
+	{
+		map textures/skies/newclouds.tga
+		tcMod scroll -0.001 -0.003
+		tcMod scale 6 6
+		depthWrite
+	}	
+
+
+//	{
+//		map textures/skies/t_sky1.tga
+//		blendfunc blend
+//		tcMod scroll 0.001 0.00
+///		tcMod scale 5 5
+//	}
+
+}
 
 textures/skies/rf_castleskyboxsky
 {
@@ -2989,20 +2967,20 @@ textures/skies/rf_castleskyboxsky
 	}
 }
 
+
+// dan - cleaned up to look more like escape1
 textures/skies/sky_escape2
 {
 	qer_editorimage textures/skies/topclouds.tga
 	surfaceparm noimpact
 	surfaceparm nolightmap
+	surfaceparm nodlight	// (SA) added so dlights don't affect surface
 	q3map_globaltexture
 	q3map_lightsubdivide 512 
 	q3map_sun	1.0 0.63 0.4 70 220 18
 	q3map_surfacelight 55
-	fogvars ( .15 .15 .15 ) .0004
-	skyfogvars ( .23 .23 .24 ) .5
-
-	surfaceparm nodlight	// (SA) added so dlights don't affect surface
-
+	fogvars ( .15 .15 .15 ) .000375
+	//skyfogvars ( .23 .23 .24 ) .5
 	skyparms full 200 -
 	
 	{
@@ -3010,7 +2988,6 @@ textures/skies/sky_escape2
 		tcMod scroll 0.002 0.002
 		tcMod scale 1 1
 		tcMod turb 0 0.05 0 .08
-
 		depthWrite
 	}
 	{
@@ -3084,7 +3061,6 @@ textures/skies/sky_spacetest
 textures/skies/terrain_haze
 {
 	qer_editorimage textures/liquids/mx_fogcloud3_alpha.tga
-//	cull front // invalid JPW FIXME SP merge
 	surfaceparm noimpact
 	surfaceparm nolightmap
 	surfaceparm alphashadow
@@ -3195,10 +3171,12 @@ textures/skies/rf_wrecked_castlesky
 	skyparms full 200 -
 	
 	{
-		map textures/skies/dimclouds1.tga
+		map textures/skies/dimclouds.tga
 		tcMod scroll 0.002 0.002
 		tcMod scale 1 1
-		tcMod turb 0 0.05 0 .08	
+		tcMod turb 0 0.05 0 .08
+
+		depthWrite
 	}
 	{
 		map textures/skies/dimclouds.tga
@@ -3266,7 +3244,7 @@ textures/skies/rf_wrecked_castlesky_hiamb
 		depthWrite
 	}
 	{
-		map textures/skies/dimclouds1.tga
+		map textures/skies/dimclouds.tga
 		blendfunc GL_ONE GL_ONE
 		tcMod scroll -0.001 -0.005
 		tcMod scale 10 10
@@ -3779,41 +3757,6 @@ textures/skies/sky_chateau_night2
 }
 
 
-textures/skies/sky_dam_night_gone_says_rich
-{
-	nocompress
-	qer_editorimage textures/skies/beachsky_m01
-	q3map_lightimage textures/skies/n_blue2.tga
-	surfaceparm noimpact
-	surfaceparm nolightmap
-	surfaceparm sky
-	q3map_globaltexture
-	q3map_lightsubdivide 2048 
-	q3map_sun	0.274632 0.274632 0.39 20 135 45
-	q3map_surfacelight 20
-	//q3map_lightrgb .1 0.1 0.5
-	skyparms full 200 -
-	nofog
-	sunshader sun
-//	fogvars ( .1 .1 .18 ) .0005
-//	skyfogvars ( .23 .23 .24 ) .1
-
-	
-	{
-		map textures/skies/newclouds2.tga
-	//	tcMod scroll 0.005 0.0005
-		tcMod scale 16.0 16.0
-		depthWrite
-	}
-
-	/////// moon test ////////////////////////
-	//	map textures/skies/sky_m01_moon.tga
-	//	blendfunc GL_ONE GL_ONE
-	///	tcMod scroll 0.0025 0.0025
-	//	tcMod scale 1.0 1.0
-	//	depthWrite
-}
-
 textures/skies/sky_dam_sunrise
 {
 	qer_editorimage textures/skies/topclouds.tga
@@ -3876,6 +3819,52 @@ textures/skies/sky_village2_night
 
 }
 
+
+textures/skies/sky_END_night
+{
+	nocompress
+	qer_editorimage textures/skies/beachsky_m01
+	q3map_lightimage textures/skies/n_blue2.tga
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm sky
+	lightgridmulamb 2
+	lightgridmuldir 3
+	q3map_globaltexture
+//	q3map_lightsubdivide 512 
+	q3map_lightsubdivide 2048 
+	q3map_sun	0.274632 0.274632 0.39 30 35 45
+	q3map_surfacelight 27
+//	q3map_lightrgb .1 0.1 0.5
+	skyparms full 200 -
+//	nofog
+	sunshader sun
+	fogvars ( .07 .07 .09 ) .0002
+//	skyfogvars ( .23 .23 .24 ) .01
+
+	
+	{
+		map textures/skies/nightsky2.tga
+		tcMod scroll 0.0005 0.0005
+		tcMod scale 16.0 16.0
+		depthWrite
+	}
+
+//	{
+//		map textures/skies/vil_clouds1.tga
+//		blendfunc blend
+//		tcMod scroll 0.001 0.00
+//		tcMod scale 2 1
+//	}
+	{
+		map textures/skies/assa_clouds1.tga
+		blendfunc blend
+		tcMod scroll 0.005 0.00
+		tcMod scale 2 1
+	}
+
+}
+
 textures/skies/sky_dam_night
 {
 	nocompress
@@ -3884,17 +3873,19 @@ textures/skies/sky_dam_night
 	surfaceparm noimpact
 	surfaceparm nolightmap
 	surfaceparm sky
+//	lightgridmulamb 2
+//	lightgridmuldir 3
 	q3map_globaltexture
 	q3map_lightsubdivide 2048 
 	q3map_sun	0.274632 0.274632 0.39 30 315 45
-	q3map_surfacelight 30
+	q3map_surfacelight 11
 //	q3map_lightrgb .1 0.1 0.5
 	skyparms full 200 -
 //	nofog
 	sunshader sun
 
-	fogvars ( .15 .15 .2 ) .0001
-	skyfogvars ( .23 .23 .3 ) .01
+	fogvars ( .15 .15 .15 ) .0001
+	skyfogvars ( .23 .23 .24 ) .01
 
 	
 	{
@@ -3911,7 +3902,49 @@ textures/skies/sky_dam_night
 		tcMod scale 2 1
 	}
 
+
 }
+
+textures/skies/sky_dam_night_skybox
+{
+	nocompress
+	qer_editorimage textures/skies/beachsky_m01
+	q3map_lightimage textures/skies/n_blue2.tga
+	surfaceparm noimpact
+	surfaceparm nolightmap
+//	lightgridmulamb 2
+//	lightgridmuldir 3
+	surfaceparm sky
+	q3map_globaltexture
+	q3map_lightsubdivide 512 
+	q3map_sun	0.274632 0.274632 0.39 10 315 45
+	q3map_surfacelight 1
+//	q3map_lightrgb .1 0.1 0.5
+	skyparms full 200 -
+//	nofog
+	sunshader sun
+
+	fogvars ( .0015 .0015 .0015 ) .0001
+//	skyfogvars ( .23 .23 .24 ) .01
+
+	
+	{
+		map textures/skies/nightsky1.tga
+	//	tcMod scroll 0.005 0.0005
+		tcMod scale 16.0 16.0
+		depthWrite
+	}
+
+	{
+		map textures/skies/vil_clouds1.tga
+		blendfunc blend
+		tcMod scroll 0.001 0.00
+		tcMod scale 2 1
+	}
+
+
+}
+
 
 textures/skies/sky_boss2
 {
@@ -3980,13 +4013,15 @@ textures/skies/sky_dark
 	surfaceparm noimpact
 	surfaceparm nolightmap
 	surfaceparm sky
+	lightgridmulamb 2
+	lightgridmuldir 4
 	q3map_globaltexture
-	q3map_lightsubdivide 1024 
-	q3map_sun 0.274632 0.274632 0.358662 30 325 35
-	q3map_surfacelight 15
+	q3map_lightsubdivide 2048 
+	q3map_sun 0.274632 0.274632 0.358662 22 325 28
+	q3map_surfacelight 12
 	skyparms full 200 -
-	//fogvars ( 0.12 .12 .19 ) 2400	
-	fogvars ( 0.0660714 0.0767857 .1000000 ) 2400
+	fogvars ( 0.09 .09 .13 ) 2400	
+
 	{
 		map textures/skies/sky_m01dmcmp.tga
 		blendfunc GL_ONE GL_ONE
@@ -4003,7 +4038,7 @@ textures/skies/sky_norway
 	q3map_globaltexture
 	q3map_lightsubdivide 2048 
 	//q3map_sun	0.274632 0.274632 0.358662 30 325 35
-	q3map_surfacelight 35
+	q3map_surfacelight 55
 	skyparms full 200 -
 	fogvars ( .4 .4 .45 ) 2700	
 	
@@ -4044,4 +4079,410 @@ textures/skies/dak_endsky
 		tcMod scroll -0.001 -0.005
 		tcMod scale 10 10
 	}
+}
+
+textures/skies/sky_dak_night
+{
+	nocompress
+	qer_editorimage textures/skies/beachsky_m01
+	q3map_lightimage textures/skies/n_blue2.tga
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm sky
+	q3map_globaltexture
+	q3map_lightsubdivide 512
+	q3map_sun	0.89 0.93 1 85 85 75
+	q3map_surfacelight 85
+//	q3map_lightrgb .1 0.1 0.5
+	skyparms full 200 -
+//	nofog
+	sunshader sun
+	fogvars ( .07 .07 .09 ) .0002
+//	skyfogvars ( .23 .23 .24 ) .01
+
+	
+	{
+		map textures/skies/nightsky2.tga
+		tcMod scroll 0.0005 0.0005
+		tcMod scale 16.0 16.0
+		depthWrite
+	}
+
+//	{
+//		map textures/skies/vil_clouds1.tga
+//		blendfunc blend
+//		tcMod scroll 0.001 0.00
+//		tcMod scale 2 1
+//	}
+	{
+		map textures/skies/assa_clouds1.tga
+		blendfunc blend
+		tcMod scroll 0.005 0.00
+		tcMod scale 2 1
+	}
+
+}
+
+textures/skies/sky_boss1_night
+{
+	nocompress
+	qer_editorimage textures/skies/beachsky_m01
+	q3map_lightimage textures/skies/n_blue2.tga
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm sky
+	q3map_globaltexture
+	q3map_sun	1.0 0.63 0.4 110 275 25
+	q3map_surfacelight 110
+	fogvars ( .15 .15 .16 ) .0003
+	skyfogvars ( .23 .23 .24 ) .5
+	q3map_lightrgb .1 0.1 0.5
+	skyparms full 200 -
+	nofog
+	sunshader sun
+//	fogvars ( .07 .07 .09 ) .0002
+//	skyfogvars ( .23 .23 .24 ) .01
+
+	
+	{
+		map textures/skies/nightsky2.tga
+		tcMod scroll 0.0005 0.0005
+		tcMod scale 16.0 16.0
+		depthWrite
+	}
+	{
+		map textures/skies/assa_clouds1.tga
+		blendfunc blend
+		tcMod scroll 0.005 0.00
+		tcMod scale 2 1
+	}
+
+}
+
+textures/skies/sky_boss1_b25
+{
+	nocompress
+	qer_editorimage textures/skies/beachsky_m01
+	q3map_lightimage textures/skies/n_blue2.tga
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm sky
+	q3map_globaltexture
+	q3map_sun	1.0 0.63 0.4 45 275 25
+	q3map_surfacelight 45
+	fogvars ( .15 .15 .16 ) .0003
+	skyfogvars ( .23 .23 .24 ) .5
+	q3map_lightrgb .1 0.1 0.5
+	skyparms full 200 -
+	nofog
+	sunshader sun
+//	fogvars ( .07 .07 .09 ) .0002
+//	skyfogvars ( .23 .23 .24 ) .01
+
+	
+	{
+		map textures/skies/nightsky2.tga
+		tcMod scroll 0.0005 0.0005
+		tcMod scale 16.0 16.0
+		depthWrite
+	}
+	{
+		map textures/skies/assa_clouds1.tga
+		blendfunc blend
+		tcMod scroll 0.005 0.00
+		tcMod scale 2 1
+	}
+}
+
+
+textures/skies/sky_boss1_skybox
+{
+	nocompress
+	qer_editorimage textures/skies/beachsky_m01
+	q3map_lightimage textures/skies/n_blue2.tga
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm sky
+	q3map_globaltexture
+	q3map_sun	1.0 0.63 0.4 30 275 25
+	q3map_surfacelight 17
+	fogvars ( .15 .15 .16 ) .0003
+	skyfogvars ( .23 .23 .24 ) .75
+	q3map_lightrgb .1 0.1 0.5
+	skyparms full 200 -
+	nofog
+	sunshader sun
+//	fogvars ( .07 .07 .09 ) .0002
+//	skyfogvars ( .23 .23 .24 ) .01
+
+	{
+		map textures/skies/nightsky2.tga
+		tcMod scroll 0.0005 0.0005
+		tcMod scale 16.0 16.0
+		depthWrite
+	}
+	{
+		map textures/skies/assa_clouds1.tga
+		blendfunc blend
+		tcMod scroll 0.005 0.00
+		tcMod scale 2 1
+	}
+}
+
+textures/skies/sky_boss2_2
+{
+	qer_editorimage textures/skies/sky_m01dmcmp
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm sky
+	q3map_globaltexture
+	q3map_lightsubdivide 2048 
+//	q3map_sun	0.274632 0.274632 0.358662 30 325 35
+	q3map_surfacelight 35
+	skyparms full 200 -
+	fogvars ( .2 .2 .2 ) .00002	
+	
+	{
+		map textures/skies/sky_m01dmcmp.tga
+		blendfunc GL_ONE GL_ONE
+		tcMod scale 12.0 12.0
+	}
+}
+
+textures/skies/sky_baseout_night
+{
+	nocompress
+	qer_editorimage textures/skies/beachsky_m01
+	q3map_lightimage textures/skies/n_blue2.tga
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm sky
+	q3map_globaltexture
+	q3map_lightsubdivide 2048 
+	q3map_sun	0.274632 0.274632 0.39 25 315 45
+	q3map_surfacelight 15
+//	q3map_lightrgb .1 0.1 0.5
+	skyparms full 200 -
+//	nofog
+	sunshader sun
+
+	fogvars ( .15 .15 .15 ) .0001
+	skyfogvars ( .23 .23 .24 ) .01
+
+	
+	{
+		map textures/skies/nightsky1.tga
+	//	tcMod scroll 0.005 0.0005
+		tcMod scale 16.0 16.0
+		depthWrite
+	}
+
+	{
+		map textures/skies/vil_clouds1.tga
+		blendfunc blend
+		tcMod scroll 0.001 0.00
+		tcMod scale 2 1
+	}
+
+
+}
+
+textures/skies/sky_briefingroom
+{
+	qer_editorimage textures/skies/sky_m01dmcmp
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm sky
+	q3map_globaltexture
+	q3map_lightsubdivide 2048 
+	//q3map_sun	0.274632 0.274632 0.358662 30 325 35
+	//q3map_surfacelight 35
+	skyparms full 200 -
+	fogvars ( .4 .4 .45 ) .005	
+	
+	{
+		map textures/skies/sky_m01dmcmp.tga
+		blendfunc GL_ONE GL_ONE
+		tcMod scale 12.0 12.0
+	}
+}
+
+textures/skies/sky_castle_night
+{
+	nocompress
+	qer_editorimage textures/skies/beachsky_m01
+	q3map_lightimage textures/skies/n_blue2.tga
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm sky
+//	lightgridmulamb 2
+//	lightgridmuldir 3
+	q3map_globaltexture
+	q3map_lightsubdivide 512
+ //	q3map_lightsubdivide 2048 
+	q3map_sun	0.274632 0.274632 0.39 30 225 45
+	q3map_surfacelight 27
+//	q3map_lightrgb .1 0.1 0.5
+	skyparms full 200 -
+//	nofog
+	sunshader sun
+	fogvars ( .07 .07 .09 ) .0002
+//	skyfogvars ( .23 .23 .24 ) .01
+
+	
+	{
+		map textures/skies/nightsky2.tga
+		tcMod scroll 0.0005 0.0005
+		tcMod scale 16.0 16.0
+		depthWrite
+	}
+
+//	{
+//		map textures/skies/vil_clouds1.tga
+//		blendfunc blend
+//		tcMod scroll 0.001 0.00
+//		tcMod scale 2 1
+//	}
+	{
+		map textures/skies/assa_clouds1.tga
+		blendfunc blend
+		tcMod scroll 0.005 0.00
+		tcMod scale 2 1
+	}
+
+}
+
+textures/skies/sky_castle_night_skybox
+{
+	nocompress
+	qer_editorimage textures/skies/beachsky_m01
+	q3map_lightimage textures/skies/n_blue2.tga
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm sky
+//	lightgridmulamb 2
+//	lightgridmuldir 3
+	q3map_globaltexture
+	q3map_lightsubdivide 512
+ //	q3map_lightsubdivide 2048 
+	q3map_sun	0.274632 0.274632 0.39 30 225 45
+	q3map_surfacelight 8
+//	q3map_lightrgb .1 0.1 0.5
+	skyparms full 200 -
+//	nofog
+	sunshader sun
+	fogvars ( .07 .07 .09 ) .0002
+//	skyfogvars ( .23 .23 .24 ) .01
+
+	
+	{
+		map textures/skies/nightsky2.tga
+		tcMod scroll 0.0005 0.0005
+		tcMod scale 16.0 16.0
+		depthWrite
+	}
+
+//	{
+//		map textures/skies/vil_clouds1.tga
+//		blendfunc blend
+//		tcMod scroll 0.001 0.00
+//		tcMod scale 2 1
+//	}
+	{
+		map textures/skies/assa_clouds1.tga
+		blendfunc blend
+		tcMod scroll 0.005 0.00
+		tcMod scale 2 1
+	}
+
+}
+
+// Dig Sky
+textures/skies/sky_dig
+{
+	qer_editorimage textures/skies/sky_m01dmcmp
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm sky
+	q3map_globaltexture
+	q3map_lightsubdivide 2048 
+	q3map_sun 0.274632 0.274632 0.358662 22 325 28
+	q3map_surfacelight 12
+	skyparms full 200 -
+	fogvars ( 0.09 .09 .13 ) 2400	
+
+	{
+		map textures/skies/sky_m01dmcmp.tga
+		blendfunc GL_ONE GL_ONE
+		tcMod scale 12.0 12.0
+	}
+}
+
+textures/skies/sky_wreck
+{
+	qer_editorimage textures/skies/sky_m01dmcmp
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nodlight
+	surfaceparm sky
+	q3map_globaltexture
+	q3map_lightsubdivide 512 
+	q3map_sun	0.274632 0.274632 0.358662 35 135 45
+	q3map_surfacelight 75
+	fogvars ( .096 .09 .09 ) .0004	
+//	skyfogvars ( .23 .23 .24 ) .15
+	nopicmip
+	nocompress
+	skyparms full 200 -
+	{
+		map textures/skies/dimclouds2.tga
+		rgbGen const ( 0.3 0.3 0.3 )
+		blendfunc GL_ONE GL_ZERO
+		tcMod scroll 0.002 0.002
+		tcMod scale 8.0 8.0
+	}
+	
+	{
+		map textures/skies/dimclouds2.tga
+		blendfunc GL_ONE GL_ONE
+		rgbGen const ( 0.2 0.2 0.2 )
+		tcMod scroll -0.001 -0.004
+		tcMod scale 10 10
+	}
+}
+
+textures/skies/sky_xlabdm
+{
+	nocompress
+	qer_editorimage textures/skies/beachsky_m01
+	q3map_lightimage textures/skies/n_blue2.tga
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm sky
+	q3map_globaltexture
+	q3map_sun	0.83 0.94 0.98 110 270 65
+	q3map_surfacelight 110
+	fogvars ( .2 .2 .2 ) .0002
+	skyfogvars ( .23 .23 .24 ) .5
+	q3map_lightrgb .1 0.1 0.5
+	skyparms full 200 -
+	nofog
+	sunshader sun
+//	fogvars ( 0.09 .09 .13 ) 2000
+//	skyfogvars ( .23 .23 .24 ) .01
+
+	
+	{
+		map textures/skies/nightsky2.tga
+		tcMod scroll 0.0005 0.0005
+		tcMod scale 16.0 16.0
+		depthWrite
+	}
+	{
+		map textures/skies/assa_clouds1.tga
+		blendfunc blend
+		tcMod scroll 0.005 0.00
+		tcMod scale 2 1
+	}
+
 }

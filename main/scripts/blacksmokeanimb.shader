@@ -254,9 +254,10 @@ blacksmokeanimb23
 blacksmokeanimb24
 {
 	nofog
+	
 	cull none
 	{
-		map sprites/explode1/spr022.tga
+		map sprites/explode1/spr023.tga
 		blendFunc GL_ZERO GL_ONE_MINUS_SRC_ALPHA
 		alphaGen const 0.2
 	}

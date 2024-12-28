@@ -4,20 +4,6 @@ textures/common/nodrawnonsolid
     surfaceparm nonsolid
 }
 
-textures/common/teleporter
-{
-    q3map_lightimage textures/sfx/powerupshit.tga
-    q3map_surfacelight 800
-    surfaceparm noimpact
-    surfaceparm nolightmap
-    {
-        //tcMod scale 5 5
-        map textures/sfx/powerupshit.tga
-        tcGen environment
-        tcMod turb 0 0.015 0 0.3
-    }
-}
-
 textures/common/nodrop
 {
     qer_nocarve
@@ -57,6 +43,28 @@ textures/common/clip
     surfaceparm playerclip
 }
 
+// TESTING MIKE
+
+textures/common/clipshot
+{
+    qer_trans 0.3
+    surfaceparm nodraw
+    surfaceparm nomarks
+    surfaceparm nonsolid
+    surfaceparm clipshot
+}
+
+textures/common/ai_nosight
+{
+    qer_trans 0.3
+    surfaceparm nodraw
+    surfaceparm nomarks
+    surfaceparm nonsolid
+    surfaceparm ai_nosight
+}
+
+// END TESTING
+
 textures/common/clip_metal
 {
     qer_trans 0.3
@@ -64,6 +72,7 @@ textures/common/clip_metal
     surfaceparm nomarks
     surfaceparm playerclip
     surfaceparm clipmissile
+    surfaceparm trans
     surfaceparm metalsteps
 }
 
@@ -647,14 +656,6 @@ textures/common/terrain2
 	surfaceparm nolightmap
 }
 
-textures/common/snow_terrain
-{
-	surfaceparm snowsteps
-	surfaceparm nodraw
-	surfaceparm nomarks
-	surfaceparm nolightmap
-}
-
 textures/common/dirtymirror
 {
 	//dirt pass
@@ -937,23 +938,6 @@ textures/sfx/helga_skyboxportal
 //		depthWrite
 		tcMod rotate 8
 	}
-}
-
-textures/sfx/helga_portal			// SMF
-{
-	qer_editorimage textures/sfx/helga_portal.tga
-	surfaceparm trans
-	surfaceparm nolightmap
-	surfaceparm nonsolid
-	tesssize 128
-
-	deformVertexes wave 160 sin 0 10 0 .3	// the chop
-
-    {
-        map textures/sfx/helga_portal.tga
-		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-        tcMod rotate 12
-    }
 }
 
 textures/sfx/helga_portallocal

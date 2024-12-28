@@ -46,8 +46,7 @@ gfx/2d/dynamiteHint
 sprites/medic_revive
 {
 	nopicmip
-	nocompress
-//	nomipmaps
+	nomipmaps
 	{
 		map sprites/medicrevive.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
@@ -57,83 +56,50 @@ sprites/medic_revive
 sprites/voiceChat
 {
 	nopicmip
-	nocompress
-//	nomipmaps
+	nomipmaps
 	{
 		map sprites/voicechat.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbGen vertex
 	}
 }
 
 sprites/voiceMedic
 {
 	nopicmip
-	nocompress
-//	nomipmaps
+	nomipmaps
 	{
 		map sprites/voicemedic.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbGen vertex
 	}
 }
 
 sprites/voiceAmmo
 {
 	nopicmip
-	nocompress
-//	nomipmaps
+	nomipmaps
 	{
 		map sprites/voiceammo.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbGen vertex
 	}
 }
 
 sprites/voice_yes
 {
 	nopicmip
-	nocompress
-//	nomipmaps
+	nomipmaps
 	{
 		map sprites/voice_yes.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbGen vertex
 	}
 }
 
 sprites/voice_no
 {
 	nopicmip
-	nocompress
-//	nomipmaps
+	nomipmaps
 	{
 		map sprites/voice_no.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbGen vertex
-	}
-}
-
-sprites/shield
-{
-	nopicmip
-	nocompress
-//	nomipmaps
-	{
-		map sprites/icon_shield.tga
-		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-	}
-}
-
-sprites/skull
-{
-	nopicmip
-	nocompress
-	nomipmaps
-	{
-		map gfx/2d/multi_dead.tga
-		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbGen vertex
 	}
 }
 
@@ -252,34 +218,12 @@ icons/iconw_smokegrenade_1_select
 	}
 }
 
-AlliedHelmet
-{
-	nopicmip
-	nomipmap
-	{
-		map gfx/2d/lives_allies.tga
-		blendfunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbgen vertex
-	}
-}
-
-AxisHelmet
-{
-	nopicmip
-	nomipmap
-	{
-		map gfx/2d/lives_axis.tga
-		blendfunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbgen vertex
-	}
-}
-
 // ===========================
 // Gun fire hitting grass/sand
 // ===========================
 dirtParticle1
 {
-	nopicmip
+	cull none
 	entityMergable
 	{
 		map models/weaphits/bullet_sand1.tga
@@ -291,7 +235,7 @@ dirtParticle1
 
 dirtParticle2
 {
-	nopicmip
+	cull none
 	entityMergable
 	{
 		map models/weaphits/bullet_sand2.tga
@@ -303,7 +247,7 @@ dirtParticle2
 
 dirtParticle3
 {
-	nopicmip
+	cull none
 	entityMergable
 	{
 		map models/weaphits/bullet_sand3.tga
@@ -315,7 +259,7 @@ dirtParticle3
 
 dirt_splash
 {
-	nopicmip
+	cull none
 	entityMergable
 	{
 		map models/weaphits/sand_splash.tga
@@ -327,7 +271,7 @@ dirt_splash
 
 water_splash
 {
-	nopicmip
+	cull none
 	entityMergable
 	{
 		map models/weaphits/water_splash.tga

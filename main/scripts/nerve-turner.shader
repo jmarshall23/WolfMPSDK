@@ -156,6 +156,16 @@ models\multiplayer\spear\spear_energy
 
 }
 
+
+models\multiplayer\flagpole\flagpole
+{
+	{
+		map models/multiplayer/flagpole/flag_clouds.tga
+		tcgen environment
+	}
+}
+
+
 models\multiplayer\syringe\syringe
 {
 	cull disable
@@ -200,7 +210,8 @@ models\multiplayer\treasure\treasure
 	cull disable
 	deformvertexes autosprite
 	surfaceparm trans
-	sort nearest	
+	sort nearest
+	nomipmaps
 	{
 		map models/multiplayer/treasure/treasure.tga
 		tcmod stretch sin .8 .08 0 .8
@@ -209,86 +220,5 @@ models\multiplayer\treasure\treasure
 	}
 }
 
-models\multiplayer\uboat\sub5
-{
-	surfaceparm metalsteps
-	{
-		map models/multiplayer/uboat/sub5.tga
-		rgbgen lightingdiffuse
-//		rgbgen vertex
-	}
-}
-
-ui_mp/assets/portraits/allies_win
-{
-	nopicmip
-	nomipmaps
-	{
-		map ui_mp/assets/portraits/allies_sky.tga
-		tcmod scroll .06 0
-	}
-
-	{
-		map ui_mp/assets/portraits/allies_win.tga
-		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-	}
-}
-
-ui_mp/assets/portraits/axis_win
-{
-	nopicmip
-	nomipmaps
-	{
-		map ui_mp/assets/portraits/axis_sky.tga
-		tcmod scroll .06 0
-	}
-
-	{
-		map ui_mp/assets/portraits/axis_win.tga
-		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-	}
-}
-
-ui_mp/assets/portraits/allies_win_flag
-{
-	nopicmip
-	nomipmaps
-	{
-		map ui_mp/assets/portraits/allies_win_flag.tga
-		alphaGen wave sin 0.5 0.2 0 0.2
-		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-	}
-}
-
-ui_mp/assets/portraits/axis_win_flag
-{
-	nopicmip
-	nomipmaps
-	{
-		map ui_mp/assets/portraits/axis_win_flag.tga
-		alphaGen wave sin 0.5 0.2 0 0.2
-		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-	}
-}
 
 
-sprites/stopwatch1
-{
-	nopicmip
-	nomipmaps
-	{
-		map sprites/stopwatch1.tga
-		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-	}
-}
-
-
-sprites/stopwatch2
-{
-	nopicmip
-	nomipmaps
-	{
-		map sprites/stopwatch2.tga
-		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-	}
-}

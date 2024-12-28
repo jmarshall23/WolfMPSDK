@@ -69,7 +69,7 @@ textures/miltary_door/mdoor_c03
 	}
 }
 
-textures/props/barrel_m01
+textures/castle_door/mdoor_c07
 {
 	surfaceparm metalsteps
 	{
@@ -77,7 +77,7 @@ textures/props/barrel_m01
 		rgbGen identity
 	}
 	{
-		map textures/props/barrel_m01.tga
+		map textures/castle_door/mdoor_c07.tga
 		blendFunc GL_DST_COLOR GL_ZERO
 		rgbGen identity
 	}

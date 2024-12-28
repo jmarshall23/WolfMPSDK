@@ -1,27 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LocalDebuggerCommand>C:\Projects\Wolf\WolfMP.exe</LocalDebuggerCommand>
-    <LocalDebuggerCommandArguments>+set r_fullscreen +set r_mode 6 +devmap mp_beach </LocalDebuggerCommandArguments>
-    <LocalDebuggerWorkingDirectory>C:\Projects\Wolf</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerCommand>C:\Projects\WolfMPSDK\WolfMP.exe</LocalDebuggerCommand>
+    <LocalDebuggerCommandArguments>+set r_fullscreen +set r_mode 6  +set cg_popupLimboMenu 0</LocalDebuggerCommandArguments>
+    <LocalDebuggerWorkingDirectory>C:\Projects\WolfMPSDK</LocalDebuggerWorkingDirectory>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Dedicated|x64'">
-    <LocalDebuggerCommand>C:\Projects\Wolf\WolfMP.exe</LocalDebuggerCommand>
-    <LocalDebuggerCommandArguments>+set r_fullscreen +set r_mode 6 +devmap mp_beach </LocalDebuggerCommandArguments>
-    <LocalDebuggerWorkingDirectory>C:\Projects\Wolf</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerCommand>C:\Projects\WolfMPSDK\WolfMP.exe</LocalDebuggerCommand>
+    <LocalDebuggerCommandArguments>+set r_fullscreen +set r_mode 6 +devmap mp_beach +set cg_popupLimboMenu 0</LocalDebuggerCommandArguments>
+    <LocalDebuggerWorkingDirectory>C:\Projects\WolfMPSDK</LocalDebuggerWorkingDirectory>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <LocalDebuggerCommand>C:\Projects\Wolf\WolfMP.exe</LocalDebuggerCommand>
-    <LocalDebuggerCommandArguments>+set r_fullscreen +set r_mode 6 +devmap mp_beach </LocalDebuggerCommandArguments>
-    <LocalDebuggerWorkingDirectory>C:\Projects\Wolf</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerCommand>C:\Projects\WolfMPSDK\WolfMP.exe</LocalDebuggerCommand>
+    <LocalDebuggerCommandArguments>+set r_fullscreen +set r_mode 6 +devmap mp_beach +set cg_popupLimboMenu 0</LocalDebuggerCommandArguments>
+    <LocalDebuggerWorkingDirectory>C:\Projects\WolfMPSDK</LocalDebuggerWorkingDirectory>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Dedicated|x64'">
-    <LocalDebuggerCommand>C:\Projects\Wolf\WolfMP.exe</LocalDebuggerCommand>
-    <LocalDebuggerCommandArguments>+set r_fullscreen +set r_mode 6 +devmap mp_beach </LocalDebuggerCommandArguments>
-    <LocalDebuggerWorkingDirectory>C:\Projects\Wolf</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerCommand>C:\Projects\WolfMPSDK\WolfMP.exe</LocalDebuggerCommand>
+    <LocalDebuggerCommandArguments>+set r_fullscreen +set r_mode 6 +devmap mp_beach +set cg_popupLimboMenu 0</LocalDebuggerCommandArguments>
+    <LocalDebuggerWorkingDirectory>C:\Projects\WolfMPSDK</LocalDebuggerWorkingDirectory>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
 </Project>

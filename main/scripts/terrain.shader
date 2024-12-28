@@ -143,7 +143,7 @@ textures/terrain/mxterra2_0
 	q3map_novertexshadows
 	q3map_forcesunlight	
 	{
-		map textures/stone/mxrock0b.tga
+		map textures/stone/mxrock0bo.tga
 		rgbGen vertex
 		tcmod scale 0.1 0.1
 	}
@@ -169,7 +169,7 @@ textures/terrain/mxterra2_2
 	q3map_novertexshadows
 	q3map_forcesunlight	
 	{
-		map textures/stone/mxrock2b.tga
+		map textures/stone/mxrock2bo.tga
 		tcmod scale 0.05 0.05 
 		rgbGen vertex
 	}
@@ -181,7 +181,7 @@ textures/terrain/mxterra2_3
 	q3map_novertexshadows
 	q3map_forcesunlight	
 	{
-		map textures/stone/mxrock3g.tga
+		map textures/stone/mxrock3bo.tga
 		tcmod scale 0.05 0.05 
 		rgbGen vertex
 	}
@@ -206,7 +206,7 @@ textures/terrain/mxterra2_0to1
 	q3map_novertexshadows
 	q3map_forcesunlight	
 	{
-		map textures/stone/mxrock0b.tga	
+		map textures/stone/mxrock0bo.tga	
 		rgbGen vertex
 		alphaGen vertex
 		tcmod scale 0.1 0.1 
@@ -227,13 +227,13 @@ textures/terrain/mxterra2_0to2
 	q3map_novertexshadows
 	q3map_forcesunlight	
 	{
-		map textures/stone/mxrock0b.tga
+		map textures/stone/mxrock0bo.tga
 		rgbGen vertex
 		alphaGen vertex
 		tcmod scale 0.1 0.1
 	}
 	{
-		map textures/stone/mxrock2b.tga
+		map textures/stone/mxrock2bo.tga
 		tcmod scale 0.05 0.05 
 		rgbGen vertex
 		alphaGen vertex
@@ -248,13 +248,13 @@ textures/terrain/mxterra2_0to3
 	q3map_novertexshadows
 	q3map_forcesunlight	
 	{
-		map textures/stone/mxrock0b.tga
+		map textures/stone/mxrock0bo.tga
 		rgbGen vertex
 		alphaGen vertex
 		tcmod scale 0.1 0.1
 	}
 	{
-		map textures/stone/mxrock3g.tga
+		map textures/stone/mxrock3bo.tga
 		tcmod scale 0.05 0.05 
 		rgbGen vertex
 		alphaGen vertex
@@ -269,7 +269,7 @@ textures/terrain/mxterra2_0to4
 	q3map_novertexshadows
 	q3map_forcesunlight	
 	{
-		map textures/stone/mxrock0b.tga
+		map textures/stone/mxrock0bo.tga
 		rgbGen vertex
 		alphaGen vertex
 		tcmod scale 0.1 0.1
@@ -297,7 +297,7 @@ textures/terrain/mxterra2_1to2
 		tcmod scale 0.1 0.1 
 	}
 	{
-		map textures/stone/mxrock2b.tga
+		map textures/stone/mxrock2bo.tga
 		tcmod scale 0.05 0.05 
 		rgbGen vertex
 		alphaGen vertex
@@ -318,7 +318,7 @@ textures/terrain/mxterra2_1to3
 		tcmod scale 0.1 0.1 
 	}
 	{
-		map textures/stone/mxrock3g.tga
+		map textures/stone/mxrock3bo.tga
 		tcmod scale 0.05 0.05 
 		rgbGen vertex
 		alphaGen vertex
@@ -354,13 +354,13 @@ textures/terrain/mxterra2_2to3
 	q3map_novertexshadows
 	q3map_forcesunlight	
 	{
-		map textures/stone/mxrock2b.tga
+		map textures/stone/mxrock2bo.tga
 		rgbGen vertex
 		alphaGen vertex
 		tcmod scale 0.05 0.05 
 	}
 	{
-		map textures/stone/mxrock3g.tga
+		map textures/stone/mxrock3bo.tga
 		tcmod scale 0.05 0.05 
 		rgbGen vertex
 		alphaGen vertex
@@ -375,7 +375,7 @@ textures/terrain/mxterra2_2to4
 	q3map_novertexshadows
 	q3map_forcesunlight	
 	{
-		map textures/stone/mxrock2b.tga
+		map textures/stone/mxrock2bo.tga
 		rgbGen vertex
 		alphaGen vertex
 		tcmod scale 0.05 0.05 
@@ -396,7 +396,7 @@ textures/terrain/mxterra2_3to4
 	q3map_novertexshadows
 	q3map_forcesunlight	
 	{
-		map textures/stone/mxrock3g.tga
+		map textures/stone/mxrock3bo.tga
 		rgbGen vertex
 		alphaGen vertex
 		tcmod scale 0.05 0.05 
@@ -2342,7 +2342,7 @@ textures/terrain/mxterra8_3to4
 
 textures/terrain/mxterra9_0
 {
-	surfaceparm snowsteps
+	surfaceparm grasssteps
 	surfaceparm nolightmap
 	q3map_novertexshadows
 	q3map_forcesunlight	
@@ -2355,7 +2355,7 @@ textures/terrain/mxterra9_0
 
 textures/terrain/mxterra9_1
 {
-	surfaceparm snowsteps
+	surfaceparm gravelsteps
 	surfaceparm nolightmap
 	q3map_novertexshadows
 	q3map_forcesunlight	
@@ -2368,7 +2368,7 @@ textures/terrain/mxterra9_1
 
 textures/terrain/mxterra9_2
 {
-	surfaceparm snowsteps
+	surfaceparm grasssteps
 	surfaceparm nolightmap
 	q3map_novertexshadows
 	q3map_forcesunlight	
@@ -2381,7 +2381,7 @@ textures/terrain/mxterra9_2
 
 textures/terrain/mxterra9_0to1
 {
-	surfaceparm snowsteps
+	surfaceparm grasssteps
 	surfaceparm nolightmap
 	q3map_novertexshadows
 	q3map_forcesunlight	
@@ -2402,7 +2402,7 @@ textures/terrain/mxterra9_0to1
 
 textures/terrain/mxterra9_0to2
 {
-	surfaceparm snowsteps
+	surfaceparm grasssteps
 	surfaceparm nolightmap
 	q3map_novertexshadows
 	q3map_forcesunlight	
@@ -2423,7 +2423,7 @@ textures/terrain/mxterra9_0to2
 
 textures/terrain/mxterra9_1to2
 {
-	surfaceparm snowsteps
+	surfaceparm grasssteps
 	surfaceparm nolightmap
 	q3map_novertexshadows
 	q3map_forcesunlight	
@@ -2750,7 +2750,7 @@ textures/terrain/mxterra11_0
 	q3map_novertexshadows
 	q3map_forcesunlight	
 	{
-		map textures/stone/mxrock0b.tga
+		map textures/stone/mxrock0bds.tga
 		rgbGen vertex
 		tcmod scale 0.1 0.1
 	}
@@ -2763,7 +2763,7 @@ textures/terrain/mxterra11_1
 	q3map_novertexshadows
 	q3map_forcesunlight	
 	{
-		map textures/stone/mxrock1b.tga
+		map textures/stone/mxrock1bds.tga
 		rgbGen vertex
 		tcmod scale 0.1 0.1 
 	}
@@ -2776,7 +2776,7 @@ textures/terrain/mxterra11_2
 	q3map_novertexshadows
 	q3map_forcesunlight	
 	{
-		map textures/stone/mxrock2b.tga
+		map textures/stone/mxrock2bo.tga
 		tcmod scale 0.05 0.05 
 		rgbGen vertex
 	}
@@ -2788,7 +2788,7 @@ textures/terrain/mxterra11_3
 	q3map_novertexshadows
 	q3map_forcesunlight	
 	{
-		map textures/stone/mxrock3aa.tga
+		map textures/stone/mxrock3_a.tga
 		tcmod scale 0.05 0.05 
 		rgbGen vertex
 	}
@@ -2813,13 +2813,13 @@ textures/terrain/mxterra11_0to1
 	q3map_novertexshadows
 	q3map_forcesunlight	
 	{
-		map textures/stone/mxrock0b.tga	
+		map textures/stone/mxrock0bds.tga	
 		rgbGen vertex
 		alphaGen vertex
 		tcmod scale 0.1 0.1 
 	}
 	{
-		map textures/stone/mxrock1b.tga
+		map textures/stone/mxrock1bds.tga
 		tcmod scale 0.1 0.1
 		rgbGen vertex
 		alphaGen vertex
@@ -2834,13 +2834,13 @@ textures/terrain/mxterra11_0to2
 	q3map_novertexshadows
 	q3map_forcesunlight	
 	{
-		map textures/stone/mxrock0b.tga
+		map textures/stone/mxrock0bds.tga
 		rgbGen vertex
 		alphaGen vertex
 		tcmod scale 0.1 0.1
 	}
 	{
-		map textures/stone/mxrock2b.tga
+		map textures/stone/mxrock2bo.tga
 		tcmod scale 0.05 0.05 
 		rgbGen vertex
 		alphaGen vertex
@@ -2855,13 +2855,13 @@ textures/terrain/mxterra11_0to3
 	q3map_novertexshadows
 	q3map_forcesunlight	
 	{
-		map textures/stone/mxrock0b.tga
+		map textures/stone/mxrock0bds.tga
 		rgbGen vertex
 		alphaGen vertex
 		tcmod scale 0.1 0.1
 	}
 	{
-		map textures/stone/mxrock3aa.tga
+		map textures/stone/mxrock3_a.tga
 		tcmod scale 0.05 0.05 
 		rgbGen vertex
 		alphaGen vertex
@@ -2876,7 +2876,7 @@ textures/terrain/mxterra11_0to4
 	q3map_novertexshadows
 	q3map_forcesunlight	
 	{
-		map textures/stone/mxrock0b.tga
+		map textures/stone/mxrock0bds.tga
 		rgbGen vertex
 		alphaGen vertex
 		tcmod scale 0.1 0.1
@@ -2898,13 +2898,13 @@ textures/terrain/mxterra11_1to2
 	q3map_novertexshadows
 	q3map_forcesunlight	
 	{
-		map textures/stone/mxrock1b.tga
+		map textures/stone/mxrock1bds.tga
 		rgbGen vertex
 		alphaGen vertex
 		tcmod scale 0.1 0.1 
 	}
 	{
-		map textures/stone/mxrock2b.tga
+		map textures/stone/mxrock2bo.tga
 		tcmod scale 0.05 0.05 
 		rgbGen vertex
 		alphaGen vertex
@@ -2919,13 +2919,13 @@ textures/terrain/mxterra11_1to3
 	q3map_novertexshadows
 	q3map_forcesunlight	
 	{
-		map textures/stone/mxrock1b.tga
+		map textures/stone/mxrock1bds.tga
 		rgbGen vertex
 		alphaGen vertex
 		tcmod scale 0.1 0.1 
 	}
 	{
-		map textures/stone/mxrock3aa.tga
+		map textures/stone/mxrock3_a.tga
 		tcmod scale 0.05 0.05 
 		rgbGen vertex
 		alphaGen vertex
@@ -2940,7 +2940,7 @@ textures/terrain/mxterra11_1to4
 	q3map_novertexshadows
 	q3map_forcesunlight	
 	{
-		map textures/stone/mxrock1b.tga
+		map textures/stone/mxrock1bds.tga
 		rgbGen vertex
 		alphaGen vertex
 		tcmod scale 0.1 0.1 
@@ -2961,13 +2961,13 @@ textures/terrain/mxterra11_2to3
 	q3map_novertexshadows
 	q3map_forcesunlight	
 	{
-		map textures/stone/mxrock2b.tga
+		map textures/stone/mxrock2bo.tga
 		rgbGen vertex
 		alphaGen vertex
 		tcmod scale 0.05 0.05 
 	}
 	{
-		map textures/stone/mxrock3aa.tga
+		map textures/stone/mxrock3_a.tga
 		tcmod scale 0.05 0.05 
 		rgbGen vertex
 		alphaGen vertex
@@ -2982,7 +2982,7 @@ textures/terrain/mxterra11_2to4
 	q3map_novertexshadows
 	q3map_forcesunlight	
 	{
-		map textures/stone/mxrock2b.tga
+		map textures/stone/mxrock2bo.tga
 		rgbGen vertex
 		alphaGen vertex
 		tcmod scale 0.05 0.05 
@@ -3002,7 +3002,7 @@ textures/terrain/mxterra11_3to4
 	q3map_novertexshadows
 	q3map_forcesunlight	
 	{
-		map textures/stone/mxrock3aa.tga
+		map textures/stone/mxrock3_a.tga
 		rgbGen vertex
 		alphaGen vertex
 		tcmod scale 0.05 0.05 
@@ -3700,46 +3700,9 @@ textures/terrain/mxterra15_1
 	q3map_novertexshadows
 	q3map_forcesunlight	
 	{
-		map textures/stone/mxsnow1.tga
+		map textures/stone/mxsnow3.tga
 		rgbGen vertex
 		tcmod scale 0.025 0.025
-	}
-}
-
-textures/terrain/mxterra15_2
-{
-	surfaceparm grasssteps
-	surfaceparm nolightmap
-	q3map_novertexshadows
-	q3map_forcesunlight	
-	{
-		map textures/stone/mxsnow2.tga
-		tcmod scale 0.05 0.05 
-		rgbGen vertex
-	}
-}
-
-textures/terrain/mxterra15_3
-{
-	surfaceparm nolightmap
-	q3map_novertexshadows
-	q3map_forcesunlight	
-	{
-		map textures/stone/mxsnow3.tga
-		tcmod scale 0.05 0.05 
-		rgbGen vertex
-	}
-}
-
-textures/terrain/mxterra15_4
-{
-	surfaceparm nolightmap
-	q3map_novertexshadows
-	q3map_forcesunlight	
-	{
-		map textures/stone/mxsnow4.tga
-		tcmod scale 0.1 0.1 
-		rgbGen vertex
 	}
 }
 
@@ -3756,208 +3719,13 @@ textures/terrain/mxterra15_0to1
 		tcmod scale 0.05 0.05 
 	}
 	{
-		map textures/stone/mxsnow1.tga
+		map textures/stone/mxsnow3.tga
 		tcmod scale 0.025 0.025
 		rgbGen vertex
 		alphaGen vertex
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
 	}
 }
-
-textures/terrain/mxterra15_0to2
-{
-	surfaceparm grasssteps
-	surfaceparm nolightmap
-	q3map_novertexshadows
-	q3map_forcesunlight	
-	{
-		map textures/stone/mxsnow0.tga
-		rgbGen vertex
-		alphaGen vertex
-		tcmod scale 0.05 0.05
-	}
-	{
-		map textures/stone/mxsnow2.tga
-		tcmod scale 0.05 0.05 
-		rgbGen vertex
-		alphaGen vertex
-		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-	}
-}
-
-textures/terrain/mxterra15_0to3
-{
-	surfaceparm grasssteps
-	surfaceparm nolightmap
-	q3map_novertexshadows
-	q3map_forcesunlight	
-	{
-		map textures/stone/mxsnow0.tga
-		rgbGen vertex
-		alphaGen vertex
-		tcmod scale 0.05 0.05
-	}
-	{
-		map textures/stone/mxsnow3.tga
-		tcmod scale 0.05 0.05 
-		rgbGen vertex
-		alphaGen vertex
-		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-	}
-}
-
-textures/terrain/mxterra15_0to4
-{
-	surfaceparm grasssteps
-	surfaceparm nolightmap
-	q3map_novertexshadows
-	q3map_forcesunlight	
-	{
-		map textures/stone/mxsnow0.tga
-		rgbGen vertex
-		alphaGen vertex
-		tcmod scale 0.05 0.05
-	}
-	{
-		map textures/stone/mxsnow4.tga
-		tcmod scale 0.1 0.1 
-		rgbGen vertex
-		alphaGen vertex
-		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-	}
-}
-
-
-textures/terrain/mxterra15_1to2
-{
-	surfaceparm grasssteps
-	surfaceparm nolightmap
-	q3map_novertexshadows
-	q3map_forcesunlight	
-	{
-		map textures/stone/mxsnow1.tga
-		rgbGen vertex
-		alphaGen vertex
-		tcmod scale 0.1 0.1 
-	}
-	{
-		map textures/stone/mxsnow2.tga
-		tcmod scale 0.05 0.05 
-		rgbGen vertex
-		alphaGen vertex
-		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-	}
-}
-
-textures/terrain/mxterra15_1to3
-{
-	surfaceparm gravelsteps
-	surfaceparm nolightmap
-	q3map_novertexshadows
-	q3map_forcesunlight	
-	{
-		map textures/stone/mxsnow1.tga
-		rgbGen vertex
-		alphaGen vertex
-		tcmod scale 0.1 0.1 
-	}
-	{
-		map textures/stone/mxsnow3.tga
-		tcmod scale 0.05 0.05 
-		rgbGen vertex
-		alphaGen vertex
-		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-	}
-}
-
-textures/terrain/mxterra15_1to4
-{
-	surfaceparm gravelsteps
-	surfaceparm nolightmap
-	q3map_novertexshadows
-	q3map_forcesunlight	
-	{
-		map textures/stone/mxsnow1.tga
-		rgbGen vertex
-		alphaGen vertex
-		tcmod scale 0.1 0.1 
-	}
-	{
-		map textures/stone/mxsnow4.tga
-		tcmod scale 0.1 0.1 
-		rgbGen vertex
-		alphaGen vertex
-		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-	}
-}
-
-textures/terrain/mxterra15_2to3
-{
-	surfaceparm grasssteps
-	surfaceparm nolightmap
-	q3map_novertexshadows
-	q3map_forcesunlight	
-	{
-		map textures/stone/mxsnow2.tga
-		rgbGen vertex
-		alphaGen vertex
-		tcmod scale 0.05 0.05 
-	}
-	{
-		map textures/stone/mxsnow3.tga
-		tcmod scale 0.05 0.05 
-		rgbGen vertex
-		alphaGen vertex
-		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-	}
-}
-
-textures/terrain/mxterra15_2to4
-{
-	surfaceparm grasssteps
-	surfaceparm nolightmap
-	q3map_novertexshadows
-	q3map_forcesunlight	
-	{
-		map textures/stone/mxsnow2.tga
-		rgbGen vertex
-		alphaGen vertex
-		tcmod scale 0.05 0.05 
-	}
-	{
-		map textures/stone/mxsnow4.tga
-		tcmod scale 0.1 0.1 
-		rgbGen vertex
-		alphaGen vertex
-		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-	}
-}
-
-
-textures/terrain/mxterra15_3to4
-{
-	surfaceparm nolightmap
-	q3map_novertexshadows
-	q3map_forcesunlight	
-	{
-		map textures/stone/mxsnow3.tga
-		rgbGen vertex
-		alphaGen vertex
-		tcmod scale 0.05 0.05 
-	}
-	{
-		map textures/stone/mxsnow4.tga
-		tcmod scale 0.1 0.1 
-		rgbGen vertex
-		alphaGen vertex
-		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-	}
-}
-
-
-
-
-
 
 
 /////////////////end ///////////////////
@@ -4316,8 +4084,396 @@ textures/terrain/mxterra17_0to1
 	}
 }
 
+
+///////////////// baseout2 ////////////////////
+//////////////////////////////////////////////
+
+textures/terrain/mxterra18_0
+{
+	surfaceparm grasssteps
+	surfaceparm nolightmap
+	q3map_novertexshadows
+	q3map_forcesunlight	
+	{
+		map textures/stone/mxrock2t.tga
+		rgbGen vertex
+		tcmod scale 0.1 0.1
+	}
+}
+
+textures/terrain/mxterra18_1
+{
+	surfaceparm gravelsteps
+	surfaceparm nolightmap
+	q3map_novertexshadows
+	q3map_forcesunlight	
+	{
+		map textures/stone/mxrock3_a.tga
+		rgbGen vertex
+		tcmod scale 0.1 0.1 
+	}
+}
+
+textures/terrain/mxterra18_0to1
+{
+	surfaceparm grasssteps
+	surfaceparm nolightmap
+	q3map_novertexshadows
+	q3map_forcesunlight	
+	{
+		map textures/stone/mxrock2t.tga	
+		rgbGen vertex
+		alphaGen vertex
+		tcmod scale 0.1 0.1 
+	}
+	{
+		map textures/stone/mxrock3_a.tga
+		tcmod scale 0.1 0.1
+		rgbGen vertex
+		alphaGen vertex
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
+
+
+///////////////// assault2 /////////////////////
+//////////////////////////////////////////////
+
+textures/terrain/mxterra19_0
+{
+	surfaceparm grasssteps
+	surfaceparm nolightmap
+	q3map_novertexshadows
+	q3map_forcesunlight	
+	{
+		map textures/stone/mxrock2.tga
+		rgbGen vertex
+		tcmod scale 0.1 0.1
+	}
+}
+
+textures/terrain/mxterra19_1
+{
+	surfaceparm gravelsteps
+	surfaceparm nolightmap
+	q3map_novertexshadows
+	q3map_forcesunlight	
+	{
+		map textures/stone/mxrock3_a.tga
+		rgbGen vertex
+		tcmod scale 0.1 0.1 
+	}
+}
+
+textures/terrain/mxterra19_0to1
+{
+	surfaceparm grasssteps
+	surfaceparm nolightmap
+	q3map_novertexshadows
+	q3map_forcesunlight	
+	{
+		map textures/stone/mxrock2.tga	
+		rgbGen vertex
+		alphaGen vertex
+		tcmod scale 0.1 0.1 
+	}
+	{
+		map textures/stone/mxrock3_a.tga
+		tcmod scale 0.1 0.1
+		rgbGen vertex
+		alphaGen vertex
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
+
+
+
+///////////////// Dam2 /////////////////////
+//////////////////////////////////////////////
+
+textures/terrain/mxterra20_0
+{
+	surfaceparm grasssteps
+	surfaceparm nolightmap
+	q3map_novertexshadows
+	q3map_forcesunlight	
+	{
+		map textures/stone/mxrock2.tga
+		rgbGen vertex
+		tcmod scale 0.1 0.1
+	}
+}
+
+textures/terrain/mxterra20_1
+{
+	surfaceparm gravelsteps
+	surfaceparm nolightmap
+	q3map_novertexshadows
+	q3map_forcesunlight	
+	{
+		map textures/stone/mxrock3_a.tga
+		rgbGen vertex
+		tcmod scale 0.1 0.1 
+	}
+}
+
+textures/terrain/mxterra20_2
+{
+	surfaceparm gravelsteps
+	surfaceparm nolightmap
+	q3map_novertexshadows
+	q3map_forcesunlight	
+	{
+		map textures/stone/mxrock1aa.tga
+		rgbGen vertex
+		tcmod scale 0.1 0.1 
+	}
+}
+
+textures/terrain/mxterra20_0to1
+{
+	surfaceparm grasssteps
+	surfaceparm nolightmap
+	q3map_novertexshadows
+	q3map_forcesunlight	
+	{
+		map textures/stone/mxrock2.tga	
+		rgbGen vertex
+		alphaGen vertex
+		tcmod scale 0.1 0.1 
+	}
+	{
+		map textures/stone/mxrock3_a.tga
+		tcmod scale 0.1 0.1
+		rgbGen vertex
+		alphaGen vertex
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
+
+
+textures/terrain/mxterra20_0to2
+{
+	surfaceparm grasssteps
+	surfaceparm nolightmap
+	q3map_novertexshadows
+	q3map_forcesunlight	
+	{
+		map textures/stone/mxrock2.tga	
+		rgbGen vertex
+		alphaGen vertex
+		tcmod scale 0.1 0.1 
+	}
+	{
+		map textures/stone/mxrock1aa.tga
+		tcmod scale 0.1 0.1
+		rgbGen vertex
+		alphaGen vertex
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
+
+textures/terrain/mxterra20_1to2
+{
+	surfaceparm grasssteps
+	surfaceparm nolightmap
+	q3map_novertexshadows
+	q3map_forcesunlight	
+	{
+		map textures/stone/mxrock3_a.tga	
+		rgbGen vertex
+		alphaGen vertex
+		tcmod scale 0.1 0.1 
+	}
+	{
+		map textures/stone/mxrock1aa.tga
+		tcmod scale 0.1 0.1
+		rgbGen vertex
+		alphaGen vertex
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
+
+///////////////// Heinrich /////////////////////
+//////////////////////////////////////////////
+
+textures/terrain/mxterra21_0
+{
+	surfaceparm grasssteps
+	surfaceparm nolightmap
+	q3map_novertexshadows
+	q3map_forcesunlight	
+	{
+		map textures/stone/dirt_m03.tga
+		rgbGen vertex
+		tcmod scale 0.1 0.1
+	}
+}
+
+textures/terrain/mxterra21_1
+{
+	surfaceparm gravelsteps
+	surfaceparm nolightmap
+	q3map_novertexshadows
+	q3map_forcesunlight	
+	{
+		map textures/stone/mxrock4ca.tga
+		rgbGen vertex
+		tcmod scale 0.1 0.1 
+	}
+}
+
+textures/terrain/mxterra21_2
+{
+	surfaceparm gravelsteps
+	surfaceparm nolightmap
+	q3map_novertexshadows
+	q3map_forcesunlight	
+	{
+		map textures/stone/ground_c09a.tga
+		rgbGen vertex
+		tcmod scale 0.1 0.1 
+	}
+}
+
+textures/terrain/mxterra21_0to1
+{
+	surfaceparm grasssteps
+	surfaceparm nolightmap
+	q3map_novertexshadows
+	q3map_forcesunlight	
+	{
+		map textures/stone/dirt_m03.tga	
+		rgbGen vertex
+		alphaGen vertex
+		tcmod scale 0.1 0.1 
+	}
+	{
+		map textures/stone/mxrock4ca.tga
+		tcmod scale 0.1 0.1
+		rgbGen vertex
+		alphaGen vertex
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
+
+
+textures/terrain/mxterra21_0to2
+{
+	surfaceparm grasssteps
+	surfaceparm nolightmap
+	q3map_novertexshadows
+	q3map_forcesunlight	
+	{
+		map textures/stone/dirt_m03.tga	
+		rgbGen vertex
+		alphaGen vertex
+		tcmod scale 0.1 0.1 
+	}
+	{
+		map textures/stone/ground_c09a.tga
+		tcmod scale 0.1 0.1
+		rgbGen vertex
+		alphaGen vertex
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
+
+textures/terrain/mxterra21_1to2
+{
+	surfaceparm grasssteps
+	surfaceparm nolightmap
+	q3map_novertexshadows
+	q3map_forcesunlight	
+	{
+		map textures/stone/mxrock4ca.tga	
+		rgbGen vertex
+		alphaGen vertex
+		tcmod scale 0.1 0.1 
+	}
+	{
+		map textures/stone/ground_c09a.tga
+		tcmod scale 0.1 0.1
+		rgbGen vertex
+		alphaGen vertex
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
+
+
+
 /////////////////end ///////////////////
 //////////////////////////////////////////////
+
+
+
+
+textures/terrain/forest_0
+{
+	surfaceparm grasssteps
+	surfaceparm nolightmap
+	q3map_novertexshadows
+	q3map_forcesunlight	
+	{
+		map textures/stone/mxrock0b.tga
+		rgbGen vertex
+		tcmod scale 0.1 0.1
+	}
+
+}
+
+
+textures/terrain/snow_0
+{
+	surfaceparm grasssteps
+	surfaceparm nolightmap
+	q3map_novertexshadows
+	q3map_forcesunlight	
+	{
+		map textures/stone/mxsnow3.tga
+		rgbGen vertex
+		tcmod scale 0.1 0.1
+
+	}
+
+}
+
+textures/terrain/rubble_0
+{
+	surfaceparm grasssteps
+	surfaceparm nolightmap
+	q3map_novertexshadows
+	q3map_forcesunlight	
+	{
+		map textures/stone/mxdebri0.tga
+		rgbGen vertex
+		tcmod scale 0.25 0.25
+
+	}
+
+}
+
+textures/terrain/rock_0
+{
+	surfaceparm grasssteps
+	surfaceparm nolightmap
+	q3map_novertexshadows
+	q3map_forcesunlight	
+	{
+		map textures/stone/mxrock2t.tga
+		rgbGen vertex
+		tcmod scale 0.1 0.1
+
+	}
+
+}
+
+
+
+
+
+
+
 
 
 
